@@ -1,0 +1,134 @@
+/* components/Footer.module.css */
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111827;
+  color: white;
+  padding: 4rem 0 2rem;
+}
+
+/* ===== FOOTER CONTAINER ===== */
+.footerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== FOOTER GRID ===== */
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* ===== FOOTER SECTIONS ===== */
+.footerSection h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+/* ===== COMPANY INFO ===== */
+.companyInfo p {
+  color: #9ca3af;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.location {
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== FOOTER LINKS ===== */
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 0.75rem;
+}
+
+.footerLink {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footerLink:hover {
+  color: white;
+}
+
+/* ===== CONTACT INFO ===== */
+.contactInfo {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactItem {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footerButton {
+  display: block;
+  width: 100%;
+  background: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footerButton:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ===== BOTTOM BAR ===== */
+.bottomBar {
+  border-top: 1px solid #374151;
+  padding-top: 2rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.bottomBar p {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+}

@@ -9,9 +9,11 @@ import styles from './Navbar.module.css';
 // Nav items
 const navItems = [
   { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' }, // Add this line
   { name: 'Services', href: '/services' },
   { name: 'How We Work', href: '/how-we-work' },
   { name: 'Who We Support', href: '/who-we-support' },
+  { name: 'What We Don\'t Do', href: '/what-we-dont-do' },
   { name: 'Contact', href: '/contact' },
 ];
 

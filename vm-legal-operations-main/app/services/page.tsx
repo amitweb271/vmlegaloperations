@@ -224,7 +224,7 @@ export default function ServicesPage() {
                     { icon: '📝', text: 'Open matters and case status' },
                     { icon: '⏰', text: 'Upcoming deadlines and timelines' },
                     { icon: '✅', text: 'Actions taken and completed tasks' },
-                    { icon: '⚠️', text: 'Items requiring attention or escalation' }
+                    { icon: '•', text: 'Items requiring attention or escalation' }
                   ].map((item, idx) => (
                     <li key={idx} className={styles.flex} style={{ alignItems: 'center', marginBottom: '1rem' }}>
                       <span style={{ fontSize: '1.25rem', marginRight: '0.75rem' }}>{item.icon}</span>
@@ -350,21 +350,22 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Compliance Notice */}
+      {/* Scope of Services Notice */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div style={{ 
-            background: '#fef2f2', 
+            background: '#f8fafc', 
             padding: isMobile ? '1.5rem' : '2rem', 
             borderRadius: '0.5rem',
-            borderLeft: '4px solid #dc2626'
+            borderLeft: '4px solid #1d4ed8',
+            border: '1px solid #e2e8f0'
           }}>
             <h3 className={styles.heading3} style={{ 
-              color: '#dc2626', 
+              color: '#1d4ed8', 
               marginBottom: '1rem',
               fontSize: isMobile ? '1.25rem' : '1.875rem'
             }}>
-              Compliance Notice
+              Scope of Services
             </h3>
             <p className={styles.textGray} style={{ fontSize: isMobile ? '0.95rem' : '1.125rem' }}>
               <strong>VM Legal Operations provides strictly non-legal administrative support only.</strong><br/>
@@ -389,7 +390,7 @@ export default function ServicesPage() {
             maxWidth: '800px', 
             margin: '0 auto 2rem' 
           }}>
-            Book a free consultation to discuss how our services can benefit your firm.
+            Book a consultation to discuss how our services can benefit your firm.
           </p>
           <div style={{ 
             display: 'flex', 
@@ -414,7 +415,7 @@ export default function ServicesPage() {
                 width: isMobile ? '100%' : 'auto'
               }}
             >
-              Schedule Free Consultation
+              Schedule Consultation
             </Link>
             <Link 
               href="/contact"

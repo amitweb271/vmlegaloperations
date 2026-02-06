@@ -144,13 +144,13 @@ export default function WhoWeSupportPage() {
           <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
             <div>
               <div style={{ 
-                background: '#fef2f2', 
+                background: '#f8fafc', 
                 padding: isMobile ? '1.5rem' : '2rem', 
                 borderRadius: '1rem',
-                border: '1px solid #fee2e2',
+                border: '1px solid #e2e8f0',
                 marginBottom: '2rem'
               }}>
-                <h3 className={styles.heading3} style={{ color: '#dc2626', marginBottom: '1rem' }}>
+                <h3 className={styles.heading3} style={{ color: '#4b5563', marginBottom: '1rem' }}>
                   The Challenges
                 </h3>
                 <p style={{ 
@@ -163,7 +163,7 @@ export default function WhoWeSupportPage() {
                 <ul style={{ listStyle: 'none', padding: 0 }}>
                   {challenges.map((challenge, idx) => (
                     <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                      <span style={{ color: '#dc2626', marginRight: '0.75rem', marginTop: '0.25rem' }}>⚠️</span>
+                      <span style={{ color: '#fbbf24', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
                       <span style={{ fontSize: isMobile ? '0.95rem' : '1rem' }}>{challenge}</span>
                     </li>
                   ))}
@@ -326,7 +326,7 @@ export default function WhoWeSupportPage() {
         </div>
       </section>
 
-      {/* Compliance Notice */}
+      {/* Scope of Services Notice */}
       <section className={`${styles.section} ${styles.sectionDark}`}>
         <div className={styles.container}>
           <div style={{ 
@@ -336,11 +336,11 @@ export default function WhoWeSupportPage() {
             border: '1px solid rgba(255, 255, 255, 0.1)'
           }}>
             <h3 className={styles.heading3} style={{ 
-              color: '#f87171', 
+              color: '#93c5fd', 
               marginBottom: '1rem',
               fontSize: isMobile ? '1.25rem' : '1.875rem'
             }}>
-              Important Compliance Notice
+              Scope of Services
             </h3>
             <p style={{ 
               color: '#d1d5db', 
@@ -376,7 +376,7 @@ export default function WhoWeSupportPage() {
             maxWidth: '800px', 
             margin: '0 auto 2rem' 
           }}>
-            Schedule a free consultation to discuss how our legal operations support can benefit your practice.
+            Schedule a consultation to discuss how our legal operations support can benefit your practice.
           </p>
           <div style={{ 
             display: 'flex', 
@@ -401,7 +401,7 @@ export default function WhoWeSupportPage() {
                 width: isMobile ? '100%' : 'auto'
               }}
             >
-              Schedule Free Consultation
+              Schedule Consultation
             </Link>
             <Link 
               href="/services"

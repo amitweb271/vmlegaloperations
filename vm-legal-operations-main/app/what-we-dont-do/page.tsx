@@ -82,13 +82,13 @@ export default function WhatWeDontDoPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)' }}>
+      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)' }}>
         <div className={styles.container}>
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
             <div style={{ 
               display: 'inline-block', 
-              backgroundColor: '#fee2e2', 
-              color: '#dc2626', 
+              backgroundColor: '#dbeafe', 
+              color: '#1d4ed8', 
               padding: '0.5rem 1rem',
               borderRadius: '2rem',
               fontSize: '0.875rem',
@@ -113,7 +113,7 @@ export default function WhatWeDontDoPage() {
             }}>
               <p style={{ 
                 fontSize: isMobile ? '0.95rem' : '1.125rem',
-                color: '#dc2626',
+                color: '#1d4ed8',
                 fontWeight: '600',
                 margin: 0
               }}>
@@ -142,16 +142,16 @@ export default function WhatWeDontDoPage() {
           <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
             {dontDoItems.map((item, index) => (
               <div key={index} className={styles.card} style={{ 
-                border: '1px solid #fee2e2',
-                borderTop: '3px solid #dc2626'
+                border: '1px solid #e2e8f0',
+                borderTop: '3px solid #6b7280'
               }}>
                 <div className={styles.flex} style={{ 
                   alignItems: 'center', 
                   marginBottom: '1rem'
                 }}>
                   <div style={{ 
-                    background: '#fee2e2', 
-                    color: '#dc2626',
+                    background: '#f1f5f9', 
+                    color: '#6b7280',
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%', 
@@ -163,10 +163,10 @@ export default function WhatWeDontDoPage() {
                     fontWeight: 'bold',
                     fontSize: '1.125rem'
                   }}>
-                    ✗
+                    ✓
                   </div>
                   <h3 className={styles.heading3} style={{ 
-                    color: '#dc2626',
+                    color: '#4b5563',
                     margin: 0
                   }}>
                     {item.title}
@@ -183,13 +183,13 @@ export default function WhatWeDontDoPage() {
                 </p>
                 
                 <div style={{ 
-                  background: '#fef2f2', 
+                  background: '#f8fafc', 
                   padding: '0.75rem', 
                   borderRadius: '0.5rem',
                   marginTop: '1rem'
                 }}>
                   <p style={{ 
-                    color: '#92400e', 
+                    color: '#4b5563', 
                     fontSize: isMobile ? '0.75rem' : '0.875rem',
                     margin: 0,
                     fontWeight: '500'
@@ -297,8 +297,8 @@ export default function WhatWeDontDoPage() {
               borderRadius: '1rem',
               border: '1px solid rgba(255, 255, 255, 0.1)'
             }}>
-              <h3 className={styles.heading3} style={{ color: '#f87171', marginBottom: '1rem' }}>
-                Outside Our Scope ✗
+              <h3 className={styles.heading3} style={{ color: '#9ca3af', marginBottom: '1rem' }}>
+                Outside Our Scope ✓
               </h3>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {[
@@ -310,7 +310,7 @@ export default function WhatWeDontDoPage() {
                   'Legal research'
                 ].map((item, idx) => (
                   <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#f87171', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
+                    <span style={{ color: '#9ca3af', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
                     <span style={{ color: '#d1d5db' }}>{item}</span>
                   </li>
                 ))}
@@ -334,7 +334,7 @@ export default function WhatWeDontDoPage() {
               marginBottom: '1rem',
               fontSize: isMobile ? '1.25rem' : '1.875rem'
             }}>
-              Compliance & Ethical Standards
+              Scope of Services & Ethical Standards
             </h3>
             <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '1.5rem' : '2rem' }}>
               <div>

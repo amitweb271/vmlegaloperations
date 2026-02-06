@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 "use client";
 
 import { useState } from 'react';
@@ -49,7 +48,7 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)' }}>
+      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)' }}>
         <div className={styles.container}>
           <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
             <h1 className={styles.heading1}>Contact Us</h1>
@@ -265,9 +264,9 @@ export default function ContactPage() {
                   Why Choose Us?
                 </h3>
                 <ul style={{ color: '#4b5563', paddingLeft: '1.5rem' }}>
-                  <li style={{ marginBottom: '0.5rem' }}>Free initial consultation</li>
+                  <li style={{ marginBottom: '0.5rem' }}>Initial consultation</li>
                   <li style={{ marginBottom: '0.5rem' }}>No long-term contracts required</li>
-                  <li style={{ marginBottom: '0.5rem' }}>Start with a risk-free pilot program</li>
+                  <li style={{ marginBottom: '0.5rem' }}>Start with a structured pilot program</li>
                   <li>Transparent monthly pricing</li>
                 </ul>
               </div>
@@ -278,13 +277,13 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className={styles.section} style={{ background: '#1d4ed8', color: 'white' }}>
+      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%)', color: 'white' }}>
         <div className={styles.container} style={{ textAlign: 'center' }}>
           <h2 className={styles.heading2} style={{ color: 'white', marginBottom: '1rem' }}>
-            Schedule a Free Consultation
+            Schedule a Consultation
           </h2>
           <p style={{ fontSize: '1.125rem', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto' }}>
-            Book a 30-minute call to discuss your firm's specific needs and how we can help.
+            Book a call to discuss your firm's specific needs and how we can help.
           </p>
           <button style={{ 
             background: 'white', 
@@ -296,7 +295,7 @@ export default function ContactPage() {
             fontSize: '1rem',
             cursor: 'pointer'
           }}>
-            Book Free Consultation
+            Schedule Consultation
           </button>
         </div>
       </section>

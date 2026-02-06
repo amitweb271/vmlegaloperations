@@ -360,7 +360,7 @@ export default function HowWeWorkPage() {
                   'Administrative work pulling time away from billable activity'
                 ].map((item, idx) => (
                   <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#f87171', marginRight: '0.75rem', marginTop: '0.25rem' }}>⚠️</span>
+                    <span style={{ color: '#fbbf24', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
                     <span style={{ color: '#d1d5db' }}>{item}</span>
                   </li>
                 ))}
@@ -397,21 +397,22 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      {/* Compliance Notice */}
+      {/* Scope of Services Notice */}
       <section className={styles.section}>
         <div className={styles.container}>
           <div style={{ 
-            background: '#fef2f2', 
+            background: '#f8fafc', 
             padding: isMobile ? '1.5rem' : '2rem', 
             borderRadius: '0.5rem',
-            borderLeft: '4px solid #dc2626'
+            borderLeft: '4px solid #1d4ed8',
+            border: '1px solid #e2e8f0'
           }}>
             <h3 className={styles.heading3} style={{ 
-              color: '#dc2626', 
+              color: '#1d4ed8', 
               marginBottom: '1rem',
               fontSize: isMobile ? '1.25rem' : '1.875rem'
             }}>
-              Compliance Notice
+              Scope of Services
             </h3>
             <p className={styles.textGray} style={{ fontSize: isMobile ? '0.95rem' : '1.125rem' }}>
               <strong>Our services are strictly non-legal and administrative in nature.</strong><br/>
@@ -436,7 +437,7 @@ export default function HowWeWorkPage() {
             maxWidth: '800px', 
             margin: '0 auto 2rem' 
           }}>
-            Begin with a risk-free pilot engagement to experience our structured approach.
+            Begin with a structured pilot engagement to experience our structured approach.
           </p>
           <div style={{ 
             display: 'flex', 

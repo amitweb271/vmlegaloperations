@@ -75,22 +75,22 @@ export default function AboutPage() {
                 color: '#111827',
                 marginBottom: '1rem'
               }}>
-                Our Focus
+                Scope of Services
               </h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                  <span style={{ color: '#1d4ed8', marginRight: '0.75rem', fontSize: '1.25rem' }}>•</span>
-                  <span>Strictly non-legal administrative support</span>
-                </li>
-                <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                  <span style={{ color: '#1d4ed8', marginRight: '0.75rem', fontSize: '1.25rem' }}>•</span>
-                  <span>U.S. law firm operations and case coordination</span>
-                </li>
-                <li className={styles.flex} style={{ alignItems: 'flex-start' }}>
-                  <span style={{ color: '#1d4ed8', marginRight: '0.75rem', fontSize: '1.25rem' }}>•</span>
-                  <span>No legal advice or legal representation</span>
-                </li>
-              </ul>
+              <p className={styles.paragraph} style={{ 
+                fontSize: isMobile ? '1rem' : '1.125rem',
+                marginBottom: '1rem',
+                lineHeight: '1.7'
+              }}>
+                VM Legal Operations provides <strong>strictly non-legal administrative support</strong> for law firm operations.
+              </p>
+              <p className={styles.paragraph} style={{ 
+                fontSize: isMobile ? '1rem' : '1.125rem',
+                lineHeight: '1.7',
+                margin: 0
+              }}>
+                We do not provide legal advice, draft legal documents, represent clients in court, or make legal decisions.
+              </p>
             </div>
             
             {/* CTA Buttons */}
@@ -161,7 +161,7 @@ export default function AboutPage() {
                   'Consistency in tracking and reporting',
                   'Control through structured processes',
                   'Confidentiality and data protection',
-                  'Compliance with legal ethics'
+                  'Process-driven methodology'
                 ].map((item, idx) => (
                   <li key={idx} className={styles.flex} style={{ alignItems: 'center', marginBottom: '0.75rem' }}>
                     <span style={{ color: '#10b981', marginRight: '0.5rem', fontSize: '1.25rem' }}>✓</span>
@@ -222,7 +222,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Compliance Notice */}
+      {/* Scope of Services Notice */}
       <section className={`${styles.section} ${styles.sectionDark}`}>
         <div className={styles.container}>
           <div style={{ 
@@ -233,18 +233,19 @@ export default function AboutPage() {
             textAlign: 'center'
           }}>
             <h3 className={styles.heading3} style={{ 
-              color: '#f87171', 
+              color: '#93c5fd', 
               marginBottom: '1rem',
               fontSize: isMobile ? '1.25rem' : '1.875rem'
             }}>
-              Compliance Notice
+              Scope of Services
             </h3>
             <p style={{ 
               color: '#d1d5db', 
               marginBottom: '1rem',
-              fontSize: isMobile ? '0.95rem' : '1.125rem'
+              fontSize: isMobile ? '0.95rem' : '1.125rem',
+              fontWeight: '600'
             }}>
-              <strong>Our services are strictly non-legal and administrative in nature.</strong>
+              Our services are strictly non-legal and administrative in nature.
             </p>
             <p style={{ 
               color: '#9ca3af',
@@ -271,7 +272,7 @@ export default function AboutPage() {
             maxWidth: '800px', 
             margin: '0 auto 2rem' 
           }}>
-            Begin with a risk-free pilot engagement to experience our approach.
+            Begin with a structured pilot engagement to experience our approach.
           </p>
           <div style={{ 
             display: 'flex', 

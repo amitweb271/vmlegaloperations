@@ -22,26 +22,53 @@
   margin-bottom: 3rem;
 }
 
+/* ===== COMPANY INFO ===== */
+.companyInfo p {
+  color: #9ca3af;  /* UNCHANGED */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.companyTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.companySubtitle {
+  color: #d1d5db;  /* UNCHANGED */
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.companyDescription {
+  color: #9ca3af;  /* UNCHANGED */
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.serviceNotice {
+  background: rgba(251, 191, 36, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border-left: 3px solid #fbbf24;
+  margin-top: 1rem;
+}
+
+.serviceNotice p {
+  color: white;  /* CHANGED: #fbbf24 se white */
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
 /* ===== FOOTER SECTIONS ===== */
 .footerSection h4 {
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: white;
-}
-
-/* ===== COMPANY INFO ===== */
-.companyInfo p {
-  color: #9ca3af;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.location {
-  color: #9ca3af;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 /* ===== FOOTER LINKS ===== */
@@ -56,32 +83,76 @@
 }
 
 .footerLink {
-  color: #9ca3af;
+  color: #9ca3af;  /* UNCHANGED */
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 0.95rem;
 }
 
 .footerLink:hover {
-  color: white;
+  color: white;  /* UNCHANGED */
+}
+
+/* ===== FLEX UTILITY ===== */
+.flex {
+  display: flex;
 }
 
 /* ===== CONTACT INFO ===== */
 .contactInfo {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
 }
 
 .contactItem {
-  color: #9ca3af;
+  color: #9ca3af;  /* UNCHANGED */
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
-.footerButton {
+.contactLink {
+  color: #9ca3af;  /* UNCHANGED */
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: white;  /* UNCHANGED */
+}
+
+.contactText {
+  color: #9ca3af;  /* UNCHANGED */
+  font-size: 0.95rem;
+}
+
+/* ===== COMPLIANCE SECTION ===== */
+.complianceSection {
+  background: rgba(239, 68, 68, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.complianceTitle {
+  color: white;  /* CHANGED: #f87171 se white */
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.complianceText {
+  color: white;  /* CHANGED: #fca5a5 se white */
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ===== CTA BUTTON ===== */
+.ctaButton {
   display: block;
   width: 100%;
   background: #1d4ed8;
@@ -94,9 +165,10 @@
   transition: all 0.3s;
   text-align: center;
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
-.footerButton:hover {
+.ctaButton:hover {
   background: #1e40af;
   transform: translateY(-2px);
 }
@@ -106,12 +178,13 @@
   border-top: 1px solid #374151;
   padding-top: 2rem;
   text-align: center;
-  color: #9ca3af;
+  color: #9ca3af;  /* UNCHANGED */
   font-size: 0.875rem;
 }
 
 .bottomBar p {
   margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -130,5 +203,13 @@
   
   .footer {
     padding: 3rem 0 1.5rem;
+  }
+  
+  .companyTitle {
+    font-size: 1.25rem;
+  }
+  
+  .footerSection h4 {
+    font-size: 1rem;
   }
 }

@@ -3,6 +3,30 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles.module.css';
 import Link from 'next/link';
+// Lucide Icons import
+import {
+  Award,
+  ShieldCheck,
+  Target,
+  Monitor,
+  Shield,
+  FileText,
+  Rocket,
+  CheckCircle2,
+  Settings,
+  MessageCircle,
+  TestTube2,
+  PlayCircle,
+  TrendingUp,
+  AlertCircle,
+  Zap,
+  ChevronRight,
+  ArrowRight,
+  Phone,
+  Lightbulb,
+  Users,
+  BarChart3
+} from 'lucide-react';
 
 export default function HowWeWorkPage() {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,375 +44,265 @@ export default function HowWeWorkPage() {
 
   const engagementPoints = [
     {
+      icon: Monitor,
       title: 'Work Alongside Your Systems',
       description: 'We work alongside your existing systems (e.g. Clio, MyCase, PracticePanther) or maintain structured trackers where required.',
-      icon: '💻'
+      color: 'blue'
     },
     {
+      icon: Shield,
       title: 'Secure, Role-Based Access',
       description: 'Access is always limited, role-based, and agreed in advance to ensure data security and confidentiality.',
-      icon: '🔐'
+      color: 'emerald'
     },
     {
+      icon: FileText,
       title: 'Strict Confidentiality & NDA',
       description: 'We operate under strict confidentiality and NDA protections, with clear protocols for data handling.',
-      icon: '🤝'
+      color: 'violet'
     },
     {
+      icon: Rocket,
       title: 'Start with Pilot',
       description: 'Engagements typically begin with a small pilot before scaling, ensuring minimal risk and maximum value.',
-      icon: '🚀'
+      color: 'amber'
+    }
+  ];
+
+  const processes = [
+    {
+      icon: MessageCircle,
+      title: 'Consultation',
+      description: 'Understand needs and define scope',
+      step: '1'
+    },
+    {
+      icon: TestTube2,
+      title: 'Pilot Setup',
+      description: 'Limited scope implementation',
+      step: '2'
+    },
+    {
+      icon: PlayCircle,
+      title: 'Operations',
+      description: 'Daily tracking and coordination',
+      step: '3'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Review & Scale',
+      description: 'Performance review and expansion',
+      step: '4'
     }
   ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)' }}>
+    <div className={styles.premiumContainer}>
+      {/* === PREMIUM HERO SECTION === */}
+      <section className={styles.premiumHero}>
+        <div className={styles.heroBackground}></div>
         <div className={styles.container}>
-          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-            <div style={{ 
-              display: 'inline-block', 
-              backgroundColor: '#dbeafe', 
-              color: '#1d4ed8', 
-              padding: '0.5rem 1rem',
-              borderRadius: '2rem',
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              marginBottom: '1.5rem'
-            }}>
-              VM Legal Operations
+          <div className={styles.heroContent}>
+            {/* Premium Badge */}
+            <div className={styles.premiumBadge}>
+              <Award className={styles.badgeIcon} />
+              <span>VM Legal Operations</span>
             </div>
             
-            <h1 className={styles.heading1}>How We Work</h1>
-            <p className={styles.paragraph} style={{ fontSize: isMobile ? '1rem' : '1.25rem' }}>
-              A <strong>simple, transparent, and low-risk engagement model</strong> designed for U.S. law firms
-            </p>
+            {/* Main Heading */}
+            <h1 className={styles.premiumHeading}>
+              How We Work
+            </h1>
+            
+            {/* Description */}
+            <h2 className={styles.subheading}>
+              A <span className={styles.gradientText}>simple, transparent, and low-risk engagement model</span> designed for U.S. law firms
+            </h2>
+            
+            {/* Scope Card */}
+            <div className={styles.scopeCard}>
+              <div className={styles.scopeHeader}>
+                <Target className={styles.scopeIcon} />
+                <h3>Our Approach</h3>
+              </div>
+              <div className={styles.scopeContent}>
+                <p>
+                  We provide <strong>consistency, visibility, and operational discipline</strong> 
+                  that keeps your cases on track and your team focused on substantive legal work.
+                </p>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className={styles.ctaContainer}>
+              <Link href="/contact" className={styles.primaryButton}>
+                <span>Start Pilot Program</span>
+                <ArrowRight className={styles.buttonIcon} />
+              </Link>
+              <Link href="/contact" className={styles.secondaryButton}>
+                <Phone className={styles.buttonIcon} />
+                <span>Schedule Consultation</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Engagement Model Overview */}
-      <section className={`${styles.section} ${styles.sectionLight}`}>
+      {/* === ENGAGEMENT MODEL SECTION === */}
+      <section className={styles.sectionWhite}>
         <div className={styles.container}>
-          <div className={styles.textCenterMobile} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2}>Our Engagement Model</h2>
-            <p className={styles.paragraph} style={{ 
-              maxWidth: '800px', 
-              margin: '0 auto',
-              fontSize: isMobile ? '1rem' : '1.125rem'
-            }}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Our Engagement Model</h2>
+            <p className={styles.sectionDescription}>
               Designed to be simple, transparent, and focused on delivering consistent operational support
             </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
-            <div>
-              <div style={{ 
-                background: 'white', 
-                padding: isMobile ? '1.5rem' : '2rem', 
-                borderRadius: '1rem',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                marginBottom: '2rem'
-              }}>
-                <h3 className={styles.heading3} style={{ marginBottom: '1rem', color: '#1d4ed8' }}>
-                  Our Role is Clear
-                </h3>
-                <p style={{ 
-                  fontSize: isMobile ? '1rem' : '1.125rem',
-                  color: '#4b5563',
-                  lineHeight: '1.6'
-                }}>
-                  To provide <strong>consistency, visibility, and operational discipline</strong> 
-                  that keeps your cases on track and your team focused on substantive legal work.
-                </p>
+          <div className={styles.engagementContainer}>
+            <div className={styles.engagementContent}>
+              <div className={styles.engagementText}>
+                <div className={styles.engagementHighlight}>
+                  <Target className={styles.highlightIcon} />
+                  <h3 className={styles.highlightTitle}>Our Role is Clear</h3>
+                  <p className={styles.highlightDescription}>
+                    To provide consistency, visibility, and operational discipline that keeps your 
+                    cases on track and your team focused on substantive legal work.
+                  </p>
+                </div>
+                
+                <div className={styles.structuredSupport}>
+                  <Settings className={styles.supportIcon} />
+                  <h4 className={styles.supportTitle}>Structured Support</h4>
+                  <ul className={styles.supportList}>
+                    {[
+                      'Monthly retainer-based support',
+                      'Pilot engagements available for evaluation',
+                      'Scope defined based on case volume and reporting requirements',
+                      'Predictable and scalable pricing structure'
+                    ].map((item, idx) => (
+                      <li key={idx} className={styles.supportItem}>
+                        <CheckCircle2 className={styles.supportCheck} />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
               
-              <div style={{ 
-                background: '#f0f9ff', 
-                padding: isMobile ? '1.5rem' : '2rem', 
-                borderRadius: '1rem',
-                border: '1px solid #dbeafe'
-              }}>
-                <h3 className={styles.heading3} style={{ marginBottom: '1rem', color: '#0f766e' }}>
-                  Structured Support
-                </h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#10b981', marginRight: '0.75rem', fontSize: '1.25rem' }}>•</span>
-                    <span style={{ fontSize: isMobile ? '0.95rem' : '1rem' }}>Monthly retainer-based support</span>
-                  </li>
-                  <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#10b981', marginRight: '0.75rem', fontSize: '1.25rem' }}>•</span>
-                    <span style={{ fontSize: isMobile ? '0.95rem' : '1rem' }}>Pilot engagements available for evaluation</span>
-                  </li>
-                  <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#10b981', marginRight: '0.75rem', fontSize: '1.25rem' }}>•</span>
-                    <span style={{ fontSize: isMobile ? '0.95rem' : '1rem' }}>Scope defined based on case volume and reporting requirements</span>
-                  </li>
-                  <li className={styles.flex} style={{ alignItems: 'flex-start' }}>
-                    <span style={{ color: '#10b981', marginRight: '0.75rem', fontSize: '1.25rem' }}>•</span>
-                    <span style={{ fontSize: isMobile ? '0.95rem' : '1rem' }}>Predictable and scalable pricing structure</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className={styles.heading3} style={{ marginBottom: '1.5rem', color: '#111827' }}>
-                Key Features of Our Approach
-              </h3>
-              <div style={{ marginBottom: '2rem' }}>
-                {engagementPoints.map((point, index) => (
-                  <div key={index} style={{ 
-                    background: 'white', 
-                    padding: isMobile ? '1rem' : '1.25rem',
-                    borderRadius: '0.75rem',
-                    marginBottom: '1rem',
-                    boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
-                    border: '1px solid #e5e7eb'
-                  }}>
-                    <div className={styles.flex} style={{ alignItems: 'flex-start', gap: '1rem' }}>
-                      <span style={{ fontSize: '1.5rem', flexShrink: 0 }}>{point.icon}</span>
-                      <div>
-                        <h4 style={{ 
-                          fontSize: isMobile ? '1rem' : '1.125rem',
-                          fontWeight: '600',
-                          marginBottom: '0.25rem',
-                          color: '#111827'
-                        }}>
-                          {point.title}
-                        </h4>
-                        <p style={{ 
-                          fontSize: isMobile ? '0.875rem' : '0.95rem',
-                          color: '#4b5563',
-                          margin: 0
-                        }}>
-                          {point.description}
-                        </p>
+              <div className={styles.engagementFeatures}>
+                <h3 className={styles.featuresTitle}>Key Features of Our Approach</h3>
+                <div className={styles.featuresGrid}>
+                  {engagementPoints.map((point, index) => {
+                    const IconComponent = point.icon;
+                    return (
+                      <div key={index} className={styles.featureCard}>
+                        <div className={`${styles.featureIconContainer} ${styles[`icon${point.color}`]}`}>
+                          <IconComponent className={styles.featureIcon} />
+                        </div>
+                        <div className={styles.featureContent}>
+                          <h4 className={styles.featureTitle}>{point.title}</h4>
+                          <p className={styles.featureDescription}>{point.description}</p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Flow Section */}
-      <section className={styles.section}>
+      {/* === PROCESS FLOW SECTION === */}
+      <section className={styles.sectionGray}>
         <div className={styles.container}>
-          <div className={styles.textCenterMobile} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2}>Our 4-Step Process</h2>
-            <p className={styles.paragraph}>A structured approach to delivering reliable support</p>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Our 4-Step Process</h2>
+            <p className={styles.sectionDescription}>
+              A structured approach to delivering reliable support
+            </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid4}`}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                width: isMobile ? '60px' : '80px', 
-                height: isMobile ? '60px' : '80px', 
-                background: '#dbeafe', 
-                borderRadius: '50%', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                fontSize: isMobile ? '1.25rem' : '1.5rem',
-                fontWeight: 'bold',
-                color: '#1d4ed8',
-                border: '3px solid white',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-              }}>
-                1
-              </div>
-              <h3 style={{ fontSize: isMobile ? '1.125rem' : '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>Consultation</h3>
-              <p style={{ color: '#6b7280', fontSize: isMobile ? '0.875rem' : '1rem' }}>Understand needs and define scope</p>
-            </div>
-            
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                width: isMobile ? '60px' : '80px', 
-                height: isMobile ? '60px' : '80px', 
-                background: '#dbeafe', 
-                borderRadius: '50%', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                fontSize: isMobile ? '1.25rem' : '1.5rem',
-                fontWeight: 'bold',
-                color: '#1d4ed8',
-                border: '3px solid white',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-              }}>
-                2
-              </div>
-              <h3 style={{ fontSize: isMobile ? '1.125rem' : '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>Pilot Setup</h3>
-              <p style={{ color: '#6b7280', fontSize: isMobile ? '0.875rem' : '1rem' }}>Limited scope implementation</p>
-            </div>
-            
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                width: isMobile ? '60px' : '80px', 
-                height: isMobile ? '60px' : '80px', 
-                background: '#dbeafe', 
-                borderRadius: '50%', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                fontSize: isMobile ? '1.25rem' : '1.5rem',
-                fontWeight: 'bold',
-                color: '#1d4ed8',
-                border: '3px solid white',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-              }}>
-                3
-              </div>
-              <h3 style={{ fontSize: isMobile ? '1.125rem' : '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>Operations</h3>
-              <p style={{ color: '#6b7280', fontSize: isMobile ? '0.875rem' : '1rem' }}>Daily tracking and coordination</p>
-            </div>
-            
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                width: isMobile ? '60px' : '80px', 
-                height: isMobile ? '60px' : '80px', 
-                background: '#dbeafe', 
-                borderRadius: '50%', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                fontSize: isMobile ? '1.25rem' : '1.5rem',
-                fontWeight: 'bold',
-                color: '#1d4ed8',
-                border: '3px solid white',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-              }}>
-                4
-              </div>
-              <h3 style={{ fontSize: isMobile ? '1.125rem' : '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>Review & Scale</h3>
-              <p style={{ color: '#6b7280', fontSize: isMobile ? '0.875rem' : '1rem' }}>Performance review and expansion</p>
-            </div>
+          <div className={styles.processFlow}>
+            {processes.map((process, index) => {
+              const IconComponent = process.icon;
+              return (
+                <div key={index} className={styles.processStepCard}>
+                  <div className={styles.processStepNumber}>{process.step}</div>
+                  <div className={styles.processIconContainer}>
+                    <IconComponent className={styles.processIcon} />
+                  </div>
+                  <h3 className={styles.processStepTitle}>{process.title}</h3>
+                  <p className={styles.processStepDescription}>{process.description}</p>
+                </div>
+              );
+            })}
           </div>
           
-          {/* Connector lines for desktop */}
+          {/* Process Connector Line */}
           {!isMobile && (
-            <div style={{ 
-              position: 'relative', 
-              height: '2px', 
-              background: '#dbeafe',
-              width: '80%',
-              margin: '0 auto',
-              top: '-50px',
-              zIndex: -1
-            }}>
-              <div style={{ 
-                position: 'absolute', 
-                left: '12.5%', 
-                top: '-4px',
-                width: '8px', 
-                height: '8px', 
-                background: '#1d4ed8',
-                borderRadius: '50%'
-              }}></div>
-              <div style={{ 
-                position: 'absolute', 
-                left: '37.5%', 
-                top: '-4px',
-                width: '8px', 
-                height: '8px', 
-                background: '#1d4ed8',
-                borderRadius: '50%'
-              }}></div>
-              <div style={{ 
-                position: 'absolute', 
-                left: '62.5%', 
-                top: '-4px',
-                width: '8px', 
-                height: '8px', 
-                background: '#1d4ed8',
-                borderRadius: '50%'
-              }}></div>
-              <div style={{ 
-                position: 'absolute', 
-                left: '87.5%', 
-                top: '-4px',
-                width: '8px', 
-                height: '8px', 
-                background: '#1d4ed8',
-                borderRadius: '50%'
-              }}></div>
+            <div className={styles.processConnector}>
+              <div className={styles.connectorLine}></div>
+              {[...Array(4)].map((_, idx) => (
+                <div key={idx} className={styles.connectorDot}></div>
+              ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* Why It Matters Section */}
-      <section className={`${styles.section} ${styles.sectionDark}`}>
+      {/* === WHY IT MATTERS SECTION === */}
+      <section className={styles.sectionDark}>
         <div className={styles.container}>
-          <div className={styles.textCenter} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2} style={{ color: 'white' }}>Why This Model Matters</h2>
-            <p style={{ 
-              fontSize: isMobile ? '1rem' : '1.25rem', 
-              color: '#d1d5db' 
-            }}>
+          <div className={styles.sectionHeader}>
+            <h2 className={`${styles.sectionTitle} ${styles.textWhite}`}>Why This Model Matters</h2>
+            <p className={`${styles.sectionDescription} ${styles.textLightGray}`}>
               Addressing common challenges in legal operations
             </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
-            <div style={{ 
-              background: 'rgba(255, 255, 255, 0.05)', 
-              padding: isMobile ? '1.5rem' : '2rem', 
-              borderRadius: '1rem',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <h3 className={styles.heading3} style={{ color: 'white', marginBottom: '1rem' }}>
-                The Problem We Solve
-              </h3>
-              <p style={{ color: '#d1d5db', marginBottom: '1rem' }}>
+          <div className={styles.problemSolutionGrid}>
+            <div className={styles.problemCard}>
+              <div className={styles.problemHeader}>
+                <div className={styles.problemDot}></div>
+                <h3 className={styles.problemTitle}>The Problem We Solve</h3>
+              </div>
+              <p className={styles.problemDescription}>
                 Even with modern case-management software, many firms experience:
               </p>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
+              <ul className={styles.problemList}>
                 {[
                   'Inconsistent system updates',
                   'Missed or late follow-ups',
                   'Fragmented information across emails and platforms',
                   'Administrative work pulling time away from billable activity'
                 ].map((item, idx) => (
-                  <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#fbbf24', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
-                    <span style={{ color: '#d1d5db' }}>{item}</span>
+                  <li key={idx} className={styles.problemListItem}>
+                    <div className={styles.listDot}></div>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div style={{ 
-              background: 'rgba(255, 255, 255, 0.05)', 
-              padding: isMobile ? '1.5rem' : '2rem', 
-              borderRadius: '1rem',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <h3 className={styles.heading3} style={{ color: 'white', marginBottom: '1rem' }}>
-                Our Solution
-              </h3>
-              <p style={{ color: '#d1d5db', marginBottom: '1rem' }}>
+            <div className={styles.solutionCard}>
+              <div className={styles.solutionHeader}>
+                <div className={styles.solutionDot}></div>
+                <h3 className={styles.solutionTitle}>Our Solution</h3>
+              </div>
+              <p className={styles.solutionDescription}>
                 We help address these gaps by:
               </p>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
+              <ul className={styles.solutionList}>
                 {[
                   'Owning the tracking and reporting process',
                   'Providing consistency and operational discipline',
                   'Ensuring nothing falls through the cracks',
                   'Freeing attorneys to focus on substantive legal work'
                 ].map((item, idx) => (
-                  <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#10b981', marginRight: '0.75rem', marginTop: '0.25rem' }}>✓</span>
-                    <span style={{ color: '#d1d5db' }}>{item}</span>
+                  <li key={idx} className={styles.solutionListItem}>
+                    <div className={styles.listDotGreen}></div>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -397,91 +311,48 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      {/* Scope of Services Notice */}
-      <section className={styles.section}>
+      {/* === SCOPE OF SERVICES NOTICE === */}
+      <section className={styles.sectionLight}>
         <div className={styles.container}>
-          <div style={{ 
-            background: '#f8fafc', 
-            padding: isMobile ? '1.5rem' : '2rem', 
-            borderRadius: '0.5rem',
-            borderLeft: '4px solid #1d4ed8',
-            border: '1px solid #e2e8f0'
-          }}>
-            <h3 className={styles.heading3} style={{ 
-              color: '#1d4ed8', 
-              marginBottom: '1rem',
-              fontSize: isMobile ? '1.25rem' : '1.875rem'
-            }}>
-              Scope of Services
-            </h3>
-            <p className={styles.textGray} style={{ fontSize: isMobile ? '0.95rem' : '1.125rem' }}>
-              <strong>Our services are strictly non-legal and administrative in nature.</strong><br/>
-              We do not provide legal advice or legal representation. We work under attorney supervision 
-              and follow all applicable regulations and ethical guidelines.
-            </p>
+          <div className={styles.scopeNoticeDetailed}>
+            <div className={styles.scopeNoticeHeader}>
+              <AlertCircle className={styles.scopeNoticeIcon} />
+              <h3 className={styles.scopeNoticeTitle}>Scope of Services</h3>
+            </div>
+            <div className={styles.scopeNoticeContent}>
+              <p className={styles.scopeNoticeText}>
+                <strong>Our services are strictly non-legal and administrative in nature.</strong>
+              </p>
+              <p className={styles.scopeNoticeDescription}>
+                We do not provide legal advice or legal representation. We work under attorney supervision 
+                and follow all applicable regulations and ethical guidelines.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className={styles.section} style={{ 
-        background: 'linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%)', 
-        color: 'white',
-        padding: isMobile ? '3rem 0' : '5rem 0'
-      }}>
-        <div className={styles.container} style={{ textAlign: 'center' }}>
-          <h2 className={styles.heading2} style={{ color: 'white' }}>Ready to Get Started?</h2>
-          <p style={{ 
-            fontSize: isMobile ? '1rem' : '1.25rem', 
-            marginBottom: '2rem', 
-            maxWidth: '800px', 
-            margin: '0 auto 2rem' 
-          }}>
-            Begin with a structured pilot engagement to experience our structured approach.
-          </p>
-          <div style={{ 
-            display: 'flex', 
-            gap: '1rem', 
-            justifyContent: 'center', 
-            flexWrap: 'wrap',
-            flexDirection: isMobile ? 'column' : 'row'
-          }}>
-            <Link 
-              href="/contact"
-              style={{ 
-                background: 'white', 
-                color: '#1d4ed8', 
-                padding: isMobile ? '0.875rem 1.5rem' : '1rem 2rem', 
-                borderRadius: '0.5rem', 
-                border: 'none',
-                fontWeight: '600',
-                fontSize: isMobile ? '1rem' : '1.125rem',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                textAlign: 'center',
-                width: isMobile ? '100%' : 'auto'
-              }}
-            >
-              Start Pilot Program
-            </Link>
-            <Link 
-              href="/contact"
-              style={{ 
-                background: 'transparent', 
-                color: 'white', 
-                padding: isMobile ? '0.875rem 1.5rem' : '1rem 2rem', 
-                borderRadius: '0.5rem', 
-                border: '2px solid white',
-                fontWeight: '600',
-                fontSize: isMobile ? '1rem' : '1.125rem',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                textAlign: 'center',
-                width: isMobile ? '100%' : 'auto'
-              }}
-            >
-              Schedule Consultation
-            </Link>
+      {/* === FINAL CTA SECTION === */}
+      <section className={styles.ctaSection}>
+        <div className={styles.container}>
+          <div className={styles.ctaContent}>
+            <div className={styles.ctaIconContainer}>
+              <Zap className={styles.ctaIcon} />
+            </div>
+            <h2 className={styles.ctaTitle}>Ready to Get Started?</h2>
+            <p className={styles.ctaDescription}>
+              Begin with a structured pilot engagement to experience our structured approach and 
+              see the difference in your firm's operational efficiency.
+            </p>
+            
+            <div className={styles.ctaButtons}>
+              <Link href="/contact" className={styles.ctaButtonPrimary}>
+                Start Pilot Program
+              </Link>
+              <Link href="/contact" className={styles.ctaButtonSecondary}>
+                Schedule Consultation
+              </Link>
+            </div>
           </div>
         </div>
       </section>

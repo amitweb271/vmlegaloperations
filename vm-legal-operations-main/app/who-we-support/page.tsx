@@ -3,6 +3,29 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles.module.css';
 import Link from 'next/link';
+// Lucide Icons import
+import {
+  Award,
+  ShieldCheck,
+  Scale,
+  BarChart3,
+  TrendingUp,
+  Users,
+  AlertCircle,
+  Shield,
+  Clock,
+  DollarSign,
+  Eye,
+  Settings,
+  Target,
+  MessageCircle,
+  ChevronRight,
+  ArrowRight,
+  Phone,
+  CheckCircle2,
+  Building2,
+  FileText
+} from 'lucide-react';
 
 export default function WhoWeSupportPage() {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,24 +43,28 @@ export default function WhoWeSupportPage() {
 
   const clientTypes = [
     {
+      icon: Scale,
       title: 'Small and mid-size U.S. law firms',
       description: 'Firms seeking to optimize operations without expanding internal staff or administrative overhead.',
-      icon: '⚖️'
+      color: 'blue'
     },
     {
+      icon: BarChart3,
       title: 'Debt collection and consumer litigation firms',
       description: 'High-volume practices requiring systematic case tracking, deadline management, and compliance monitoring.',
-      icon: '📊'
+      color: 'emerald'
     },
     {
+      icon: TrendingUp,
       title: 'Firms handling high-volume matters',
       description: 'Practices with multiple concurrent cases needing consistent tracking and coordination.',
-      icon: '📈'
+      color: 'violet'
     },
     {
+      icon: Users,
       title: 'Legal teams seeking administrative support without expanding internal staff',
       description: 'Legal departments and in-house counsel teams looking to improve operational efficiency.',
-      icon: '👥'
+      color: 'amber'
     }
   ];
 
@@ -48,275 +75,171 @@ export default function WhoWeSupportPage() {
     'Administrative work pulling time away from billable activity'
   ];
 
+  const benefits = [
+    {
+      icon: Clock,
+      title: 'Time Savings',
+      description: 'Attorneys save significant time on administrative tasks'
+    },
+    {
+      icon: DollarSign,
+      title: 'Cost Efficiency',
+      description: 'Significant savings compared to hiring in-house staff'
+    },
+    {
+      icon: Eye,
+      title: 'Better Visibility',
+      description: 'Real-time case status and deadline tracking across all matters'
+    },
+    {
+      icon: Settings,
+      title: 'Operational Discipline',
+      description: 'Consistent tracking, reporting, and follow-through'
+    }
+  ];
+
   return (
-    <div>
-      {/* Hero Section */}
-      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)' }}>
+    <div className={styles.premiumContainer}>
+      {/* === PREMIUM HERO SECTION === */}
+      <section className={styles.premiumHero}>
+        <div className={styles.heroBackground}></div>
         <div className={styles.container}>
-          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-            <div style={{ 
-              display: 'inline-block', 
-              backgroundColor: '#dbeafe', 
-              color: '#1d4ed8', 
-              padding: '0.5rem 1rem',
-              borderRadius: '2rem',
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              marginBottom: '1.5rem'
-            }}>
-              VM Legal Operations
+          <div className={styles.heroContent}>
+            {/* Premium Badge */}
+            <div className={styles.premiumBadge}>
+              <Award className={styles.badgeIcon} />
+              <span>VM Legal Operations</span>
             </div>
             
-            <h1 className={styles.heading1}>Who We Support</h1>
-            <p className={styles.paragraph} style={{ fontSize: isMobile ? '1rem' : '1.25rem' }}>
-              Dedicated <strong>offshore legal operations support</strong> for specific types of U.S. law practices
-            </p>
+            {/* Main Heading */}
+            <h1 className={styles.premiumHeading}>
+              Who We Support
+            </h1>
+            
+            {/* Description */}
+            <h2 className={styles.subheading}>
+              Dedicated <span className={styles.gradientText}>offshore legal operations support</span> for specific types of U.S. law practices
+            </h2>
+            
+            {/* Scope Card */}
+            <div className={styles.scopeCard}>
+              <div className={styles.scopeHeader}>
+                <ShieldCheck className={styles.scopeIcon} />
+                <h3>Our Ideal Partners</h3>
+              </div>
+              <div className={styles.scopeContent}>
+                <p>
+                  We work best with U.S. law firms and legal teams that value efficiency, consistency, 
+                  and want to focus on substantive legal work while we handle the operational details.
+                </p>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className={styles.ctaContainer}>
+              <Link href="/contact" className={styles.primaryButton}>
+                <span>Schedule Consultation</span>
+                <ArrowRight className={styles.buttonIcon} />
+              </Link>
+              <Link href="/services" className={styles.secondaryButton}>
+                <FileText className={styles.buttonIcon} />
+                <span>View Our Services</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Ideal Clients Section */}
-      <section className={`${styles.section} ${styles.sectionLight}`}>
+      {/* === IDEAL CLIENTS SECTION === */}
+      <section className={styles.sectionWhite}>
         <div className={styles.container}>
-          <div className={styles.textCenterMobile} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2}>Ideal Client Profiles</h2>
-            <p className={styles.paragraph} style={{ 
-              maxWidth: '800px', 
-              margin: '0 auto',
-              fontSize: isMobile ? '1rem' : '1.125rem'
-            }}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Ideal Client Profiles</h2>
+            <p className={styles.sectionDescription}>
               We work best with U.S. law firms and legal teams that have these characteristics
             </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
-            {clientTypes.map((client, index) => (
-              <div key={index} className={styles.card} style={{ 
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column'
-              }}>
-                <div className={styles.flex} style={{ 
-                  alignItems: 'center', 
-                  marginBottom: '1.5rem'
-                }}>
-                  <span style={{ 
-                    fontSize: isMobile ? '2rem' : '2.5rem', 
-                    marginRight: '1rem',
-                    flexShrink: 0
-                  }}>
-                    {client.icon}
-                  </span>
-                  <h3 className={styles.heading3} style={{ margin: 0 }}>
-                    {client.title}
-                  </h3>
+          <div className={styles.clientsGrid}>
+            {clientTypes.map((client, index) => {
+              const IconComponent = client.icon;
+              return (
+                <div key={index} className={styles.clientCard}>
+                  <div className={`${styles.clientIconContainer} ${styles[`icon${client.color}`]}`}>
+                    <IconComponent className={styles.clientIcon} />
+                  </div>
+                  <h3 className={styles.clientTitle}>{client.title}</h3>
+                  <p className={styles.clientDescription}>{client.description}</p>
                 </div>
-                
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1rem',
-                  color: '#4b5563',
-                  lineHeight: '1.6',
-                  margin: 0,
-                  flex: 1
-                }}>
-                  {client.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Why Support Matters Section */}
-      <section className={styles.section}>
+      {/* === WHY SUPPORT MATTERS SECTION === */}
+      <section className={styles.sectionGray}>
         <div className={styles.container}>
-          <div className={styles.textCenterMobile} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2}>Why Legal Operations Support Matters</h2>
-            <p className={styles.paragraph} style={{ 
-              maxWidth: '800px', 
-              margin: '0 auto',
-              fontSize: isMobile ? '1rem' : '1.125rem'
-            }}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Why Legal Operations Support Matters</h2>
+            <p className={styles.sectionDescription}>
               Addressing common challenges in modern legal practice
             </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
-            <div>
-              <div style={{ 
-                background: '#f8fafc', 
-                padding: isMobile ? '1.5rem' : '2rem', 
-                borderRadius: '1rem',
-                border: '1px solid #e2e8f0',
-                marginBottom: '2rem'
-              }}>
-                <h3 className={styles.heading3} style={{ color: '#4b5563', marginBottom: '1rem' }}>
-                  The Challenges
-                </h3>
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1rem',
-                  color: '#4b5563',
-                  marginBottom: '1rem'
-                }}>
-                  Even with modern case-management software, many firms experience:
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  {challenges.map((challenge, idx) => (
-                    <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                      <span style={{ color: '#fbbf24', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
-                      <span style={{ fontSize: isMobile ? '0.95rem' : '1rem' }}>{challenge}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className={styles.supportGrid}>
+            <div className={styles.challengesCard}>
+              <div className={styles.challengesHeader}>
+                <div className={styles.challengesDot}></div>
+                <h3 className={styles.challengesTitle}>The Challenges</h3>
               </div>
+              <p className={styles.challengesDescription}>
+                Even with modern case-management software, many firms experience:
+              </p>
+              <ul className={styles.challengesList}>
+                {challenges.map((challenge, idx) => (
+                  <li key={idx} className={styles.challengesListItem}>
+                    <div className={styles.listDot}></div>
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
               
-              <div style={{ 
-                background: '#f0f9ff', 
-                padding: isMobile ? '1.5rem' : '2rem', 
-                borderRadius: '1rem',
-                border: '1px solid #dbeafe'
-              }}>
-                <h3 className={styles.heading3} style={{ color: '#1d4ed8', marginBottom: '1rem' }}>
-                  How We Help
-                </h3>
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1rem',
-                  color: '#4b5563',
-                  fontWeight: '600'
-                }}>
+              <div className={styles.helpCard}>
+                <Shield className={styles.helpIcon} />
+                <h4 className={styles.helpTitle}>How We Help</h4>
+                <p className={styles.helpDescription}>
                   We help address these gaps by <strong>owning the tracking and reporting process</strong>, 
                   so attorneys can focus on substantive legal work.
                 </p>
               </div>
             </div>
             
-            <div>
-              <div style={{ 
-                background: 'white', 
-                padding: isMobile ? '1.5rem' : '2rem', 
-                borderRadius: '1rem',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                marginBottom: '2rem'
-              }}>
-                <h3 className={styles.heading3} style={{ marginBottom: '1rem', color: '#0f766e' }}>
-                  Key Benefits
-                </h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '1rem' }}>
-                    <span style={{ 
-                      background: '#d1fae5', 
-                      color: '#0f766e',
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '1rem',
-                      flexShrink: 0,
-                      fontSize: '0.875rem',
-                      fontWeight: 'bold'
-                    }}>
-                      ✓
-                    </span>
-                    <div>
-                      <h4 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.25rem' }}>Time Savings</h4>
-                      <p style={{ fontSize: isMobile ? '0.875rem' : '0.95rem', color: '#6b7280', margin: 0 }}>
-                        Attorneys save significant time on administrative tasks
-                      </p>
+            <div className={styles.benefitsCard}>
+              <div className={styles.benefitsHeader}>
+                <Shield className={styles.benefitsIcon} />
+                <h3 className={styles.benefitsTitle}>Key Benefits</h3>
+              </div>
+              <div className={styles.benefitsGrid}>
+                {benefits.map((benefit, idx) => {
+                  const IconComponent = benefit.icon;
+                  return (
+                    <div key={idx} className={styles.benefitItem}>
+                      <div className={styles.benefitIconContainer}>
+                        <IconComponent className={styles.benefitIcon} />
+                      </div>
+                      <div className={styles.benefitContent}>
+                        <h4 className={styles.benefitTitle}>{benefit.title}</h4>
+                        <p className={styles.benefitDescription}>{benefit.description}</p>
+                      </div>
                     </div>
-                  </li>
-                  
-                  <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '1rem' }}>
-                    <span style={{ 
-                      background: '#d1fae5', 
-                      color: '#0f766e',
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '1rem',
-                      flexShrink: 0,
-                      fontSize: '0.875rem',
-                      fontWeight: 'bold'
-                    }}>
-                      ✓
-                    </span>
-                    <div>
-                      <h4 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.25rem' }}>Cost Efficiency</h4>
-                      <p style={{ fontSize: isMobile ? '0.875rem' : '0.95rem', color: '#6b7280', margin: 0 }}>
-                        Significant savings compared to hiring in-house staff
-                      </p>
-                    </div>
-                  </li>
-                  
-                  <li className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '1rem' }}>
-                    <span style={{ 
-                      background: '#d1fae5', 
-                      color: '#0f766e',
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '1rem',
-                      flexShrink: 0,
-                      fontSize: '0.875rem',
-                      fontWeight: 'bold'
-                    }}>
-                      ✓
-                    </span>
-                    <div>
-                      <h4 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.25rem' }}>Better Visibility</h4>
-                      <p style={{ fontSize: isMobile ? '0.875rem' : '0.95rem', color: '#6b7280', margin: 0 }}>
-                        Real-time case status and deadline tracking across all matters
-                      </p>
-                    </div>
-                  </li>
-                  
-                  <li className={styles.flex} style={{ alignItems: 'flex-start' }}>
-                    <span style={{ 
-                      background: '#d1fae5', 
-                      color: '#0f766e',
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: '1rem',
-                      flexShrink: 0,
-                      fontSize: '0.875rem',
-                      fontWeight: 'bold'
-                    }}>
-                      ✓
-                    </span>
-                    <div>
-                      <h4 style={{ fontSize: '1rem', fontWeight: '600', marginBottom: '0.25rem' }}>Operational Discipline</h4>
-                      <p style={{ fontSize: isMobile ? '0.875rem' : '0.95rem', color: '#6b7280', margin: 0 }}>
-                        Consistent tracking, reporting, and follow-through
-                      </p>
-                    </div>
-                  </li>
-                </ul>
+                  );
+                })}
               </div>
               
-              <div style={{ 
-                background: '#fef3c7', 
-                padding: isMobile ? '1.5rem' : '2rem', 
-                borderRadius: '1rem',
-                border: '1px solid #fde68a',
-                textAlign: 'center'
-              }}>
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1.125rem',
-                  fontWeight: '600',
-                  color: '#92400e',
-                  margin: 0
-                }}>
+              <div className={styles.roleHighlight}>
+                <Target className={styles.roleIcon} />
+                <p className={styles.roleText}>
                   Our role is to provide <strong>consistency, visibility, and operational discipline</strong> 
                   that keeps your cases on track.
                 </p>
@@ -326,33 +249,18 @@ export default function WhoWeSupportPage() {
         </div>
       </section>
 
-      {/* Scope of Services Notice */}
-      <section className={`${styles.section} ${styles.sectionDark}`}>
+      {/* === SCOPE OF SERVICES NOTICE === */}
+      <section className={styles.sectionDark}>
         <div className={styles.container}>
-          <div style={{ 
-            background: 'rgba(255, 255, 255, 0.05)', 
-            padding: isMobile ? '1.5rem' : '2rem', 
-            borderRadius: '0.5rem',
-            border: '1px solid rgba(255, 255, 255, 0.1)'
-          }}>
-            <h3 className={styles.heading3} style={{ 
-              color: '#93c5fd', 
-              marginBottom: '1rem',
-              fontSize: isMobile ? '1.25rem' : '1.875rem'
-            }}>
-              Scope of Services
-            </h3>
-            <p style={{ 
-              color: '#d1d5db', 
-              marginBottom: '1rem',
-              fontSize: isMobile ? '0.95rem' : '1.125rem'
-            }}>
+          <div className={styles.scopeNotice}>
+            <div className={styles.scopeIconContainer}>
+              <AlertCircle className={styles.scopeNoticeIcon} />
+            </div>
+            <h3 className={styles.scopeNoticeTitle}>Scope of Services</h3>
+            <p className={styles.scopeNoticeText}>
               <strong>VM Legal Operations provides strictly non-legal administrative support only.</strong>
             </p>
-            <p style={{ 
-              color: '#9ca3af',
-              fontSize: isMobile ? '0.875rem' : '1rem'
-            }}>
+            <p className={styles.scopeNoticeDescription}>
               We do not provide legal advice, draft legal documents, represent clients in court, 
               or make legal decisions. Our services are limited to operational and administrative support 
               for U.S. law firms. We work under attorney supervision and follow all applicable 
@@ -362,65 +270,27 @@ export default function WhoWeSupportPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className={styles.section} style={{ 
-        background: 'linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%)', 
-        color: 'white',
-        padding: isMobile ? '3rem 0' : '5rem 0'
-      }}>
-        <div className={styles.container} style={{ textAlign: 'center' }}>
-          <h2 className={styles.heading2} style={{ color: 'white' }}>Is Your Firm a Good Fit?</h2>
-          <p style={{ 
-            fontSize: isMobile ? '1rem' : '1.25rem', 
-            marginBottom: '2rem', 
-            maxWidth: '800px', 
-            margin: '0 auto 2rem' 
-          }}>
-            Schedule a consultation to discuss how our legal operations support can benefit your practice.
-          </p>
-          <div style={{ 
-            display: 'flex', 
-            gap: '1rem', 
-            justifyContent: 'center', 
-            flexWrap: 'wrap',
-            flexDirection: isMobile ? 'column' : 'row'
-          }}>
-            <Link 
-              href="/contact"
-              style={{ 
-                background: 'white', 
-                color: '#1d4ed8', 
-                padding: isMobile ? '0.875rem 1.5rem' : '1rem 2rem', 
-                borderRadius: '0.5rem', 
-                border: 'none',
-                fontWeight: '600',
-                fontSize: isMobile ? '1rem' : '1.125rem',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                textAlign: 'center',
-                width: isMobile ? '100%' : 'auto'
-              }}
-            >
-              Schedule Consultation
-            </Link>
-            <Link 
-              href="/services"
-              style={{ 
-                background: 'transparent', 
-                color: 'white', 
-                padding: isMobile ? '0.875rem 1.5rem' : '1rem 2rem', 
-                borderRadius: '0.5rem', 
-                border: '2px solid white',
-                fontWeight: '600',
-                fontSize: isMobile ? '1rem' : '1.125rem',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                textAlign: 'center',
-                width: isMobile ? '100%' : 'auto'
-              }}
-            >
-              View Our Services
-            </Link>
+      {/* === FINAL CTA SECTION === */}
+      <section className={styles.ctaSection}>
+        <div className={styles.container}>
+          <div className={styles.ctaContent}>
+            <div className={styles.ctaIconContainer}>
+              <MessageCircle className={styles.ctaIcon} />
+            </div>
+            <h2 className={styles.ctaTitle}>Is Your Firm a Good Fit?</h2>
+            <p className={styles.ctaDescription}>
+              Schedule a consultation to discuss how our legal operations support can benefit your practice 
+              and improve your firm's efficiency.
+            </p>
+            
+            <div className={styles.ctaButtons}>
+              <Link href="/contact" className={styles.ctaButtonPrimary}>
+                Schedule Consultation
+              </Link>
+              <Link href="/services" className={styles.ctaButtonSecondary}>
+                View Our Services
+              </Link>
+            </div>
           </div>
         </div>
       </section>

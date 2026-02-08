@@ -1,4 +1,3 @@
-// components/Navbar.tsx
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -9,11 +8,11 @@ import styles from './Navbar.module.css';
 // Nav items
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' }, // Add this line
+  { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'How We Work', href: '/how-we-work' },
   { name: 'Who We Support', href: '/who-we-support' },
-  { name: 'What We Don\'t Do', href: '/what-we-dont-do' },
+  { name: "What We Don't Do", href: '/what-we-dont-do' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -50,6 +49,19 @@ export default function Navbar() {
     setIsOpen(false);
   }, [pathname]);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && !(event.target as Element).closest(`.${styles.mobileMenu}`) && 
+          !(event.target as Element).closest(`.${styles.mobileButton}`)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.navbarScrolled : ''}`}>
       <div className={styles.container}>
@@ -76,9 +88,9 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <button className={styles.primaryButton}>
+            <Link href="/contact" className={styles.primaryButton}>
               Start Pilot
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button - Show only on mobile */}
@@ -99,15 +111,15 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`${styles.mobileNavLink} ${pathname === item.href ? styles.activeLink : ''}`}
+                  className={`${styles.mobileNavLink} ${pathname === item.href ? styles.activeMobileLink : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <button className={styles.mobilePrimaryButton}>
+              <Link href="/contact" className={styles.mobilePrimaryButton} onClick={() => setIsOpen(false)}>
                 Start Pilot
-              </button>
+              </Link>
             </div>
           </div>
         )}

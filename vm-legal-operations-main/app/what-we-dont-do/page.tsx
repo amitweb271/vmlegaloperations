@@ -3,6 +3,31 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles.module.css';
 import Link from 'next/link';
+// Lucide Icons import
+import {
+  Award,
+  ShieldCheck,
+  AlertCircle,
+  Scale,
+  FileText,
+  Gavel,
+  Brain,
+  DollarSign,
+  Search,
+  BarChart3,
+  Clock,
+  Building2,
+  RefreshCw,
+  FileBarChart,
+  CheckCircle2,
+  Shield,
+  MessageCircle,
+  ChevronRight,
+  ArrowRight,
+  Phone,
+  Target,
+  Users
+} from 'lucide-react';
 
 export default function WhatWeDontDoPage() {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,261 +45,220 @@ export default function WhatWeDontDoPage() {
 
   const dontDoItems = [
     {
+      icon: Scale,
       title: 'Provide Legal Advice',
       description: 'We do not offer legal opinions, interpretations of law, or strategic legal guidance.',
-      reason: 'Only licensed attorneys can provide legal advice. We focus exclusively on administrative support.'
+      reason: 'Only licensed attorneys can provide legal advice. We focus exclusively on administrative support.',
+      color: 'gray'
     },
     {
+      icon: FileText,
       title: 'Draft Legal Documents',
       description: 'We do not prepare pleadings, motions, briefs, contracts, or other legal documents.',
-      reason: 'Document drafting requires legal analysis and judgment, which is outside our scope.'
+      reason: 'Document drafting requires legal analysis and judgment, which is outside our scope.',
+      color: 'gray'
     },
     {
+      icon: Gavel,
       title: 'Represent Clients in Court',
       description: 'We do not appear before any court, tribunal, or administrative body.',
-      reason: 'Court representation requires a law license and is the responsibility of your firm\'s attorneys.'
+      reason: 'Court representation requires a law license and is the responsibility of your firm\'s attorneys.',
+      color: 'gray'
     },
     {
+      icon: Brain,
       title: 'Make Legal Decisions',
       description: 'We do not make strategic decisions, case evaluations, or settlement recommendations.',
-      reason: 'Legal decision-making requires attorney-client privilege and professional judgment.'
+      reason: 'Legal decision-making requires attorney-client privilege and professional judgment.',
+      color: 'gray'
     },
     {
+      icon: DollarSign,
       title: 'Access Trust Accounts',
       description: 'We do not handle client funds, billing, or financial transactions.',
-      reason: 'Financial matters are strictly managed by your firm to maintain compliance with trust accounting rules.'
+      reason: 'Financial matters are strictly managed by your firm to maintain compliance with trust accounting rules.',
+      color: 'gray'
     },
     {
+      icon: Search,
       title: 'Provide Legal Research',
       description: 'We do not conduct case law research, statutory analysis, or legal precedent research.',
-      reason: 'Legal research requires legal training and interpretation skills that we do not provide.'
+      reason: 'Legal research requires legal training and interpretation skills that we do not provide.',
+      color: 'gray'
     }
   ];
 
   const whatWeDo = [
     {
-      icon: '📊',
+      icon: BarChart3,
       title: 'Case Status Tracking',
-      description: 'Monitor case stages, maintain structured trackers, update progress.'
+      description: 'Monitor case stages, maintain structured trackers, update progress.',
+      color: 'blue'
     },
     {
-      icon: '⏰',
+      icon: Clock,
       title: 'Deadline & Timeline Monitoring',
-      description: 'Track court-driven deadlines, flag upcoming actions, send alerts.'
+      description: 'Track court-driven deadlines, flag upcoming actions, send alerts.',
+      color: 'emerald'
     },
     {
-      icon: '🏛️',
+      icon: Building2,
       title: 'Court Notification Monitoring',
-      description: 'Monitor dockets, filing confirmations, and court communications.'
+      description: 'Monitor dockets, filing confirmations, and court communications.',
+      color: 'rose'
     },
     {
-      icon: '🔄',
+      icon: RefreshCw,
       title: 'Follow-Up & Coordination',
-      description: 'Track pending actions, coordinate status confirmations, escalate deadlines.'
+      description: 'Track pending actions, coordinate status confirmations, escalate deadlines.',
+      color: 'violet'
     },
     {
-      icon: '📋',
+      icon: FileBarChart,
       title: 'Weekly Status Reporting',
-      description: 'Clear, structured reports covering all active matters and pending items.'
+      description: 'Clear, structured reports covering all active matters and pending items.',
+      color: 'amber'
     }
   ];
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className={styles.section} style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)' }}>
+    <div className={styles.premiumContainer}>
+      {/* === PREMIUM HERO SECTION === */}
+      <section className={styles.premiumHero}>
+        <div className={styles.heroBackground}></div>
         <div className={styles.container}>
-          <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-            <div style={{ 
-              display: 'inline-block', 
-              backgroundColor: '#dbeafe', 
-              color: '#1d4ed8', 
-              padding: '0.5rem 1rem',
-              borderRadius: '2rem',
-              fontSize: '0.875rem',
-              fontWeight: '600',
-              marginBottom: '1.5rem'
-            }}>
-              VM Legal Operations
+          <div className={styles.heroContent}>
+            {/* Premium Badge */}
+            <div className={styles.premiumBadge}>
+              <Award className={styles.badgeIcon} />
+              <span>VM Legal Operations</span>
             </div>
             
-            <h1 className={styles.heading1}>What We Don't Do</h1>
-            <p className={styles.paragraph} style={{ fontSize: isMobile ? '1rem' : '1.25rem' }}>
-              Clear boundaries to maintain <strong>compliance and transparency</strong> in our services
-            </p>
+            {/* Main Heading */}
+            <h1 className={styles.premiumHeading}>
+              What We Don't Do
+            </h1>
             
-            <div style={{ 
-              background: 'white', 
-              padding: '1.5rem', 
-              borderRadius: '1rem',
-              marginTop: '2rem',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-              textAlign: 'center'
-            }}>
-              <p style={{ 
-                fontSize: isMobile ? '0.95rem' : '1.125rem',
-                color: '#1d4ed8',
-                fontWeight: '600',
-                margin: 0
-              }}>
-                "Our services are strictly non-legal and administrative in nature.<br/>
-                We do not provide legal advice or legal representation."
-              </p>
+            {/* Description */}
+            <h2 className={styles.subheading}>
+              Clear boundaries to maintain <span className={styles.gradientText}>compliance and transparency</span> in our services
+            </h2>
+            
+            {/* Scope Card */}
+            <div className={styles.scopeCard}>
+              <div className={styles.scopeHeader}>
+                <AlertCircle className={styles.scopeIcon} />
+                <h3>Our Service Boundaries</h3>
+              </div>
+              <div className={styles.scopeContent}>
+                <p>
+                  "Our services are strictly non-legal and administrative in nature. 
+                  We do not provide legal advice or legal representation."
+                </p>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className={styles.ctaContainer}>
+              <Link href="/contact" className={styles.primaryButton}>
+                <span>Contact Us</span>
+                <ArrowRight className={styles.buttonIcon} />
+              </Link>
+              <Link href="/how-we-work" className={styles.secondaryButton}>
+                <Phone className={styles.buttonIcon} />
+                <span>How We Work</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What We Don't Do Section */}
-      <section className={`${styles.section} ${styles.sectionLight}`}>
+      {/* === SERVICE BOUNDARIES SECTION === */}
+      <section className={styles.sectionWhite}>
         <div className={styles.container}>
-          <div className={styles.textCenterMobile} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2}>Service Boundaries</h2>
-            <p className={styles.paragraph} style={{ 
-              maxWidth: '800px', 
-              margin: '0 auto',
-              fontSize: isMobile ? '1rem' : '1.125rem'
-            }}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Service Boundaries</h2>
+            <p className={styles.sectionDescription}>
               To maintain clarity and compliance, these activities are <strong>strictly outside our scope</strong>
             </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
-            {dontDoItems.map((item, index) => (
-              <div key={index} className={styles.card} style={{ 
-                border: '1px solid #e2e8f0',
-                borderTop: '3px solid #6b7280'
-              }}>
-                <div className={styles.flex} style={{ 
-                  alignItems: 'center', 
-                  marginBottom: '1rem'
-                }}>
-                  <div style={{ 
-                    background: '#f1f5f9', 
-                    color: '#6b7280',
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '50%', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    marginRight: '1rem',
-                    flexShrink: 0,
-                    fontWeight: 'bold',
-                    fontSize: '1.125rem'
-                  }}>
-                    ✓
+          <div className={styles.dontDoGrid}>
+            {dontDoItems.map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <div key={index} className={styles.dontDoCard}>
+                  <div className={styles.dontDoHeader}>
+                    <div className={styles.dontDoIconContainer}>
+                      <IconComponent className={styles.dontDoIcon} />
+                    </div>
+                    <h3 className={styles.dontDoTitle}>{item.title}</h3>
                   </div>
-                  <h3 className={styles.heading3} style={{ 
-                    color: '#4b5563',
-                    margin: 0
-                  }}>
-                    {item.title}
-                  </h3>
+                  
+                  <p className={styles.dontDoDescription}>{item.description}</p>
+                  
+                  <div className={styles.reasonBox}>
+                    <p className={styles.reasonLabel}>Reason:</p>
+                    <p className={styles.reasonText}>{item.reason}</p>
+                  </div>
                 </div>
-                
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1rem',
-                  color: '#4b5563',
-                  marginBottom: '1rem',
-                  lineHeight: '1.6'
-                }}>
-                  {item.description}
-                </p>
-                
-                <div style={{ 
-                  background: '#f8fafc', 
-                  padding: '0.75rem', 
-                  borderRadius: '0.5rem',
-                  marginTop: '1rem'
-                }}>
-                  <p style={{ 
-                    color: '#4b5563', 
-                    fontSize: isMobile ? '0.75rem' : '0.875rem',
-                    margin: 0,
-                    fontWeight: '500'
-                  }}>
-                    <strong>Reason:</strong> {item.reason}
-                  </p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section className={styles.section}>
+      {/* === WHAT WE DO PROVIDE SECTION === */}
+      <section className={styles.sectionGray}>
         <div className={styles.container}>
-          <div className={styles.textCenterMobile} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2}>What We Do Provide</h2>
-            <p className={styles.paragraph} style={{ 
-              maxWidth: '800px', 
-              margin: '0 auto',
-              fontSize: isMobile ? '1rem' : '1.125rem'
-            }}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>What We Do Provide</h2>
+            <p className={styles.sectionDescription}>
               Our focus is strictly on <strong>non-legal administrative support</strong> for law firm operations
             </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid3}`} style={{ gap: isMobile ? '2rem' : '1.5rem' }}>
-            {whatWeDo.map((service, index) => (
-              <div key={index} className={styles.card} style={{ 
-                textAlign: 'center',
-                borderTop: '3px solid #1d4ed8'
-              }}>
-                <div style={{ 
-                  fontSize: isMobile ? '2.5rem' : '3rem',
-                  marginBottom: '1rem'
-                }}>
-                  {service.icon}
+          <div className={styles.weDoGrid}>
+            {whatWeDo.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div key={index} className={styles.weDoCard}>
+                  <div className={`${styles.weDoIconContainer} ${styles[`icon${service.color}`]}`}>
+                    <IconComponent className={styles.weDoIcon} />
+                  </div>
+                  <h3 className={styles.weDoTitle}>{service.title}</h3>
+                  <p className={styles.weDoDescription}>{service.description}</p>
                 </div>
-                <h3 className={styles.heading3} style={{ marginBottom: '0.75rem' }}>
-                  {service.title}
-                </h3>
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1rem',
-                  color: '#4b5563',
-                  margin: 0
-                }}>
-                  {service.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
           
-          <div className={styles.textCenter} style={{ marginTop: '3rem' }}>
-            <Link href="/services" className={`${styles.btn} ${styles.btnPrimary}`}>
-              View All Services →
+          <div className={styles.centerButton}>
+            <Link href="/services" className={styles.viewButton}>
+              <span>View All Services</span>
+              <ChevronRight className={styles.buttonIcon} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Scope of Services Section */}
-      <section className={`${styles.section} ${styles.sectionDark}`}>
+      {/* === SCOPE OF SERVICES SECTION === */}
+      <section className={styles.sectionDark}>
         <div className={styles.container}>
-          <div className={styles.textCenter} style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
-            <h2 className={styles.heading2} style={{ color: 'white' }}>Scope of Services</h2>
-            <p style={{ 
-              fontSize: isMobile ? '1rem' : '1.25rem', 
-              color: '#d1d5db' 
-            }}>
+          <div className={styles.sectionHeader}>
+            <h2 className={`${styles.sectionTitle} ${styles.textWhite}`}>Scope of Services</h2>
+            <p className={`${styles.sectionDescription} ${styles.textLightGray}`}>
               Clear definition of what falls within and outside our support parameters
             </p>
           </div>
           
-          <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '2rem' : '3rem' }}>
-            <div style={{ 
-              background: 'rgba(255, 255, 255, 0.05)', 
-              padding: isMobile ? '1.5rem' : '2rem', 
-              borderRadius: '1rem',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <h3 className={styles.heading3} style={{ color: '#10b981', marginBottom: '1rem' }}>
-                Within Our Scope ✓
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
+          <div className={styles.scopeComparisonGrid}>
+            <div className={styles.withinScope}>
+              <div className={styles.scopeHeader}>
+                <CheckCircle2 className={styles.scopeCheckIcon} />
+                <h3 className={styles.scopeTitle}>Within Our Scope ✓</h3>
+              </div>
+              <ul className={styles.scopeList}>
                 {[
                   'Case status monitoring and updates',
                   'Deadline tracking and alerting',
@@ -283,24 +267,20 @@ export default function WhatWeDontDoPage() {
                   'Weekly status reporting',
                   'Administrative workflow management'
                 ].map((item, idx) => (
-                  <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#10b981', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
-                    <span style={{ color: '#d1d5db' }}>{item}</span>
+                  <li key={idx} className={styles.scopeListItem}>
+                    <CheckCircle2 className={styles.listIconGreen} />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div style={{ 
-              background: 'rgba(255, 255, 255, 0.05)', 
-              padding: isMobile ? '1.5rem' : '2rem', 
-              borderRadius: '1rem',
-              border: '1px solid rgba(255, 255, 255, 0.1)'
-            }}>
-              <h3 className={styles.heading3} style={{ color: '#9ca3af', marginBottom: '1rem' }}>
-                Outside Our Scope ✓
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
+            <div className={styles.outsideScope}>
+              <div className={styles.scopeHeader}>
+                <AlertCircle className={styles.scopeAlertIcon} />
+                <h3 className={styles.scopeTitle}>Outside Our Scope ✓</h3>
+              </div>
+              <ul className={styles.scopeList}>
                 {[
                   'Legal advice or opinions',
                   'Document drafting',
@@ -309,9 +289,9 @@ export default function WhatWeDontDoPage() {
                   'Financial transactions',
                   'Legal research'
                 ].map((item, idx) => (
-                  <li key={idx} className={styles.flex} style={{ alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#9ca3af', marginRight: '0.75rem', marginTop: '0.25rem' }}>•</span>
-                    <span style={{ color: '#d1d5db' }}>{item}</span>
+                  <li key={idx} className={styles.scopeListItem}>
+                    <AlertCircle className={styles.listIconGray} />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -320,33 +300,22 @@ export default function WhatWeDontDoPage() {
         </div>
       </section>
 
-      {/* Compliance & Ethics Section */}
-      <section className={styles.section}>
+      {/* === COMPLIANCE & ETHICS SECTION === */}
+      <section className={styles.sectionWhite}>
         <div className={styles.container}>
-          <div style={{ 
-            background: '#f0f9ff', 
-            padding: isMobile ? '1.5rem' : '2rem', 
-            borderRadius: '1rem',
-            borderLeft: '4px solid #1d4ed8'
-          }}>
-            <h3 className={styles.heading3} style={{ 
-              color: '#1d4ed8', 
-              marginBottom: '1rem',
-              fontSize: isMobile ? '1.25rem' : '1.875rem'
-            }}>
-              Scope of Services & Ethical Standards
-            </h3>
-            <div className={`${styles.grid} ${styles.grid2}`} style={{ gap: isMobile ? '1.5rem' : '2rem' }}>
-              <div>
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1.125rem',
-                  color: '#4b5563',
-                  marginBottom: '1rem'
-                }}>
+          <div className={styles.complianceCard}>
+            <div className={styles.complianceHeader}>
+              <Shield className={styles.complianceIcon} />
+              <h3 className={styles.complianceTitle}>Scope of Services & Ethical Standards</h3>
+            </div>
+            
+            <div className={styles.complianceContent}>
+              <div className={styles.complianceText}>
+                <p className={styles.complianceDescription}>
                   We operate under <strong>strict ethical guidelines</strong> and maintain clear boundaries to ensure 
                   compliance with all applicable regulations governing legal services support.
                 </p>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
+                <ul className={styles.complianceList}>
                   {[
                     'Strict adherence to U.S. legal ethics rules',
                     'Clear distinction between legal and administrative work',
@@ -354,34 +323,22 @@ export default function WhatWeDontDoPage() {
                     'Confidentiality and data protection protocols',
                     'Transparent service agreements'
                   ].map((item, idx) => (
-                    <li key={idx} className={styles.flex} style={{ alignItems: 'center', marginBottom: '0.75rem' }}>
-                      <span style={{ color: '#1d4ed8', marginRight: '0.75rem' }}>✓</span>
-                      <span style={{ fontSize: isMobile ? '0.95rem' : '1rem' }}>{item}</span>
+                    <li key={idx} className={styles.complianceListItem}>
+                      <CheckCircle2 className={styles.complianceCheckIcon} />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               
-              <div>
-                <div style={{ 
-                  background: '#dbeafe', 
-                  padding: '1rem', 
-                  borderRadius: '0.5rem',
-                  marginBottom: '1rem'
-                }}>
-                  <p style={{ 
-                    fontSize: isMobile ? '0.875rem' : '1rem',
-                    color: '#1d4ed8',
-                    fontWeight: '600',
-                    margin: 0
-                  }}>
+              <div className={styles.complianceNotice}>
+                <div className={styles.noticeBox}>
+                  <AlertCircle className={styles.noticeIcon} />
+                  <p className={styles.noticeText}>
                     Our services are limited to non-legal administrative support only.
                   </p>
                 </div>
-                <p style={{ 
-                  fontSize: isMobile ? '0.95rem' : '1rem',
-                  color: '#4b5563'
-                }}>
+                <p className={styles.noticeDescription}>
                   This clear delineation ensures we remain in compliance while providing valuable 
                   operational support to U.S. law firms.
                 </p>
@@ -391,65 +348,27 @@ export default function WhatWeDontDoPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className={styles.section} style={{ 
-        background: 'linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%)', 
-        color: 'white',
-        padding: isMobile ? '3rem 0' : '5rem 0'
-      }}>
-        <div className={styles.container} style={{ textAlign: 'center' }}>
-          <h2 className={styles.heading2} style={{ color: 'white' }}>Need Clarification?</h2>
-          <p style={{ 
-            fontSize: isMobile ? '1rem' : '1.25rem', 
-            marginBottom: '2rem', 
-            maxWidth: '800px', 
-            margin: '0 auto 2rem' 
-          }}>
-            Have questions about our service boundaries? Contact us for a detailed discussion.
-          </p>
-          <div style={{ 
-            display: 'flex', 
-            gap: '1rem', 
-            justifyContent: 'center', 
-            flexWrap: 'wrap',
-            flexDirection: isMobile ? 'column' : 'row'
-          }}>
-            <Link 
-              href="/contact"
-              style={{ 
-                background: 'white', 
-                color: '#1d4ed8', 
-                padding: isMobile ? '0.875rem 1.5rem' : '1rem 2rem', 
-                borderRadius: '0.5rem', 
-                border: 'none',
-                fontWeight: '600',
-                fontSize: isMobile ? '1rem' : '1.125rem',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                textAlign: 'center',
-                width: isMobile ? '100%' : 'auto'
-              }}
-            >
-              Contact Us
-            </Link>
-            <Link 
-              href="/how-we-work"
-              style={{ 
-                background: 'transparent', 
-                color: 'white', 
-                padding: isMobile ? '0.875rem 1.5rem' : '1rem 2rem', 
-                borderRadius: '0.5rem', 
-                border: '2px solid white',
-                fontWeight: '600',
-                fontSize: isMobile ? '1rem' : '1.125rem',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                textAlign: 'center',
-                width: isMobile ? '100%' : 'auto'
-              }}
-            >
-              How We Work
-            </Link>
+      {/* === FINAL CTA SECTION === */}
+      <section className={styles.ctaSection}>
+        <div className={styles.container}>
+          <div className={styles.ctaContent}>
+            <div className={styles.ctaIconContainer}>
+              <MessageCircle className={styles.ctaIcon} />
+            </div>
+            <h2 className={styles.ctaTitle}>Need Clarification?</h2>
+            <p className={styles.ctaDescription}>
+              Have questions about our service boundaries? Contact us for a detailed discussion 
+              about how we can support your firm while maintaining strict compliance.
+            </p>
+            
+            <div className={styles.ctaButtons}>
+              <Link href="/contact" className={styles.ctaButtonPrimary}>
+                Contact Us
+              </Link>
+              <Link href="/how-we-work" className={styles.ctaButtonSecondary}>
+                How We Work
+              </Link>
+            </div>
           </div>
         </div>
       </section>

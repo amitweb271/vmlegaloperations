@@ -1,0 +1,1267 @@
+/* ===== VM LEGAL OPERATIONS - WHO WE SUPPORT PAGE STYLES ===== */
+/* Unique prefix: vm-who- */
+/* ULTRA PREMIUM VERSION - WITH ALL ENHANCEMENTS */
+
+/* ---------- CONTAINER & LAYOUT ---------- */
+.vmWhoContainer {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.vmWhoPageWrapper {
+  width: 100%;
+  /* overflow-x: hidden; */
+  animation: vmWhoPageFadeIn 1s ease-out;
+}
+
+@keyframes vmWhoPageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ---------- SCROLL REVEAL ANIMATIONS ---------- */
+.vmWhoReveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.vmWhoRevealActive {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- HERO SECTION ---------- */
+.vmWhoHeroSection {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6f0fa 30%, #d4e4fa 70%, #c0d9f5 100%);
+  width: 100%;
+  isolation: isolate;
+}
+
+.vmWhoHeroBg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 60%, rgba(29, 78, 216, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.vmWhoHeroContent {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* ---------- BADGE ---------- */
+.vmWhoBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #1e40af;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  animation: vmWhoGlowPulse 3s infinite ease-in-out;
+}
+
+@keyframes vmWhoGlowPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15); }
+  50% { box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3); }
+}
+
+.vmWhoBadgeIcon {
+  width: 18px;
+  height: 18px;
+  color: #2563eb;
+}
+
+/* ---------- HEADINGS ---------- */
+.vmWhoMainHeading {
+  font-size: 3.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: vmWhoFadeInUp 1s ease-out;
+}
+
+@keyframes vmWhoFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vmWhoSubHeading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 2.5rem;
+  line-height: 1.4;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.vmWhoGradientText {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* ---------- SCOPE CARD ---------- */
+.vmWhoScopeCard {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.vmWhoScopeCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.15), 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.vmWhoScopeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.vmWhoScopeIcon {
+  width: 24px;
+  height: 24px;
+  color: #2563eb;
+}
+
+.vmWhoScopeHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.vmWhoScopeContent p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+  text-align: center;
+}
+
+.vmWhoScopeContent strong {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+/* ---------- CTA BUTTONS ---------- */
+.vmWhoCtaGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.vmWhoBtnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
+  background-size: 200% 200%;
+  animation: vmWhoGradientMove 5s ease infinite;
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  border: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@keyframes vmWhoGradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.vmWhoBtnPrimary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.vmWhoBtnPrimary:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.vmWhoBtnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 12px -1px rgba(37, 99, 235, 0.15);
+}
+
+.vmWhoBtnPrimary:active {
+  transform: scale(0.98);
+}
+
+.vmWhoBtnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: white;
+  color: #1e40af;
+  font-weight: 600;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  border: 1.5px solid #2563eb;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.vmWhoBtnSecondary:hover {
+  background: #eff6ff;
+  border-color: #1e40af;
+  transform: translateY(-1px);
+}
+
+.vmWhoBtnSecondary:active {
+  transform: scale(0.98);
+}
+
+.vmWhoBtnIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.vmWhoBtnPrimary:hover .vmWhoBtnIcon,
+.vmWhoBtnSecondary:hover .vmWhoBtnIcon {
+  transform: translateX(4px);
+}
+
+/* ---------- SECTION WRAPPERS ---------- */
+.vmWhoSectionWhite {
+  background: white;
+  padding: 5rem 0;
+  scroll-margin-top: 80px;
+}
+
+.vmWhoSectionGray {
+  background: #f8fafc;
+  padding: 5rem 0;
+  scroll-margin-top: 80px;
+}
+
+.vmWhoSectionLight {
+  background: #f8fafc;
+  padding: 5rem 0;
+  scroll-margin-top: 80px;
+}
+
+.vmWhoSectionDark {
+  background: #0f172a;
+  padding: 5rem 0;
+  color: white;
+  scroll-margin-top: 80px;
+}
+
+.vmWhoSectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.vmWhoSectionTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.vmWhoSectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #8b5cf6, #06b6d4);
+  transition: width 0.5s ease;
+}
+
+.vmWhoSectionHeader:hover .vmWhoSectionTitle::after {
+  width: 80px;
+}
+
+.vmWhoSectionDark .vmWhoSectionTitle {
+  color: white;
+}
+
+.vmWhoSectionDark .vmWhoSectionTitle::after {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
+}
+
+.vmWhoSectionDesc {
+  font-size: 1.125rem;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ---------- CLIENTS GRID ---------- */
+.vmWhoClientsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.vmWhoClientCard {
+  background: white;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid #f1f5f9;
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vmWhoClientCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6, #06b6d4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vmWhoClientCard:hover::before {
+  opacity: 1;
+}
+
+.vmWhoClientCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 50px -15px rgba(37, 99, 235, 0.2);
+  border-color: transparent;
+}
+
+.vmWhoClientIconContainer {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.4s ease;
+  position: relative;
+  isolation: isolate;
+}
+
+.vmWhoClientIconContainer::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 25px;
+  background: inherit;
+  filter: blur(10px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.vmWhoClientCard:hover .vmWhoClientIconContainer::after {
+  opacity: 0.5;
+}
+
+.vmWhoClientCard:hover .vmWhoClientIconContainer {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.vmWhoClientIcon {
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+
+.vmWhoClientTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.vmWhoClientCard:hover .vmWhoClientTitle {
+  color: #2563eb;
+}
+
+.vmWhoClientDescription {
+  font-size: 0.9375rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.vmWhoClientCard:hover .vmWhoClientDescription {
+  color: #1e293b;
+}
+
+/* Client icon gradients */
+.vmWhoIconBlue .vmWhoClientIconContainer {
+  background: linear-gradient(145deg, #1e40af, #2563eb);
+}
+.vmWhoIconEmerald .vmWhoClientIconContainer {
+  background: linear-gradient(145deg, #065f46, #10b981);
+}
+.vmWhoIconViolet .vmWhoClientIconContainer {
+  background: linear-gradient(145deg, #6d28d9, #8b5cf6);
+}
+.vmWhoIconAmber .vmWhoClientIconContainer {
+  background: linear-gradient(145deg, #b45309, #f97316);
+}
+
+/* ---------- SUPPORT GRID ---------- */
+.vmWhoSupportGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Challenges Card */
+.vmWhoChallengesCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid #f1f5f9;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vmWhoChallengesCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(239, 68, 68, 0.02), transparent 70%);
+  z-index: -1;
+}
+
+.vmWhoChallengesCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 50px -15px rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
+}
+
+.vmWhoChallengesHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.vmWhoChallengesDot {
+  width: 12px;
+  height: 12px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: vmWhoPulse 2s infinite;
+}
+
+@keyframes vmWhoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.vmWhoChallengesTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.vmWhoChallengesCard:hover .vmWhoChallengesTitle {
+  color: #ef4444;
+}
+
+.vmWhoChallengesDescription {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.vmWhoChallengesList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.vmWhoChallengesListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+}
+
+.vmWhoChallengesListItem:hover {
+  transform: translateX(8px);
+  background: #fef2f2;
+}
+
+.vmWhoListDot {
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.vmWhoChallengesListItem:hover .vmWhoListDot {
+  transform: scale(1.5);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.vmWhoChallengesListItem span {
+  font-size: 0.9375rem;
+  color: #475569;
+  line-height: 1.6;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.vmWhoChallengesListItem:hover span {
+  color: #0f172a;
+  font-weight: 500;
+}
+
+/* Help Card */
+.vmWhoHelpCard {
+  background: linear-gradient(145deg, #f8fafc, #f1f5f9);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: auto;
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vmWhoHelpCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.05), transparent 70%);
+  z-index: -1;
+}
+
+.vmWhoHelpCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.2);
+  border-color: #2563eb;
+}
+
+.vmWhoHelpIcon {
+  width: 40px;
+  height: 40px;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.vmWhoHelpCard:hover .vmWhoHelpIcon {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.vmWhoHelpTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.vmWhoHelpCard:hover .vmWhoHelpTitle {
+  color: #2563eb;
+}
+
+.vmWhoHelpDescription {
+  font-size: 0.9375rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.vmWhoHelpDescription strong {
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+
+.vmWhoHelpCard:hover .vmWhoHelpDescription strong {
+  color: #2563eb;
+}
+
+/* Benefits Card */
+.vmWhoBenefitsCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid #f1f5f9;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vmWhoBenefitsCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(16, 185, 129, 0.02), transparent 70%);
+  z-index: -1;
+}
+
+.vmWhoBenefitsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 50px -15px rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+}
+
+.vmWhoBenefitsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.vmWhoBenefitsIcon {
+  width: 32px;
+  height: 32px;
+  color: #10b981;
+  transition: all 0.3s ease;
+}
+
+.vmWhoBenefitsCard:hover .vmWhoBenefitsIcon {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.vmWhoBenefitsTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.vmWhoBenefitsCard:hover .vmWhoBenefitsTitle {
+  color: #10b981;
+}
+
+.vmWhoBenefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.vmWhoBenefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.vmWhoBenefitItem:hover {
+  transform: translateX(5px);
+  background: #f0fdf4;
+}
+
+.vmWhoBenefitIconContainer {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  isolation: isolate;
+}
+
+.vmWhoBenefitIconContainer::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 15px;
+  background: inherit;
+  filter: blur(6px);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+.vmWhoBenefitItem:hover .vmWhoBenefitIconContainer::after {
+  opacity: 0.5;
+}
+
+.vmWhoBenefitItem:hover .vmWhoBenefitIconContainer {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.vmWhoBenefitIcon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.vmWhoBenefitContent {
+  flex: 1;
+}
+
+.vmWhoBenefitTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.vmWhoBenefitItem:hover .vmWhoBenefitTitle {
+  color: #10b981;
+}
+
+.vmWhoBenefitDescription {
+  font-size: 0.875rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.vmWhoBenefitItem:hover .vmWhoBenefitDescription {
+  color: #1e293b;
+}
+
+/* Benefit icon variants */
+.vmWhoBenefitItem:nth-child(1) .vmWhoBenefitIconContainer {
+  background: linear-gradient(145deg, #1e40af, #2563eb);
+}
+.vmWhoBenefitItem:nth-child(2) .vmWhoBenefitIconContainer {
+  background: linear-gradient(145deg, #065f46, #10b981);
+}
+.vmWhoBenefitItem:nth-child(3) .vmWhoBenefitIconContainer {
+  background: linear-gradient(145deg, #b45309, #f97316);
+}
+.vmWhoBenefitItem:nth-child(4) .vmWhoBenefitIconContainer {
+  background: linear-gradient(145deg, #6d28d9, #8b5cf6);
+}
+
+/* Role Highlight */
+.vmWhoRoleHighlight {
+  background: linear-gradient(145deg, #1e40af, #2563eb);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vmWhoRoleHighlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.2), transparent 70%);
+  animation: vmWhoParticleMove 8s infinite alternate;
+}
+
+@keyframes vmWhoParticleMove {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(2%, 2%); }
+}
+
+.vmWhoRoleHighlight:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -10px rgba(37, 99, 235, 0.4);
+}
+
+.vmWhoRoleIcon {
+  width: 40px;
+  height: 40px;
+  color: white;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.vmWhoRoleHighlight:hover .vmWhoRoleIcon {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.vmWhoRoleText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.vmWhoRoleText strong {
+  color: white;
+  font-weight: 700;
+}
+
+/* ---------- SCOPE NOTICE ---------- */
+.vmWhoScopeNotice {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vmWhoScopeNotice::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(96, 165, 250, 0.1), transparent 70%);
+  animation: vmWhoParticleMove 10s infinite alternate;
+}
+
+.vmWhoScopeNotice:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.vmWhoScopeIconContainer {
+  width: 80px;
+  height: 80px;
+  background: rgba(37, 99, 235, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  backdrop-filter: blur(5px);
+  animation: vmWhoPulse 2s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+.vmWhoScopeNoticeIcon {
+  width: 40px;
+  height: 40px;
+  color: #60a5fa;
+  transition: all 0.3s ease;
+}
+
+.vmWhoScopeNotice:hover .vmWhoScopeNoticeIcon {
+  transform: scale(1.1);
+}
+
+.vmWhoScopeNoticeTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vmWhoScopeNoticeText {
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.vmWhoScopeNoticeDescription {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.vmWhoScopeNotice:hover .vmWhoScopeNoticeDescription {
+  color: #cbd5e1;
+}
+
+/* ---------- FINAL CTA SECTION ---------- */
+.vmWhoCtaSection {
+  background: linear-gradient(145deg, #1e40af, #2563eb);
+  padding: 5rem 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.vmWhoCtaSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 30%),
+              radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 30%);
+  animation: vmWhoParticleMove 10s infinite alternate;
+}
+
+.vmWhoCtaContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vmWhoCtaIconBox {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  backdrop-filter: blur(5px);
+  animation: vmWhoPulse 2s infinite ease-in-out;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.vmWhoCtaIcon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.vmWhoCtaTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.vmWhoCtaDesc {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vmWhoCtaBtnGroup {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.vmWhoCtaBtnPrimary {
+  display: inline-block;
+  background: white;
+  color: #1e40af;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vmWhoCtaBtnPrimary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.vmWhoCtaBtnPrimary:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.vmWhoCtaBtnPrimary:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.vmWhoCtaBtnSecondary {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.vmWhoCtaBtnSecondary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.vmWhoCtaBtnSecondary:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.vmWhoCtaBtnSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- UTILITY ---------- */
+.vmWhoTextWhite {
+  color: white !important;
+}
+
+/* ---------- RESPONSIVE BREAKPOINTS ---------- */
+@media (max-width: 1024px) {
+  .vmWhoMainHeading { font-size: 3.25rem; }
+  .vmWhoClientsGrid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
+  .vmWhoBenefitsGrid { grid-template-columns: repeat(2, 1fr); }
+  .vmWhoSectionTitle { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .vmWhoContainer { padding: 0 1.5rem; }
+  .vmWhoHeroSection { padding: 4rem 0; min-height: 70vh; }
+  .vmWhoMainHeading { font-size: 2.75rem; }
+  .vmWhoSubHeading { font-size: 1.25rem; }
+  .vmWhoSectionWhite, 
+  .vmWhoSectionGray, 
+  .vmWhoSectionLight, 
+  .vmWhoSectionDark { padding: 4rem 0; }
+  .vmWhoSectionTitle { font-size: 2rem; }
+  .vmWhoClientsGrid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .vmWhoSupportGrid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .vmWhoBenefitsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .vmWhoContainer { padding: 0 1.25rem; }
+  .vmWhoMainHeading { font-size: 2.25rem; }
+  .vmWhoBadge { padding: 0.5rem 1.25rem; font-size: 0.8125rem; }
+  .vmWhoSubHeading { font-size: 1.125rem; }
+  .vmWhoCtaGroup { flex-direction: column; width: 100%; }
+  .vmWhoBtnPrimary, 
+  .vmWhoBtnSecondary { width: 100%; padding: 0.75rem 1.5rem; }
+  .vmWhoClientsGrid { grid-template-columns: 1fr; gap: 1.25rem; }
+  .vmWhoBenefitsGrid { grid-template-columns: 1fr; gap: 1rem; }
+  .vmWhoCtaTitle { font-size: 2rem; }
+  .vmWhoCtaDesc { font-size: 1rem; }
+  .vmWhoScopeNotice { padding: 2rem; }
+  .vmWhoScopeNoticeTitle { font-size: 1.75rem; }
+  .vmWhoClientCard { padding: 2rem 1rem; }
+  .vmWhoClientIconContainer { width: 70px; height: 70px; }
+  .vmWhoClientIcon { width: 32px; height: 32px; }
+}
+
+@media (max-width: 480px) {
+  .vmWhoContainer { padding: 0 1rem; }
+  .vmWhoHeroSection { padding: 3rem 0; min-height: 60vh; }
+  .vmWhoMainHeading { font-size: 2rem; }
+  .vmWhoBadge { padding: 0.5rem 1rem; font-size: 0.75rem; gap: 0.5rem; }
+  .vmWhoBadgeIcon { width: 16px; height: 16px; }
+  .vmWhoSubHeading { font-size: 1rem; }
+  .vmWhoScopeCard { padding: 1.5rem; }
+  .vmWhoScopeHeader h3 { font-size: 1.125rem; }
+  .vmWhoScopeContent p { font-size: 0.9375rem; }
+  .vmWhoSectionWhite, 
+  .vmWhoSectionGray, 
+  .vmWhoSectionLight, 
+  .vmWhoSectionDark { padding: 3rem 0; }
+  .vmWhoSectionTitle { font-size: 1.75rem; }
+  .vmWhoSectionDesc { font-size: 1rem; }
+  .vmWhoClientCard { padding: 1.5rem; }
+  .vmWhoClientTitle { font-size: 1.125rem; }
+  .vmWhoClientIconContainer { width: 60px; height: 60px; }
+  .vmWhoClientIcon { width: 28px; height: 28px; }
+  .vmWhoChallengesCard { padding: 1.5rem; }
+  .vmWhoChallengesTitle { font-size: 1.35rem; }
+  .vmWhoBenefitsCard { padding: 1.5rem; }
+  .vmWhoBenefitsTitle { font-size: 1.35rem; }
+  .vmWhoBenefitItem { flex-direction: column; align-items: center; text-align: center; }
+  .vmWhoBenefitContent { text-align: center; }
+  .vmWhoRoleHighlight { flex-direction: column; text-align: center; padding: 1.25rem; }
+  .vmWhoRoleIcon { width: 36px; height: 36px; }
+  .vmWhoCtaSection { padding: 3rem 0; }
+  .vmWhoCtaTitle { font-size: 1.75rem; }
+  .vmWhoCtaIconBox { width: 60px; height: 60px; }
+  .vmWhoCtaIcon { width: 30px; height: 30px; }
+  .vmWhoCtaBtnGroup { flex-direction: column; gap: 0.75rem; }
+  .vmWhoCtaBtnPrimary, 
+  .vmWhoCtaBtnSecondary { width: 100%; padding: 0.75rem 1.5rem; font-size: 0.9375rem; }
+}
+
+@media (max-width: 375px) {
+  .vmWhoMainHeading { font-size: 1.75rem; }
+  .vmWhoBtnIcon { width: 16px; height: 16px; }
+}

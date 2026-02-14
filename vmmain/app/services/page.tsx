@@ -34,7 +34,7 @@ import {
 
 export default function ServicesPage() {
   const [isMobile, setIsMobile] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeSection, setActiveSection] = useState('hero'); // new 
 
   useEffect(() => {
     const checkMobile = () => {

@@ -211,137 +211,142 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className={contactStyles.vmContactForm}>
-                    {/* Name Field */}
-                    <div className={contactStyles.vmContactFormGroup}>
-                      <div className={contactStyles.vmContactFormLabel}>
-                        <User className={contactStyles.vmContactLabelIcon} />
-                        <label>Your Name *</label>
-                      </div>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className={contactStyles.vmContactFormInput}
-                        placeholder="John Smith"
-                      />
-                    </div>
+                 <form onSubmit={handleSubmit} className={contactStyles.vmContactForm}>
 
-                    {/* Email Field */}
-                    <div className={contactStyles.vmContactFormGroup}>
-                      <div className={contactStyles.vmContactFormLabel}>
-                        <Mail className={contactStyles.vmContactLabelIcon} />
-                        <label>Email Address *</label>
-                      </div>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className={contactStyles.vmContactFormInput}
-                        placeholder="john@lawfirm.com"
-                      />
-                    </div>
+  {/* Name Field */}
+  <div className={contactStyles.vmContactFormGroup}>
+    <div className={contactStyles.vmContactFormLabel}>
+      <User className={contactStyles.vmContactLabelIcon} />
+      <label>Your Name *</label>
+    </div>
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      required
+      className={contactStyles.vmContactFormInput}
+      placeholder="Full name as you would like us to address you"
+    />
+  </div>
 
-                    {/* Law Firm Name Field */}
-                    <div className={contactStyles.vmContactFormGroup}>
-                      <div className={contactStyles.vmContactFormLabel}>
-                        <Building2 className={contactStyles.vmContactLabelIcon} />
-                        <label>Law Firm Name / Practice Name *</label>
-                      </div>
-                      <input
-                        type="text"
-                        name="firmName"
-                        value={formData.firmName}
-                        onChange={handleChange}
-                        required
-                        className={contactStyles.vmContactFormInput}
-                        placeholder="Smith & Associates LLP"
-                      />
-                      <p className={contactStyles.vmContactFormHint}>
-                        (Solo practitioners may enter their practice name.)
-                      </p>
-                    </div>
+  {/* Email Field */}
+  <div className={contactStyles.vmContactFormGroup}>
+    <div className={contactStyles.vmContactFormLabel}>
+      <Mail className={contactStyles.vmContactLabelIcon} />
+      <label>Email Address *</label>
+    </div>
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      required
+      className={contactStyles.vmContactFormInput}
+      placeholder="Enter your email address"
+    />
+  </div>
 
-                    {/* Firm Size Field */}
-                    <div className={contactStyles.vmContactFormGroup}>
-                      <div className={contactStyles.vmContactFormLabel}>
-                        <Users className={contactStyles.vmContactLabelIcon} />
-                        <label>Firm Size</label>
-                      </div>
-                      <select
-                        name="firmSize"
-                        value={formData.firmSize}
-                        onChange={handleChange}
-                        className={contactStyles.vmContactFormSelect}
-                      >
-                        <option value="">Select firm size</option>
-                        <option value="solo">Solo Practitioner</option>
-                        <option value="small">2-10 Attorneys</option>
-                        <option value="medium">11-50 Attorneys</option>
-                        <option value="large">50+ Attorneys</option>
-                      </select>
-                    </div>
+  {/* Firm Name */}
+  <div className={contactStyles.vmContactFormGroup}>
+    <div className={contactStyles.vmContactFormLabel}>
+      <Building2 className={contactStyles.vmContactLabelIcon} />
+      <label>Law Firm / Practice Name *</label>
+    </div>
+    <input
+      type="text"
+      name="firmName"
+      value={formData.firmName}
+      onChange={handleChange}
+      required
+      className={contactStyles.vmContactFormInput}
+      placeholder="Official law firm or practice name"
+    />
+  </div>
 
-                    {/* Phone Field (Optional) - Naya field add kiya */}
-                    <div className={contactStyles.vmContactFormGroup}>
-                      <div className={contactStyles.vmContactFormLabel}>
-                        <Phone className={contactStyles.vmContactLabelIcon} />
-                        <label>Phone Number (Optional)</label>
-                      </div>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className={contactStyles.vmContactFormInput}
-                        placeholder="+1 (123) 456-7890"
-                      />
-                    </div>
+  {/* Firm Size */}
+  <div className={contactStyles.vmContactFormGroup}>
+    <div className={contactStyles.vmContactFormLabel}>
+      <Users className={contactStyles.vmContactLabelIcon} />
+      <label>Firm Size</label>
+    </div>
+    <select
+      name="firmSize"
+      value={formData.firmSize}
+      onChange={handleChange}
+      className={contactStyles.vmContactFormSelect}
+    >
+      <option value="">Select your firm size</option>
+      <option value="solo">Solo Practitioner</option>
+      <option value="small">2-10 Attorneys</option>
+      <option value="medium">11-50 Attorneys</option>
+      <option value="large">50+ Attorneys</option>
+    </select>
+  </div>
 
-                    {/* Message Field */}
-                    <div className={contactStyles.vmContactFormGroup}>
-                      <div className={contactStyles.vmContactFormLabel}>
-                        <MessageSquare className={contactStyles.vmContactLabelIcon} />
-                        <label>What services are you interested in? *</label>
-                      </div>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={5}
-                        className={contactStyles.vmContactFormTextarea}
-                        placeholder="Tell us about your needs, case volume, and specific challenges..."
-                      />
-                    </div>
+  {/* Phone */}
+  <div className={contactStyles.vmContactFormGroup}>
+    <div className={contactStyles.vmContactFormLabel}>
+      <Phone className={contactStyles.vmContactLabelIcon} />
+      <label>Phone Number (Optional)</label>
+    </div>
+    <input
+      type="tel"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      className={contactStyles.vmContactFormInput}
+      placeholder="Enter your contact number"
+    />
+  </div>
 
-                    {/* Error Message - Naya add kiya */}
-                    {submitError && (
-                      <div className={contactStyles.vmContactError}>
-                        {submitError}
-                      </div>
-                    )}
+  {/* Message */}
+  <div className={contactStyles.vmContactFormGroup}>
+    <div className={contactStyles.vmContactFormLabel}>
+      <MessageSquare className={contactStyles.vmContactLabelIcon} />
+      <label>How can we support your firm? *</label>
+    </div>
+    <textarea
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      required
+      rows={5}
+      className={contactStyles.vmContactFormTextarea}
+      placeholder="Please describe your requirements, current challenges, or the type of support you are seeking."
+    />
+    
+    {/* Trust Builder */}
+    <p className={contactStyles.vmContactFormHint}>
+      All information shared will remain strictly confidential.
+    </p>
+  </div>
 
-                    {/* Submit Button */}
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className={contactStyles.vmContactSubmitBtn}
-                    >
-                      {isSubmitting ? (
-                        <span>Sending...</span>
-                      ) : (
-                        <>
-                          <span>Send Message</span>
-                          <ArrowRight className={contactStyles.vmContactBtnIcon} />
-                        </>
-                      )}
-                    </button>
-                  </form>
+  {/* Error */}
+  {submitError && (
+    <div className={contactStyles.vmContactError}>
+      {submitError}
+    </div>
+  )}
+
+  {/* Submit */}
+  <button
+    type="submit"
+    disabled={isSubmitting}
+    className={contactStyles.vmContactSubmitBtn}
+  >
+    {isSubmitting ? (
+      <span>Submitting...</span>
+    ) : (
+      <>
+        <span>Send Message</span>
+        <ArrowRight className={contactStyles.vmContactBtnIcon} />
+      </>
+    )}
+  </button>
+
+</form>
+
                 )}
               </div>
             </div>

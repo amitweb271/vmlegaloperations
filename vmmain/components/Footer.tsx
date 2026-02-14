@@ -149,11 +149,10 @@ export default function Footer() {
             
             <div className={styles.complianceSection}>
               <div className={styles.flex} style={{ alignItems: 'center', marginBottom: '0.5rem' }}>
-                <AlertCircle style={{ width: '16px', height: '16px', color: '#f87171', marginRight: '0.5rem' }} />
                 <h5 className={styles.complianceTitle}>Compliance Notice</h5>
               </div>
               <p className={styles.complianceText}>
-                We do <strong>not</strong> provide legal advice, draft legal documents, 
+                We do not provide legal advice, draft legal documents, 
                 or represent clients in court.
               </p>
             </div>

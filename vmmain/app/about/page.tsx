@@ -27,7 +27,11 @@ import {
   Lock,
   Flag,
   Sparkles,
-  Gem
+  Gem,
+  Briefcase,
+  Layers,
+  Activity,
+  FolderOpen
 } from 'lucide-react';
 
 export default function AboutPage() {
@@ -82,353 +86,216 @@ export default function AboutPage() {
             
             {/* Main Heading */}
             <h1 className={aboutStyles.vmAboutMainHeading}>
-              About VM Legal Operations
+             VM Legal Operations
             </h1>
             
-            {/* Description */}
-            <h2 className={aboutStyles.vmAboutSubHeading}>
-              We provide <span className={aboutStyles.vmAboutGradientText}>offshore legal operations support</span> to
-              U.S. law firms, legal departments, and collection agencies.
-            </h2>
-            
-            {/* Scope Card */}
-            <div className={aboutStyles.vmAboutScopeCard}>
-              <div className={aboutStyles.vmAboutScopeHeader}>
-                <ShieldCheck className={aboutStyles.vmAboutScopeIcon} />
-                <h3>Scope of Services</h3>
-              </div>
-              <div className={aboutStyles.vmAboutScopeContent}>
-                <p>
-                  VM Legal Operations provides <strong>strictly non-legal administrative support</strong> for law firm operations. 
-                  We do not provide legal advice, draft legal documents, represent clients in court, or make legal decisions.
-                </p>
-              </div>
-            </div>
-            
-            {/* CTA Buttons */}
-            <div className={aboutStyles.vmAboutCtaGroup}>
-              <Link href="/contact" className={aboutStyles.vmAboutBtnPrimary}>
-                <span>Start Pilot Program</span>
-                <ArrowRight className={aboutStyles.vmAboutBtnIcon} />
-              </Link>
-              <Link href="/contact" className={aboutStyles.vmAboutBtnSecondary}>
-                <Phone className={aboutStyles.vmAboutBtnIcon} />
-                <span>Schedule Intro Call</span>
-              </Link>
+            {/* Tagline - NEW */}
+            <div className={aboutStyles.vmAboutTagline}>
+              Your Remote Legal Support Partner for U.S. Law Firms
             </div>
           </div>
         </div>
       </section>
 
-      {/* === OUR APPROACH SECTION (UPDATED WITH PREMIUM FEATURES) === */}
-      <section id="approach" className={`${aboutStyles.vmAboutSectionWhite} ${aboutStyles.vmAboutReveal}`}>
+      {/* === WHO WE ARE SECTION (NEW STRUCTURE) === */}
+      <section id="who-we-are" className={`${aboutStyles.vmAboutSectionWhite} ${aboutStyles.vmAboutReveal}`}>
         <div className={aboutStyles.vmAboutContainer}>
           <div className={aboutStyles.vmAboutSectionHeader}>
-            <h2 className={aboutStyles.vmAboutSectionTitle}>Our Approach & Philosophy</h2>
-            <p className={aboutStyles.vmAboutSectionDesc}>
-              How we deliver reliable legal operations support
-            </p>
+            <h2 className={aboutStyles.vmAboutSectionTitle}>Who We Are</h2>
           </div>
           
-          <div className={aboutStyles.vmAboutApproachWrapper}>
-            <div className={aboutStyles.vmAboutApproachContent}>
-              {/* Text Section */}
-              <div className={aboutStyles.vmAboutApproachText}>
-                <div className={aboutStyles.vmAboutApproachPara}>
-                  <strong>We provide offshore legal operations support focused strictly on non-legal administrative work</strong> that law firms rely on to maintain consistency and control.
-                </div>
-                <div className={aboutStyles.vmAboutApproachPara}>
-                  <strong>Our approach is process-driven and risk-aware.</strong> We work within clearly defined scopes, respect confidentiality requirements, and integrate with existing workflows rather than disrupting them.
-                </div>
-                <div className={aboutStyles.vmAboutApproachPara}>
-                  <strong>This model is designed for firms that value clarity, accountability, and reliable follow-through</strong> — without increasing internal headcount or administrative overhead.
-                </div>
-              </div>
-              
-              {/* Core Principles Card (PREMIUM) */}
-              <div className={aboutStyles.vmAboutFeaturesCard}>
-                <div className={aboutStyles.vmAboutFeaturesHeader}>
-                  <Target className={aboutStyles.vmAboutFeaturesIcon} />
-                  <h3 className={aboutStyles.vmAboutFeaturesTitle}>Our Core Principles</h3>
-                </div>
-                <ul className={aboutStyles.vmAboutFeaturesList}>
-                  {/* Principle 1 */}
-                  <li 
-                    className={aboutStyles.vmAboutFeatureItem}
-                    data-tooltip="Core Principle #1"
-                  >
-                    <CheckCircle2 className={aboutStyles.vmAboutFeatureIcon} />
-                    <span>Clarity in scope and boundaries</span>
-                  </li>
-                  
-                  {/* Principle 2 */}
-                  <li 
-                    className={aboutStyles.vmAboutFeatureItem}
-                    data-tooltip="Core Principle #2"
-                  >
-                    <CheckCircle2 className={aboutStyles.vmAboutFeatureIcon} />
-                    <span>Consistency in tracking and reporting</span>
-                  </li>
-                  
-                  {/* Principle 3 */}
-                  <li 
-                    className={aboutStyles.vmAboutFeatureItem}
-                    data-tooltip="Core Principle #3"
-                  >
-                    <CheckCircle2 className={aboutStyles.vmAboutFeatureIcon} />
-                    <span>Control through structured processes</span>
-                  </li>
-                  
-                  {/* Principle 4 */}
-                  <li 
-                    className={aboutStyles.vmAboutFeatureItem}
-                    data-tooltip="Core Principle #4"
-                  >
-                    <CheckCircle2 className={aboutStyles.vmAboutFeatureIcon} />
-                    <span>Confidentiality and data protection</span>
-                  </li>
-                  
-                  {/* Principle 5 */}
-                  <li 
-                    className={aboutStyles.vmAboutFeatureItem}
-                    data-tooltip="Core Principle #5"
-                  >
-                    <CheckCircle2 className={aboutStyles.vmAboutFeatureIcon} />
-                    <span>Process-driven methodology</span>
-                  </li>
-                  
-                  {/* Principle 6 */}
-                  <li 
-                    className={aboutStyles.vmAboutFeatureItem}
-                    data-tooltip="Core Principle #6"
-                  >
-                    <CheckCircle2 className={aboutStyles.vmAboutFeatureIcon} />
-                    <span>Risk-aware operations</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div className={aboutStyles.vmAboutWhoWeAreContent}>
+            <p className={aboutStyles.vmAboutWhoWeAreText}>
+              VM Legal Operations is a remote legal support firm specializing in legal operations and paralegal services for licensed U.S. attorneys and law firms.
+            </p>
+            <p className={aboutStyles.vmAboutWhoWeAreText}>
+              We combine structured processes, litigation-oriented workflows, and secure information handling to support your legal practice efficiently — so you can focus on delivering legal results, not administrative work.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* === WHAT WE DO SECTION === */}
-      <section id="services" className={`${aboutStyles.vmAboutSectionGray} ${aboutStyles.vmAboutReveal}`}>
+      {/* === WHAT SETS US APART SECTION (NEW) === */}
+      <section id="what-sets-us-apart" className={`${aboutStyles.vmAboutSectionGray} ${aboutStyles.vmAboutReveal}`}>
         <div className={aboutStyles.vmAboutContainer}>
           <div className={aboutStyles.vmAboutSectionHeader}>
-            <h2 className={aboutStyles.vmAboutSectionTitle}>What We Do</h2>
-            <p className={aboutStyles.vmAboutSectionDesc}>
-              Day-to-day legal operations and case coordination support
+            <h2 className={aboutStyles.vmAboutSectionTitle}>What Sets Us Apart</h2>
+          </div>
+          
+          <div className={aboutStyles.vmAboutApartIntro}>
+            <p className={aboutStyles.vmAboutApartIntroText}>
+              We understand that law firms operate on deadlines, precision, and confidentiality. Our services are designed to integrate seamlessly into your workflow while maintaining the highest standards of accuracy and data security.
             </p>
           </div>
           
-          <div className={aboutStyles.vmAboutServicesGrid}>
-            {/* Case Status Tracking */}
-            <div className={aboutStyles.vmAboutServiceCard}>
-              <div className={aboutStyles.vmAboutServiceHeader}>
-                <div className={aboutStyles.vmAboutServiceIconBox}>
-                  <BarChart3 className={aboutStyles.vmAboutServiceIcon} />
-                </div>
-                <h3 className={aboutStyles.vmAboutServiceTitle}>Case Status Tracking</h3>
+          <div className={aboutStyles.vmAboutApartGrid}>
+            <div className={aboutStyles.vmAboutApartItem}>
+              <div className={aboutStyles.vmAboutApartIconBox}>
+                <Target className={aboutStyles.vmAboutApartIcon} />
               </div>
-              <div className={aboutStyles.vmAboutServiceContent}>
-                <p className={aboutStyles.vmAboutServiceDesc}>
-                  Track case stages and progress across matters with structured reporting
-                </p>
-                <ul className={aboutStyles.vmAboutServiceList}>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Real-time case progress monitoring</span>
-                  </li>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Structured tracker maintenance</span>
-                  </li>
-                </ul>
-              </div>
+              <span>A process-driven approach</span>
             </div>
             
-            {/* Deadline Monitoring */}
-            <div className={aboutStyles.vmAboutServiceCard}>
-              <div className={aboutStyles.vmAboutServiceHeader}>
-                <div className={aboutStyles.vmAboutServiceIconBox}>
-                  <Clock className={aboutStyles.vmAboutServiceIcon} />
-                </div>
-                <h3 className={aboutStyles.vmAboutServiceTitle}>Deadline Monitoring</h3>
+            <div className={aboutStyles.vmAboutApartItem}>
+              <div className={aboutStyles.vmAboutApartIconBox}>
+                <Gavel className={aboutStyles.vmAboutApartIcon} />
               </div>
-              <div className={aboutStyles.vmAboutServiceContent}>
-                <p className={aboutStyles.vmAboutServiceDesc}>
-                  Monitor court-driven and rule-based deadlines with proactive alerts
-                </p>
-                <ul className={aboutStyles.vmAboutServiceList}>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Court deadline tracking</span>
-                  </li>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Proactive action flagging</span>
-                  </li>
-                </ul>
-              </div>
+              <span>Litigation support experience</span>
             </div>
             
-            {/* Court Monitoring */}
-            <div className={aboutStyles.vmAboutServiceCard}>
-              <div className={aboutStyles.vmAboutServiceHeader}>
-                <div className={aboutStyles.vmAboutServiceIconBox}>
-                  <Building2 className={aboutStyles.vmAboutServiceIcon} />
-                </div>
-                <h3 className={aboutStyles.vmAboutServiceTitle}>Court Monitoring</h3>
+            <div className={aboutStyles.vmAboutApartItem}>
+              <div className={aboutStyles.vmAboutApartIconBox}>
+                <Layers className={aboutStyles.vmAboutApartIcon} />
               </div>
-              <div className={aboutStyles.vmAboutServiceContent}>
-                <p className={aboutStyles.vmAboutServiceDesc}>
-                  Track docket updates and court notifications with status reporting
-                </p>
-                <ul className={aboutStyles.vmAboutServiceList}>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Docket update tracking</span>
-                  </li>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Court notification monitoring</span>
-                  </li>
-                </ul>
-              </div>
+              <span>Detailed case organization systems</span>
             </div>
             
-            {/* Follow-up Coordination */}
-            <div className={aboutStyles.vmAboutServiceCard}>
-              <div className={aboutStyles.vmAboutServiceHeader}>
-                <div className={aboutStyles.vmAboutServiceIconBox}>
-                  <FileText className={aboutStyles.vmAboutServiceIcon} />
-                </div>
-                <h3 className={aboutStyles.vmAboutServiceTitle}>Follow-up & Coordination</h3>
+            <div className={aboutStyles.vmAboutApartItem}>
+              <div className={aboutStyles.vmAboutApartIconBox}>
+                <Clock className={aboutStyles.vmAboutApartIcon} />
               </div>
-              <div className={aboutStyles.vmAboutServiceContent}>
-                <p className={aboutStyles.vmAboutServiceDesc}>
-                  Coordinate status confirmations and escalate approaching deadlines
-                </p>
-                <ul className={aboutStyles.vmAboutServiceList}>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Status confirmation coordination</span>
-                  </li>
-                  <li className={aboutStyles.vmAboutServiceListItem}>
-                    <CheckCircle2 className={aboutStyles.vmAboutListIcon} />
-                    <span>Deadline escalation management</span>
-                  </li>
-                </ul>
+              <span>Deadline-focused project workflows</span>
+            </div>
+            
+            <div className={aboutStyles.vmAboutApartItem}>
+              <div className={aboutStyles.vmAboutApartIconBox}>
+                <Lock className={aboutStyles.vmAboutApartIcon} />
               </div>
+              <span>Confidential and secure handling of legal information</span>
             </div>
           </div>
           
-          <div className={aboutStyles.vmAboutCenterBtn}>
-            <Link href="/services" className={aboutStyles.vmAboutLinkView}>
-              <span>View All Services</span>
-              <ChevronRight className={aboutStyles.vmAboutBtnIcon} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* === SCOPE OF SERVICES NOTICE (PREMIUM) === */}
-      <section id="scope" className={`${aboutStyles.vmAboutSectionDark} ${aboutStyles.vmAboutReveal}`}>
-        <div className={aboutStyles.vmAboutContainer}>
-          <div className={aboutStyles.vmAboutScopeNotice}>
-            <div className={aboutStyles.vmAboutScopeIconContainer}>
-              <Scale className={aboutStyles.vmAboutScopeNoticeIcon} />
-            </div>
-            <h3 className={aboutStyles.vmAboutScopeNoticeTitle}>Scope of Services</h3>
-            <p className={aboutStyles.vmAboutScopeNoticeText}>
-              Our services are <strong>strictly non-legal and administrative</strong> in nature.
-            </p>
-            <p className={aboutStyles.vmAboutScopeNoticeDescription}>
-              We do not provide legal advice, draft legal documents, represent clients in court, 
-              or make legal decisions.
+          <div className={aboutStyles.vmAboutApartConclusion}>
+            <p className={aboutStyles.vmAboutApartConclusionText}>
+              We work as an extension of your team — helping you manage workload, increase operational efficiency, and improve case readiness.
             </p>
           </div>
         </div>
       </section>
 
-      {/* === OUR VALUES SECTION (PREMIUM) === */}
-      <section id="values" className={`${aboutStyles.vmAboutSectionWhite} ${aboutStyles.vmAboutReveal}`}>
+      {/* === WHY U.S. LAW FIRMS CHOOSE US (NEW) === */}
+      <section id="why-choose-us" className={`${aboutStyles.vmAboutSectionWhite} ${aboutStyles.vmAboutReveal}`}>
         <div className={aboutStyles.vmAboutContainer}>
           <div className={aboutStyles.vmAboutSectionHeader}>
-            <h2 className={aboutStyles.vmAboutSectionTitle}>Our Values</h2>
-            <p className={aboutStyles.vmAboutSectionDesc}>
-              The principles that guide our operations
-            </p>
+            <h2 className={aboutStyles.vmAboutSectionTitle}>Why U.S. Law Firms Choose Us</h2>
           </div>
           
-          <div className={aboutStyles.vmAboutValuesGrid}>
-            {/* Confidentiality */}
-            <div className={aboutStyles.vmAboutValueCard}>
-              <div className={aboutStyles.vmAboutValueIconContainer}>
-                <Lock className={aboutStyles.vmAboutValueIcon} />
+          <div className={aboutStyles.vmAboutWhyGrid}>
+            {/* Reliable Turnaround */}
+            <div className={aboutStyles.vmAboutWhyCard}>
+              <div className={aboutStyles.vmAboutWhyHeader}>
+                <div className={aboutStyles.vmAboutWhyIconBox}>
+                  <Clock className={aboutStyles.vmAboutWhyIcon} />
+                </div>
+                <h3 className={aboutStyles.vmAboutWhyTitle}>Reliable Turnaround</h3>
               </div>
-              <h3 className={aboutStyles.vmAboutValueTitle}>Confidentiality</h3>
-              <p className={aboutStyles.vmAboutValueDescription}>
-                Strict data protection and NDA compliance for all client information
-              </p>
+              <ul className={aboutStyles.vmAboutWhyList}>
+                <li className={aboutStyles.vmAboutWhyListItem}>
+                  <CheckCircle2 className={aboutStyles.vmAboutWhyListIcon} />
+                  <span>Structured timelines and reporting</span>
+                </li>
+                <li className={aboutStyles.vmAboutWhyListItem}>
+                  <CheckCircle2 className={aboutStyles.vmAboutWhyListIcon} />
+                  <span>Clear delivery expectations</span>
+                </li>
+              </ul>
             </div>
             
-            {/* Precision */}
-            <div className={aboutStyles.vmAboutValueCard}>
-              <div className={aboutStyles.vmAboutValueIconContainer}>
-                <Target className={aboutStyles.vmAboutValueIcon} />
+            {/* Process-Driven Workflows */}
+            <div className={aboutStyles.vmAboutWhyCard}>
+              <div className={aboutStyles.vmAboutWhyHeader}>
+                <div className={aboutStyles.vmAboutWhyIconBox}>
+                  <Target className={aboutStyles.vmAboutWhyIcon} />
+                </div>
+                <h3 className={aboutStyles.vmAboutWhyTitle}>Process-Driven Workflows</h3>
               </div>
-              <h3 className={aboutStyles.vmAboutValueTitle}>Precision</h3>
-              <p className={aboutStyles.vmAboutValueDescription}>
-                Accurate tracking and reporting with attention to detail
-              </p>
+              <ul className={aboutStyles.vmAboutWhyList}>
+                <li className={aboutStyles.vmAboutWhyListItem}>
+                  <CheckCircle2 className={aboutStyles.vmAboutWhyListIcon} />
+                  <span>SOP-based execution</span>
+                </li>
+                <li className={aboutStyles.vmAboutWhyListItem}>
+                  <CheckCircle2 className={aboutStyles.vmAboutWhyListIcon} />
+                  <span>Checklists and quality controls</span>
+                </li>
+              </ul>
             </div>
             
-            {/* Collaboration */}
-            <div className={aboutStyles.vmAboutValueCard}>
-              <div className={aboutStyles.vmAboutValueIconContainer}>
-                <Users className={aboutStyles.vmAboutValueIcon} />
+            {/* Software Compatibility */}
+            <div className={aboutStyles.vmAboutWhyCard}>
+              <div className={aboutStyles.vmAboutWhyHeader}>
+                <div className={aboutStyles.vmAboutWhyIconBox}>
+                  <Briefcase className={aboutStyles.vmAboutWhyIcon} />
+                </div>
+                <h3 className={aboutStyles.vmAboutWhyTitle}>Software Compatibility</h3>
               </div>
-              <h3 className={aboutStyles.vmAboutValueTitle}>Collaboration</h3>
-              <p className={aboutStyles.vmAboutValueDescription}>
-                Seamless integration with existing firm workflows and systems
-              </p>
+              <ul className={aboutStyles.vmAboutWhyList}>
+                <li className={aboutStyles.vmAboutWhyListItem}>
+                  <CheckCircle2 className={aboutStyles.vmAboutWhyListIcon} />
+                  <span>Comfortable with tools like Clio, MyCase, Filevine, PACER, and more</span>
+                </li>
+              </ul>
             </div>
             
-            {/* Reliability */}
-            <div className={aboutStyles.vmAboutValueCard}>
-              <div className={aboutStyles.vmAboutValueIconContainer}>
-                <Flag className={aboutStyles.vmAboutValueIcon} />
+            {/* Security & Confidentiality */}
+            <div className={aboutStyles.vmAboutWhyCard}>
+              <div className={aboutStyles.vmAboutWhyHeader}>
+                <div className={aboutStyles.vmAboutWhyIconBox}>
+                  <Lock className={aboutStyles.vmAboutWhyIcon} />
+                </div>
+                <h3 className={aboutStyles.vmAboutWhyTitle}>Security & Confidentiality</h3>
               </div>
-              <h3 className={aboutStyles.vmAboutValueTitle}>Reliability</h3>
-              <p className={aboutStyles.vmAboutValueDescription}>
-                Consistent performance and dependable follow-through
-              </p>
+              <ul className={aboutStyles.vmAboutWhyList}>
+                <li className={aboutStyles.vmAboutWhyListItem}>
+                  <CheckCircle2 className={aboutStyles.vmAboutWhyListIcon} />
+                  <span>Secure communication and file handling</span>
+                </li>
+                <li className={aboutStyles.vmAboutWhyListItem}>
+                  <CheckCircle2 className={aboutStyles.vmAboutWhyListIcon} />
+                  <span>Confidentiality aligned with firm standards</span>
+                </li>
+              </ul>
             </div>
+          </div>
+          
+          <div className={aboutStyles.vmAboutWhyConclusion}>
+            <p className={aboutStyles.vmAboutWhyConclusionText}>
+              We take responsibility for organization and tracking — so your team can focus on impact.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* === FINAL CTA SECTION === */}
-      <section id="contact" className={`${aboutStyles.vmAboutCtaSection} ${aboutStyles.vmAboutReveal}`}>
+      {/* === OUR VISION SECTION (NEW) === */}
+      <section id="our-vision" className={`${aboutStyles.vmAboutSectionGray} ${aboutStyles.vmAboutReveal}`}>
+        <div className={aboutStyles.vmAboutContainer}>
+          <div className={aboutStyles.vmAboutVisionCard}>
+            <div className={aboutStyles.vmAboutVisionIconBox}>
+              <Gem className={aboutStyles.vmAboutVisionIcon} />
+            </div>
+            <h2 className={aboutStyles.vmAboutVisionTitle}>Our Vision</h2>
+            <p className={aboutStyles.vmAboutVisionText}>
+              We aim to be a trusted remote legal support partner for driven U.S. law firms — helping them scale, streamline, and deliver better legal services with consistent back-office support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* === CALL TO ACTION SECTION (NEW) === */}
+      <section id="cta" className={`${aboutStyles.vmAboutCtaSection} ${aboutStyles.vmAboutReveal}`}>
         <div className={aboutStyles.vmAboutContainer}>
           <div className={aboutStyles.vmAboutCtaContent}>
-            <div className={aboutStyles.vmAboutCtaIconBox}>
-              <Zap className={aboutStyles.vmAboutCtaIcon} />
-            </div>
-            <h2 className={aboutStyles.vmAboutCtaTitle}>Ready to Get Started?</h2>
+            <h2 className={aboutStyles.vmAboutCtaTitle}>Want to Learn More?</h2>
             <p className={aboutStyles.vmAboutCtaDesc}>
-              Begin with a structured pilot engagement to experience our approach and see the difference 
-              in your firm's operational efficiency.
+              If you want to understand how our structured support can enhance your firm's productivity and reduce administrative load, schedule a consultation or send us a message.
             </p>
             
             <div className={aboutStyles.vmAboutCtaBtnGroup}>
               <Link href="/contact" className={aboutStyles.vmAboutCtaBtnPrimary}>
-                Start Pilot Program
+                Book a Consultation
               </Link>
               <Link href="/contact" className={aboutStyles.vmAboutCtaBtnSecondary}>
-                Schedule Consultation
+                Contact Us
               </Link>
             </div>
           </div>

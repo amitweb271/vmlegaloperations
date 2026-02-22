@@ -46,7 +46,7 @@ export default function Footer() {
             <div className={styles.serviceNotice}>
               <div className={styles.flex} style={{ alignItems: 'flex-start' }}>
                 <Shield style={{ width: '18px', height: '18px', color: '#fbbf24', marginRight: '0.5rem', marginTop: '0.125rem', flexShrink: 0 }} />
-                <p>Our services are <strong>strictly non-legal and administrative in nature</strong>.</p>
+                <p>Services provided exclusively to licensed U.S. attorneys under attorney supervision.</p>
               </div>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function Footer() {
             </ul>
           </div>
           
-          {/* Contact & Compliance */}
+          {/* Contact & Info */}
           <div className={styles.footerSection}>
             <h4>Contact & Info</h4>
             <ul className={styles.contactInfo}>
@@ -146,16 +146,6 @@ export default function Footer() {
                 <span className={styles.contactText}>India (serving U.S. clients remotely)</span>
               </li>
             </ul>
-            
-            <div className={styles.complianceSection}>
-              <div className={styles.flex} style={{ alignItems: 'center', marginBottom: '0.5rem' }}>
-                <h5 className={styles.complianceTitle}>Compliance Notice</h5>
-              </div>
-              <p className={styles.complianceText}>
-                We do not provide legal advice, draft legal documents, 
-                or represent clients in court.
-              </p>
-            </div>
           </div>
         </div>
         
@@ -166,8 +156,7 @@ export default function Footer() {
               © {currentYear} VM Legal Operations. A service division of VM Tech Solutions. All rights reserved.
             </p>
             <p className={styles.disclaimer}>
-              This service is for U.S. law firms only. Our services are limited to non-legal administrative support only.
-              Pilot engagements are limited in scope and designed for evaluation purposes.
+              Services provided exclusively to licensed U.S. law firms under attorney supervision.
             </p>
           </div>
         </div>

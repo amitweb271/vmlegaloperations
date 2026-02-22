@@ -130,7 +130,7 @@
   color: #3b82f6;
 }
 
-/* Service Notice */
+/* Service Notice - Updated */
 .serviceNotice {
   background: linear-gradient(145deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
   padding: 1rem;
@@ -331,59 +331,7 @@
   color: #e2e8f0;
 }
 
-/* ===== COMPLIANCE SECTION ===== */
-.complianceSection {
-  background: linear-gradient(145deg, rgba(37, 99, 235, 0.05), rgba(139, 92, 246, 0.05));
-  padding: 1.25rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.complianceSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 70% 30%, rgba(37, 99, 235, 0.1), transparent 70%);
-  z-index: -1;
-}
-
-.complianceSection:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.2);
-  border-color: rgba(37, 99, 235, 0.3);
-}
-
-.complianceTitle {
-  color: white;
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.complianceText {
-  color: #9ca3af;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  margin: 0.5rem 0 0 0;
-  transition: color 0.3s ease;
-}
-
-.complianceSection:hover .complianceText {
-  color: #cbd5e1;
-}
-
-.complianceText strong {
-  color: #f87171;
-  font-weight: 600;
-}
+/* Note: Compliance Section has been removed as per requirements */
 
 /* ===== BOTTOM BAR ===== */
 .bottomBar {
@@ -560,10 +508,6 @@
   
   .serviceNotice {
     padding: 0.75rem;
-  }
-  
-  .complianceSection {
-    padding: 1rem;
   }
 }
 

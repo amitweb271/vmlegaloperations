@@ -1,6 +1,6 @@
-/* ===== VM LEGAL OPERATIONS - SERVICES PAGE STYLES ===== */
+/* ===== VM LEGAL OPERATIONS - SERVICES PAGE ULTRA PREMIUM STYLES ===== */
 /* Unique prefix: vm-services- */
-/* ULTRA PREMIUM VERSION - WITH ALL ENHANCEMENTS */
+/* ULTRA PREMIUM VERSION V2 - FIXED ICON COLORS */
 
 /* ---------- CONTAINER & LAYOUT ---------- */
 .vmServicesContainer {
@@ -13,26 +13,35 @@
 
 .vmServicesPageWrapper {
   width: 100%;
-  /* overflow-x: hidden; */
   animation: vmServicesPageFadeIn 1s ease-out;
+  scroll-behavior: smooth;
+  position: relative;
+  background: #ffffff;
 }
 
 @keyframes vmServicesPageFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* ---------- SCROLL REVEAL ANIMATIONS ---------- */
 .vmServicesReveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .vmServicesRevealActive {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Add staggered delay for children */
+.vmServicesRevealActive .vmServicesCategoryCard:nth-child(1) { transition-delay: 0.1s; }
+.vmServicesRevealActive .vmServicesCategoryCard:nth-child(2) { transition-delay: 0.2s; }
+.vmServicesRevealActive .vmServicesCategoryCard:nth-child(3) { transition-delay: 0.3s; }
+.vmServicesRevealActive .vmServicesCategoryCard:nth-child(4) { transition-delay: 0.4s; }
+.vmServicesRevealActive .vmServicesCategoryCard:nth-child(5) { transition-delay: 0.5s; }
 
 /* ---------- HERO SECTION ---------- */
 .vmServicesHeroSection {
@@ -45,19 +54,27 @@
   background: linear-gradient(135deg, #f0f9ff 0%, #e6f0fa 30%, #d4e4fa 70%, #c0d9f5 100%);
   width: 100%;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .vmServicesHeroBg {
   position: absolute;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 60%, rgba(29, 78, 216, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.5;
+    radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 90% 60%, rgba(29, 78, 216, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    repeating-linear-gradient(45deg, rgba(37, 99, 235, 0.02) 0px, rgba(37, 99, 235, 0.02) 1px, transparent 1px, transparent 10px);
+  opacity: 0.7;
   mix-blend-mode: overlay;
   pointer-events: none;
+  z-index: 1;
+  animation: vmServicesBgShift 20s infinite alternate ease-in-out;
+}
+
+@keyframes vmServicesBgShift {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  100% { transform: scale(1.05) rotate(0.5deg); opacity: 0.9; }
 }
 
 .vmServicesHeroContent {
@@ -68,7 +85,7 @@
   text-align: center;
   padding: 0 1.5rem;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 10;
 }
 
 /* ---------- BADGE ---------- */
@@ -77,136 +94,228 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: #1e40af;
-  padding: 0.625rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  border: 1px solid rgba(37, 99, 235, 0.2);
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.2);
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  animation: vmServicesGlowPulse 3s infinite ease-in-out;
+  animation: vmServicesGlowPulse 2.5s infinite ease-in-out;
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.vmServicesBadge:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(37, 99, 235, 0.4);
 }
 
 @keyframes vmServicesGlowPulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15); }
-  50% { box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3); }
+  0%, 100% { 
+    box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.2);
+    border-color: rgba(37, 99, 235, 0.25);
+  }
+  50% { 
+    box-shadow: 0 20px 40px -5px rgba(37, 99, 235, 0.4);
+    border-color: rgba(37, 99, 235, 0.5);
+  }
 }
 
 .vmServicesBadgeIcon {
   width: 18px;
   height: 18px;
   color: #2563eb;
+  animation: vmServicesSpinSlow 10s infinite linear;
+}
+
+@keyframes vmServicesSpinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* ---------- HEADINGS ---------- */
 .vmServicesMainHeading {
-  font-size: 3.75rem;
+  font-size: clamp(2.5rem, 8vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
   text-align: center;
-  background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #2563eb 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e40af 60%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: vmServicesFadeInUp 1s ease-out;
+  animation: vmServicesFadeInScale 1s ease-out;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
-@keyframes vmServicesFadeInUp {
-  from {
+@keyframes vmServicesFadeInScale {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: scale(0.9);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
-.vmServicesSubHeading {
+.vmServicesMainHeading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #2563eb, #8b5cf6, #2563eb, transparent);
+  border-radius: 2px;
+  animation: vmServicesLineGrow 1s ease-out 0.5s both;
+}
+
+@keyframes vmServicesLineGrow {
+  0% { width: 0; opacity: 0; }
+  100% { width: 100px; opacity: 1; }
+}
+
+/* ---------- TAGLINE & DESCRIPTION ---------- */
+.vmServicesTagline {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: vmServicesFadeInUp 1s ease-out 0.3s both;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.vmServicesTagline::before,
+.vmServicesTagline::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2563eb;
+  font-size: 1.5rem;
+  opacity: 0.5;
+  animation: vmServicesPulse 2s infinite;
+}
+
+.vmServicesTagline::before {
+  left: -20px;
+}
+
+.vmServicesTagline::after {
+  right: -20px;
+}
+
+.vmServicesSubheading {
   font-size: 1.5rem;
   font-weight: 600;
   color: #334155;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   line-height: 1.4;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
-}
-
-.vmServicesGradientText {
-  background: linear-gradient(135deg, #1e40af, #2563eb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
-}
-
-/* ---------- SCOPE CARD ---------- */
-.vmServicesScopeCard {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 2rem;
-  border-radius: 1rem;
-  margin-bottom: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.1);
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  display: inline-block;
   width: 100%;
-  box-sizing: border-box;
-  transform-origin: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.vmServicesScopeCard:hover {
-  transform: scale(1.02);
-  box-shadow: 0 30px 60px rgba(37, 99, 235, 0.15), 0 0 0 2px rgba(37, 99, 235, 0.2);
+.vmServicesDescription {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(37, 99, 235, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
 
-.vmServicesScopeHeader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+.vmServicesDescription::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+  animation: vmServicesRotateSlow 20s infinite linear;
 }
 
-.vmServicesScopeIcon {
-  width: 24px;
-  height: 24px;
-  color: #2563eb;
+@keyframes vmServicesRotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.vmServicesScopeHeader h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0;
+.vmServicesDescription:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 40px 70px -20px rgba(37, 99, 235, 0.25);
 }
 
-.vmServicesScopeContent p {
-  font-size: 1rem;
-  color: #475569;
-  line-height: 1.7;
-  margin: 0;
+.vmServicesDescriptionText {
+  font-size: 1.125rem;
+  color: #334155;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-.vmServicesScopeContent strong {
+.vmServicesDescriptionText:last-child {
+  margin-bottom: 0;
+}
+
+.vmServicesDescriptionText strong {
   color: #1e40af;
   font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.vmServicesDescriptionText strong::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb, #8b5cf6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.vmServicesDescription:hover .vmServicesDescriptionText strong::after {
+  transform: scaleX(1);
 }
 
 /* ---------- CTA BUTTONS ---------- */
@@ -215,7 +324,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
 }
@@ -224,31 +333,32 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
-  background-size: 200% 200%;
-  animation: vmServicesGradientMove 5s ease infinite;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6, #2563eb);
+  background-size: 300% 300%;
+  animation: vmServicesGradientFlow 6s ease infinite;
   color: white;
   font-weight: 600;
-  padding: 0.875rem 2.25rem;
+  padding: 1rem 2.5rem;
   border-radius: 9999px;
   text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.2s ease;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
   border: none;
   white-space: nowrap;
-  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  z-index: 1;
 }
 
-@keyframes vmServicesGradientMove {
+@keyframes vmServicesGradientFlow {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
 
-.vmServicesBtnPrimary::after {
+.vmServicesBtnPrimary::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -259,640 +369,619 @@
   background: rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
+  z-index: -1;
 }
 
-.vmServicesBtnPrimary:hover::after {
+.vmServicesBtnPrimary:hover::before {
   width: 300px;
   height: 300px;
 }
 
 .vmServicesBtnPrimary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 12px -1px rgba(37, 99, 235, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 20px 30px -5px rgba(37, 99, 235, 0.4);
 }
 
 .vmServicesBtnPrimary:active {
-  transform: scale(0.98);
+  transform: scale(0.98) translateY(0);
 }
 
 .vmServicesBtnSecondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   background: white;
   color: #1e40af;
   font-weight: 600;
-  padding: 0.875rem 2.25rem;
+  padding: 1rem 2.5rem;
   border-radius: 9999px;
   text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  border: 1.5px solid #2563eb;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  border: 2px solid #2563eb;
   white-space: nowrap;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  z-index: 1;
+}
+
+.vmServicesBtnSecondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #eff6ff, #dbeafe);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.vmServicesBtnSecondary:hover::before {
+  width: 100%;
 }
 
 .vmServicesBtnSecondary:hover {
-  background: #eff6ff;
   border-color: #1e40af;
-  transform: translateY(-1px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.25);
 }
 
 .vmServicesBtnSecondary:active {
-  transform: scale(0.98);
+  transform: scale(0.98) translateY(0);
 }
 
 .vmServicesBtnIcon {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.2s ease;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
 }
 
 .vmServicesBtnIconSmall {
   width: 16px;
   height: 16px;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .vmServicesBtnPrimary:hover .vmServicesBtnIcon,
-.vmServicesBtnSecondary:hover .vmServicesBtnIcon,
-.vmServicesServiceButton:hover .vmServicesBtnIconSmall {
-  transform: translateX(4px);
+.vmServicesBtnSecondary:hover .vmServicesBtnIcon {
+  transform: translateX(6px) scale(1.1);
 }
 
 /* ---------- SECTION WRAPPERS ---------- */
 .vmServicesSectionWhite {
   background: white;
-  padding: 5rem 0;
+  padding: 6rem 0;
   scroll-margin-top: 80px;
+  position: relative;
+}
+
+.vmServicesSectionWhite::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.2), transparent);
 }
 
 .vmServicesSectionGray {
   background: #f8fafc;
-  padding: 5rem 0;
+  padding: 6rem 0;
   scroll-margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vmServicesSectionGray::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03) 0%, transparent 30%);
+  pointer-events: none;
 }
 
 .vmServicesSectionLight {
-  background: #f8fafc;
-  padding: 5rem 0;
-  scroll-margin-top: 80px;
-}
-
-.vmServicesSectionDark {
-  background: #0f172a;
-  padding: 5rem 0;
-  color: white;
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
+  padding: 6rem 0;
   scroll-margin-top: 80px;
 }
 
 .vmServicesSectionHeader {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
 }
 
 .vmServicesSectionTitle {
-  font-size: 2.25rem;
-  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 800;
   color: #0f172a;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   letter-spacing: -0.02em;
   text-align: center;
   position: relative;
   display: inline-block;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
 }
 
-.vmServicesSectionTitle::after {
+.vmServicesSectionTitle::before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #8b5cf6, #06b6d4);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.vmServicesSectionHeader:hover .vmServicesSectionTitle::before {
+  width: 100px;
+}
+
+.vmServicesSectionDesc {
+  font-size: 1.2rem;
+  color: #475569;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* ===== MAIN SERVICES CATEGORIES GRID - FIXED ICON COLORS ===== */
+.vmServicesCategoriesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.vmServicesCategoryCard {
+  background: white;
+  border-radius: 2rem;
+  padding: 3rem;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
+  transform-origin: center;
+  will-change: transform, opacity;
+  cursor: pointer;
+}
+
+.vmServicesCategoryCard::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 2rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6, #06b6d4, #2563eb);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.vmServicesCategoryCard:hover::before {
+  opacity: 1;
+}
+
+.vmServicesCategoryCard:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 40px 70px -20px rgba(37, 99, 235, 0.3);
+  border-color: transparent;
+}
+
+.vmServicesCategoryCard:active {
+  transform: scale(0.98) translateY(-8px);
+}
+
+.vmServicesCategoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(37, 99, 235, 0.1);
+  position: relative;
+}
+
+.vmServicesCategoryHeader::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
   width: 0;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, #2563eb, #8b5cf6, #06b6d4);
   transition: width 0.5s ease;
 }
 
-.vmServicesSectionHeader:hover .vmServicesSectionTitle::after {
-  width: 80px;
+.vmServicesCategoryCard:hover .vmServicesCategoryHeader::after {
+  width: 100px;
 }
 
-.vmServicesSectionDesc {
-  font-size: 1.125rem;
-  color: #475569;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-  text-align: center;
-}
-
-/* ---------- SERVICES GRID DETAILED ---------- */
-.vmServicesGridDetailed {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.vmServicesServiceCardDetailed {
-  background: white;
-  border-radius: 1rem;
-  padding: 2rem;
-  border: 1px solid #f1f5f9;
-  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  position: relative;
-  isolation: isolate;
-  cursor: pointer;
-}
-
-.vmServicesServiceCardDetailed::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 1rem;
-  padding: 2px;
-  background: linear-gradient(135deg, #2563eb, #8b5cf6, #06b6d4);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.vmServicesServiceCardDetailed:hover::before {
-  opacity: 1;
-}
-
-.vmServicesServiceCardDetailed:hover {
-  transform: translateY(-8px) rotateX(2deg);
-  box-shadow: 0 30px 50px rgba(37, 99, 235, 0.2);
-  border-color: transparent;
-}
-
-.vmServicesServiceCardDetailed:active {
-  transform: scale(0.98);
-}
-
-.vmServicesServiceHeaderDetailed {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.vmServicesServiceIconContainer {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+/* ===== FIXED ICON CONTAINER STYLES ===== */
+.vmServicesCategoryIconContainer {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   isolation: isolate;
-  transition: all 0.3s ease;
+  box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.2);
 }
 
-.vmServicesServiceIconContainer::after {
+.vmServicesCategoryIconContainer::after {
   content: '';
   position: absolute;
-  inset: -4px;
-  border-radius: 20px;
+  inset: -8px;
+  border-radius: 30px;
   background: inherit;
-  filter: blur(8px);
+  filter: blur(15px);
   opacity: 0;
   z-index: -1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
-.vmServicesServiceCardDetailed:hover .vmServicesServiceIconContainer::after {
+.vmServicesCategoryCard:hover .vmServicesCategoryIconContainer::after {
   opacity: 0.6;
 }
 
-.vmServicesServiceIconContainer:hover {
-  transform: scale(1.05) rotate(5deg);
+.vmServicesCategoryCard:hover .vmServicesCategoryIconContainer {
+  transform: scale(1.15) rotate(8deg) translateY(-5px);
+  box-shadow: 0 25px 35px -10px rgba(37, 99, 235, 0.4);
 }
 
-.vmServicesServiceIcon {
-  width: 30px;
-  height: 30px;
+/* ===== FIXED ICON COLOR VARIANTS - DIRECT ON CONTAINER ===== */
+.vmServicesIconBlue {
+  background: linear-gradient(145deg, #1e40af, #2563eb, #3b82f6);
+  background-size: 200% 200%;
+  animation: vmServicesGradientShift 4s ease infinite;
+}
+
+.vmServicesIconPurple {
+  background: linear-gradient(145deg, #6d28d9, #8b5cf6, #c084fc);
+  background-size: 200% 200%;
+  animation: vmServicesGradientShift 4s ease infinite 0.5s;
+}
+
+.vmServicesIconOrange {
+  background: linear-gradient(145deg, #b45309, #f97316, #fb923c);
+  background-size: 200% 200%;
+  animation: vmServicesGradientShift 4s ease infinite 1s;
+}
+
+.vmServicesIconTeal {
+  background: linear-gradient(145deg, #0e7490, #06b6d4, #22d3ee);
+  background-size: 200% 200%;
+  animation: vmServicesGradientShift 4s ease infinite 1.5s;
+}
+
+.vmServicesIconEmerald {
+  background: linear-gradient(145deg, #065f46, #10b981, #34d399);
+  background-size: 200% 200%;
+  animation: vmServicesGradientShift 4s ease infinite 2s;
+}
+
+@keyframes vmServicesGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.vmServicesCategoryIcon {
+  width: 42px;
+  height: 42px;
   color: white;
+  transition: transform 0.5s ease;
 }
 
-.vmServicesServiceTitle {
-  font-size: 1.35rem;
+.vmServicesCategoryCard:hover .vmServicesCategoryIcon {
+  transform: scale(1.1) rotate(-8deg);
+}
+
+.vmServicesCategoryTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.vmServicesCategoryCard:hover .vmServicesCategoryTitle {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vmServicesCategoryContent {
+  position: relative;
+  z-index: 1;
+}
+
+.vmServicesCategoryDescription {
+  font-size: 1.25rem;
+  color: #1e40af;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  padding-left: 1rem;
+  border-left: 4px solid #2563eb;
+  transition: all 0.3s ease;
+}
+
+.vmServicesCategoryCard:hover .vmServicesCategoryDescription {
+  border-left-color: #8b5cf6;
+  transform: translateX(5px);
+}
+
+.vmServicesCategoryListHeader {
+  font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 0.35rem 0;
-  line-height: 1.2;
-  transition: color 0.3s ease;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  display: inline-block;
+  padding: 0 1rem;
+  background: linear-gradient(135deg, #f8fafc, transparent);
 }
 
-.vmServicesServiceCardDetailed:hover .vmServicesServiceTitle {
-  color: #2563eb;
-}
-
-.vmServicesServiceSubtitle {
-  font-size: 0.9375rem;
-  color: #64748b;
-  margin: 0;
-  line-height: 1.5;
-  transition: color 0.3s ease;
-}
-
-.vmServicesServiceCardDetailed:hover .vmServicesServiceSubtitle {
-  color: #334155;
-}
-
-/* Icon color variants - Fix class names */
-.vmServicesIconBlue .vmServicesServiceIconContainer {
-  background: linear-gradient(145deg, #1e40af, #2563eb);
-}
-.vmServicesIconEmerald .vmServicesServiceIconContainer {
-  background: linear-gradient(145deg, #065f46, #10b981);
-}
-.vmServicesIconRose .vmServicesServiceIconContainer {
-  background: linear-gradient(145deg, #9f1239, #e11d48);
-}
-.vmServicesIconViolet .vmServicesServiceIconContainer {
-  background: linear-gradient(145deg, #6d28d9, #8b5cf6);
-}
-.vmServicesIconAmber .vmServicesServiceIconContainer {
-  background: linear-gradient(145deg, #b45309, #f97316);
-}
-
-.vmServicesServiceContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.vmServicesServiceList {
+.vmServicesCategoryList {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem 0;
-  flex: 1;
-}
-
-.vmServicesServiceListItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-  padding: 0.25rem 0;
-  border-radius: 0.5rem;
-}
-
-.vmServicesServiceListItem:hover {
-  transform: translateX(8px);
-  background: linear-gradient(90deg, #f8fafc, transparent);
-}
-
-.vmServicesListIcon {
-  width: 18px;
-  height: 18px;
-  color: #10b981;
-  margin-top: 0.125rem;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-
-.vmServicesServiceListItem:hover .vmServicesListIcon {
-  transform: scale(1.2) rotate(360deg);
-  color: #2563eb;
-}
-
-.vmServicesServiceListItem span {
-  font-size: 0.9375rem;
-  color: #475569;
-  line-height: 1.5;
-  flex: 1;
-  transition: color 0.3s ease;
-}
-
-.vmServicesServiceListItem:hover span {
-  color: #0f172a;
-  font-weight: 500;
-}
-
-.vmServicesServiceAction {
-  margin-top: auto;
-}
-
-.vmServicesServiceButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #2563eb;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  text-decoration: none;
-  padding: 0.5rem 0;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.vmServicesServiceButton::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #2563eb, #8b5cf6);
-  transition: width 0.3s ease;
-}
-
-.vmServicesServiceButton:hover::before {
-  width: 100%;
-}
-
-.vmServicesServiceButton:hover {
-  gap: 0.75rem;
-  color: #1e40af;
-}
-
-/* ---------- REPORTING GRID ---------- */
-.vmServicesReportingGrid {
+  margin: 0 0 2rem 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
-.vmServicesReportingCard {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 1.5rem;
-  border: 1px solid #f1f5f9;
-  transition: all 0.4s ease;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
+@media (max-width: 768px) {
+  .vmServicesCategoryList {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
-.vmServicesReportingCard::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.02), rgba(139, 92, 246, 0.02));
-  z-index: -1;
-}
-
-.vmServicesReportingCard:hover {
-  border-color: #2563eb;
-  box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.2);
-  transform: translateY(-5px);
-}
-
-.vmServicesReportingHeader {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 2px solid #f1f5f9;
-  padding-bottom: 1.25rem;
-}
-
-.vmServicesReportingIcon {
-  width: 32px;
-  height: 32px;
-  color: #2563eb;
-  transition: all 0.3s ease;
-}
-
-.vmServicesReportingCard:hover .vmServicesReportingIcon {
-  transform: scale(1.1) rotate(360deg);
-}
-
-.vmServicesReportingTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-.vmServicesReportingCard:hover .vmServicesReportingTitle {
-  color: #2563eb;
-}
-
-.vmServicesReportingList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.vmServicesReportingListItem {
+.vmServicesCategoryListItem {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 1.25rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 0.75rem;
-}
-
-.vmServicesReportingListItem:hover {
-  transform: translateX(8px);
+  padding: 0.875rem 1.25rem;
   background: #f8fafc;
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, opacity;
+  border: 1px solid transparent;
 }
 
-.vmServicesListIconBlue {
-  width: 20px;
-  height: 20px;
-  color: #2563eb;
-  margin-top: 0.125rem;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
+.vmServicesCategoryListItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
 }
 
-.vmServicesListIconGreen {
+.vmServicesCategoryListItem:hover {
+  transform: translateX(8px) translateY(-2px);
+  background: white;
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.2);
+}
+
+.vmServicesCategoryListItem:hover::before {
+  transform: scaleY(1);
+}
+
+.vmServicesCategoryListItem:active {
+  transform: scale(0.98) translateX(8px);
+}
+
+.vmServicesCategoryListIcon {
   width: 20px;
   height: 20px;
   color: #10b981;
   margin-top: 0.125rem;
   flex-shrink: 0;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2));
+}
+
+.vmServicesCategoryListItem:hover .vmServicesCategoryListIcon {
+  transform: scale(1.3) rotate(360deg);
+  color: #2563eb;
+  filter: drop-shadow(0 4px 6px rgba(37, 99, 235, 0.3));
+}
+
+.vmServicesCategoryListItem span {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.6;
+  flex: 1;
   transition: all 0.3s ease;
 }
 
-.vmServicesReportingListItem:hover .vmServicesListIconBlue,
-.vmServicesReportingListItem:hover .vmServicesListIconGreen {
-  transform: scale(1.2) rotate(360deg);
-}
-
-.vmServicesReportingListItem span {
-  font-size: 0.9375rem;
-  color: #475569;
-  line-height: 1.5;
-  flex: 1;
-  transition: color 0.3s ease;
-}
-
-.vmServicesReportingListItem:hover span {
+.vmServicesCategoryListItem:hover span {
   color: #0f172a;
   font-weight: 500;
+  transform: translateX(3px);
 }
 
-/* ---------- PROCESS GRID ---------- */
-.vmServicesProcessGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-}
-
-.vmServicesProcessCard {
-  background: white;
-  padding: 2.5rem 1.5rem 1.5rem;
+.vmServicesCategoryNote {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(145deg, #f8fafc, #ffffff);
   border-radius: 1.5rem;
-  border: 1px solid #f1f5f9;
-  text-align: center;
-  position: relative;
+  border-left: 6px solid;
   transition: all 0.4s ease;
-  isolation: isolate;
+  position: relative;
   overflow: hidden;
 }
 
-.vmServicesProcessCard::before {
+/* Different border colors for each category note */
+.vmServicesCategoryCard:nth-child(1) .vmServicesCategoryNote {
+  border-left-color: #2563eb;
+}
+.vmServicesCategoryCard:nth-child(2) .vmServicesCategoryNote {
+  border-left-color: #8b5cf6;
+}
+.vmServicesCategoryCard:nth-child(3) .vmServicesCategoryNote {
+  border-left-color: #f97316;
+}
+.vmServicesCategoryCard:nth-child(4) .vmServicesCategoryNote {
+  border-left-color: #06b6d4;
+}
+.vmServicesCategoryCard:nth-child(5) .vmServicesCategoryNote {
+  border-left-color: #10b981;
+}
+
+.vmServicesCategoryCard:hover .vmServicesCategoryNote {
+  transform: translateX(8px);
+  box-shadow: 0 15px 25px -15px rgba(37, 99, 235, 0.2);
+}
+
+.vmServicesCategoryNote p {
+  margin: 0;
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.7;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.vmServicesCategoryNote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-size: 5rem;
+  color: rgba(37, 99, 235, 0.1);
+  font-family: serif;
+  pointer-events: none;
+}
+
+/* ---------- SOFTWARE GRID ---------- */
+.vmServicesSoftwareGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vmServicesSoftwareItem {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: white;
+  border-radius: 1.25rem;
+  border: 1px solid #f1f5f9;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, opacity;
+  box-shadow: 0 10px 20px -15px rgba(0, 0, 0, 0.1);
+}
+
+.vmServicesSoftwareItem::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 1.5rem;
+  inset: -1px;
+  border-radius: 1.25rem;
   padding: 2px;
-  background: linear-gradient(135deg, #2563eb, #8b5cf6, #06b6d4);
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease;
 }
 
-.vmServicesProcessCard:hover::before {
+.vmServicesSoftwareItem:hover::before {
   opacity: 1;
 }
 
-.vmServicesProcessCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 50px -15px rgba(37, 99, 235, 0.25);
+.vmServicesSoftwareItem:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 30px -15px rgba(37, 99, 235, 0.25);
   border-color: transparent;
 }
 
-.vmServicesProcessStep {
-  position: absolute;
-  top: 1px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #2563eb, #8b5cf6);
-  color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
-  transition: all 0.3s ease;
+.vmServicesSoftwareItem:active {
+  transform: scale(0.98) translateY(-3px);
 }
 
-.vmServicesProcessCard:hover .vmServicesProcessStep {
-  transform: translateX(-50%) scale(1.1);
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
-}
-
-.vmServicesStepNumber {
-  color: white;
-}
-
-.vmServicesProcessIconContainer {
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5rem auto 1.25rem;
-  transition: all 0.4s ease;
-  position: relative;
-}
-
-.vmServicesProcessIconContainer::after {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border-radius: 25px;
-  background: inherit;
-  filter: blur(10px);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 0.3s ease;
-}
-
-.vmServicesProcessCard:hover .vmServicesProcessIconContainer::after {
-  opacity: 0.5;
-}
-
-.vmServicesProcessCard:hover .vmServicesProcessIconContainer {
-  transform: scale(1.1) rotate(360deg);
-}
-
-.vmServicesProcessIcon {
-  width: 32px;
-  height: 32px;
-  color: white;
-}
-
-.vmServicesProcessTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 0.75rem;
-  transition: color 0.3s ease;
-}
-
-.vmServicesProcessCard:hover .vmServicesProcessTitle {
-  color: #2563eb;
-}
-
-.vmServicesProcessDescription {
-  font-size: 0.9375rem;
-  color: #475569;
-  margin: 0;
-  line-height: 1.6;
-  transition: color 0.3s ease;
-}
-
-.vmServicesProcessCard:hover .vmServicesProcessDescription {
-  color: #1e293b;
-}
-
-/* Process icon variants */
-.vmServicesProcessCard:nth-child(1) .vmServicesProcessIconContainer {
+.vmServicesSoftwareIconBox {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   background: linear-gradient(145deg, #1e40af, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  box-shadow: 0 8px 15px -5px rgba(37, 99, 235, 0.3);
 }
-.vmServicesProcessCard:nth-child(2) .vmServicesProcessIconContainer {
-  background: linear-gradient(145deg, #b45309, #f97316);
+
+.vmServicesSoftwareItem:hover .vmServicesSoftwareIconBox {
+  transform: scale(1.15) rotate(360deg);
+  box-shadow: 0 12px 20px -5px rgba(37, 99, 235, 0.4);
 }
-.vmServicesProcessCard:nth-child(3) .vmServicesProcessIconContainer {
-  background: linear-gradient(145deg, #065f46, #10b981);
+
+.vmServicesSoftwareIcon {
+  width: 22px;
+  height: 22px;
+  color: white;
+  transition: transform 0.4s ease;
 }
-.vmServicesProcessCard:nth-child(4) .vmServicesProcessIconContainer {
-  background: linear-gradient(145deg, #6d28d9, #8b5cf6);
+
+.vmServicesSoftwareItem:hover .vmServicesSoftwareIcon {
+  transform: scale(1.1) rotate(-360deg);
+}
+
+.vmServicesSoftwareName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f172a;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.vmServicesSoftwareItem:hover .vmServicesSoftwareName {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ---------- SCOPE NOTICE DETAILED ---------- */
@@ -900,11 +989,11 @@
   max-width: 900px;
   margin: 0 auto;
   background: white;
-  padding: 3rem;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s ease;
+  padding: 3.5rem;
+  border-radius: 2.5rem;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -914,42 +1003,43 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.02), transparent 70%);
+  background: radial-gradient(circle at 30% 40%, rgba(37, 99, 235, 0.03), transparent 70%);
   z-index: -1;
 }
 
 .vmServicesScopeNoticeDetailed:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 30px 50px -15px rgba(37, 99, 235, 0.2);
-  border-color: #2563eb;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 40px 70px -20px rgba(37, 99, 235, 0.25);
+  border-color: rgba(37, 99, 235, 0.3);
 }
 
 .vmServicesScopeNoticeHeader {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .vmServicesScopeNoticeIcon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   color: #2563eb;
   animation: vmServicesPulse 2s infinite;
+  filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.3));
 }
 
 @keyframes vmServicesPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.3)); }
+  50% { transform: scale(1.15); filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.5)); }
 }
 
 .vmServicesScopeNoticeTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   color: #0f172a;
   margin: 0;
-  background: linear-gradient(135deg, #1e40af, #2563eb);
+  background: linear-gradient(135deg, #1e40af, #2563eb, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -960,24 +1050,32 @@
 }
 
 .vmServicesScopeNoticeText {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: #1e40af;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background: rgba(37, 99, 235, 0.05);
+  border-radius: 9999px;
 }
 
 .vmServicesScopeNoticeDetailed:hover .vmServicesScopeNoticeText {
   color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+  transform: scale(1.02);
 }
 
 .vmServicesScopeNoticeDescription {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #475569;
-  line-height: 1.7;
+  line-height: 1.8;
   max-width: 700px;
   margin: 0 auto;
   transition: color 0.3s ease;
+  padding: 0 1rem;
 }
 
 .vmServicesScopeNoticeDetailed:hover .vmServicesScopeNoticeDescription {
@@ -986,8 +1084,10 @@
 
 /* ---------- FINAL CTA SECTION ---------- */
 .vmServicesCtaSection {
-  background: linear-gradient(145deg, #1e40af, #2563eb);
-  padding: 5rem 0;
+  background: linear-gradient(145deg, #1e40af, #2563eb, #1e40af);
+  background-size: 200% 200%;
+  animation: vmServicesGradientShift 8s ease infinite;
+  padding: 6rem 0;
   color: white;
   position: relative;
   overflow: hidden;
@@ -998,66 +1098,84 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 30%),
-              radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 30%);
-  animation: vmServicesParticleMove 10s infinite alternate;
+              radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 30%),
+              repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 20px);
+  animation: vmServicesBgMove 20s infinite alternate;
 }
 
-@keyframes vmServicesParticleMove {
-  0% { transform: scale(1) translate(0, 0); }
-  100% { transform: scale(1.1) translate(2%, 2%); }
+@keyframes vmServicesBgMove {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.1) rotate(1deg); }
 }
 
 .vmServicesCtaContent {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
   position: relative;
   z-index: 1;
 }
 
 .vmServicesCtaIconBox {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
-  backdrop-filter: blur(5px);
-  animation: vmServicesPulse 2s infinite ease-in-out;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  margin: 0 auto 2rem;
+  backdrop-filter: blur(8px);
+  animation: vmServicesPulseIcon 3s infinite ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes vmServicesPulseIcon {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  50% { 
+    transform: scale(1.15); 
+    box-shadow: 0 0 80px rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .vmServicesCtaIcon {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   color: white;
+  animation: vmServicesSpinSlow 12s infinite linear;
 }
 
 .vmServicesCtaTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
   color: white;
   letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .vmServicesCtaDesc {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  max-width: 600px;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 500;
 }
 
 .vmServicesCtaBtnGroup {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -1065,19 +1183,20 @@
   display: inline-block;
   background: white;
   color: #1e40af;
-  font-weight: 600;
-  padding: 0.875rem 2rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
   border-radius: 9999px;
   text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  font-size: 1.125rem;
+  transition: all 0.4s ease;
   border: none;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
-.vmServicesCtaBtnPrimary::after {
+.vmServicesCtaBtnPrimary::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -1085,20 +1204,21 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(37, 99, 235, 0.15);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition: width 0.8s, height 0.8s;
+  z-index: -1;
 }
 
-.vmServicesCtaBtnPrimary:hover::after {
-  width: 300px;
-  height: 300px;
+.vmServicesCtaBtnPrimary:hover::before {
+  width: 400px;
+  height: 400px;
 }
 
 .vmServicesCtaBtnPrimary:hover {
   background: #f8fafc;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.3);
 }
 
 .vmServicesCtaBtnSecondary {
@@ -1106,127 +1226,158 @@
   background: transparent;
   color: white;
   font-weight: 600;
-  padding: 0.875rem 2rem;
+  padding: 1rem 2.5rem;
   border-radius: 9999px;
   text-decoration: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(5px);
+  font-size: 1.125rem;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
-.vmServicesCtaBtnSecondary::after {
+.vmServicesCtaBtnSecondary::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0;
+  left: 0;
   width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  height: 100%;
+  background: white;
+  transition: width 0.4s ease;
+  z-index: -1;
 }
 
-.vmServicesCtaBtnSecondary:hover::after {
-  width: 300px;
-  height: 300px;
+.vmServicesCtaBtnSecondary:hover::before {
+  width: 100%;
 }
 
 .vmServicesCtaBtnSecondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+  color: #1e40af;
   border-color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 35px -5px rgba(0, 0, 0, 0.3);
 }
 
 /* ---------- RESPONSIVE BREAKPOINTS ---------- */
+@media (max-width: 1200px) {
+  .vmServicesContainer { max-width: 960px; }
+  .vmServicesMainHeading { font-size: 3.5rem; }
+  .vmServicesSectionTitle { font-size: 2.25rem; }
+}
+
 @media (max-width: 1024px) {
-  .vmServicesMainHeading { font-size: 3.25rem; }
-  .vmServicesGridDetailed { grid-template-columns: repeat(2, 1fr); }
-  .vmServicesProcessGrid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
-  .vmServicesSectionTitle { font-size: 2rem; }
+  .vmServicesContainer { max-width: 720px; padding: 0 2rem; }
+  .vmServicesMainHeading { font-size: 3rem; }
+  .vmServicesTagline::before,
+  .vmServicesTagline::after { display: none; }
+  .vmServicesCategoryHeader { gap: 1.5rem; }
+  .vmServicesCategoryIconContainer { width: 80px; height: 80px; }
+  .vmServicesCategoryIcon { width: 38px; height: 38px; }
+  .vmServicesCategoryTitle { font-size: 1.75rem; }
 }
 
 @media (max-width: 768px) {
   .vmServicesContainer { padding: 0 1.5rem; }
-  .vmServicesHeroSection { padding: 4rem 0; min-height: 70vh; }
+  .vmServicesHeroSection { padding: 4rem 0; min-height: auto; }
   .vmServicesMainHeading { font-size: 2.75rem; }
-  .vmServicesSubHeading { font-size: 1.25rem; }
+  .vmServicesTagline { font-size: 1.5rem; }
+  .vmServicesSubheading { font-size: 1.25rem; }
   .vmServicesSectionWhite, 
   .vmServicesSectionGray, 
-  .vmServicesSectionLight, 
-  .vmServicesSectionDark { padding: 4rem 0; }
+  .vmServicesSectionLight { padding: 4rem 0; }
   .vmServicesSectionTitle { font-size: 2rem; }
-  .vmServicesGridDetailed { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .vmServicesReportingGrid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .vmServicesProcessGrid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .vmServicesDescription { padding: 2rem; }
+  .vmServicesDescriptionText { font-size: 1rem; }
+  .vmServicesCategoryCard { padding: 2rem; }
+  .vmServicesCategoryHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .vmServicesCategoryIconContainer { width: 70px; height: 70px; }
+  .vmServicesCategoryIcon { width: 34px; height: 34px; }
+  .vmServicesCategoryTitle { font-size: 1.5rem; }
+  .vmServicesCategoryDescription { font-size: 1.125rem; }
+  .vmServicesCategoryList { grid-template-columns: 1fr; }
+  .vmServicesSoftwareGrid { grid-template-columns: repeat(2, 1fr); }
+  .vmServicesScopeNoticeDetailed { padding: 2.5rem; }
+  .vmServicesScopeNoticeTitle { font-size: 1.75rem; }
 }
 
 @media (max-width: 640px) {
   .vmServicesContainer { padding: 0 1.25rem; }
   .vmServicesMainHeading { font-size: 2.25rem; }
+  .vmServicesTagline { font-size: 1.25rem; }
   .vmServicesBadge { padding: 0.5rem 1.25rem; font-size: 0.8125rem; }
-  .vmServicesSubHeading { font-size: 1.125rem; }
+  .vmServicesSubheading { font-size: 1.125rem; }
   .vmServicesCtaGroup { flex-direction: column; width: 100%; }
   .vmServicesBtnPrimary, 
-  .vmServicesBtnSecondary { width: 100%; padding: 0.75rem 1.5rem; }
-  .vmServicesGridDetailed { grid-template-columns: 1fr; gap: 1.25rem; }
-  .vmServicesProcessGrid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .vmServicesCtaTitle { font-size: 2rem; }
-  .vmServicesCtaDesc { font-size: 1rem; }
+  .vmServicesBtnSecondary { width: 100%; padding: 0.875rem 1.5rem; }
+  .vmServicesDescription { padding: 1.5rem; }
+  .vmServicesCategoryCard { padding: 1.5rem; }
+  .vmServicesCategoryIconContainer { width: 60px; height: 60px; }
+  .vmServicesCategoryIcon { width: 30px; height: 30px; }
+  .vmServicesCategoryTitle { font-size: 1.35rem; }
+  .vmServicesCategoryDescription { font-size: 1rem; }
+  .vmServicesCategoryListItem { padding: 0.75rem 1rem; }
+  .vmServicesCategoryListItem span { font-size: 0.9375rem; }
+  .vmServicesCategoryNote { padding: 1.25rem 1.5rem; }
+  .vmServicesCategoryNote p { font-size: 0.9375rem; }
+  .vmServicesSoftwareGrid { grid-template-columns: 1fr; }
+  .vmServicesSoftwareItem { padding: 1rem 1.25rem; }
   .vmServicesScopeNoticeDetailed { padding: 2rem; }
+  .vmServicesScopeNoticeHeader { flex-direction: column; gap: 1rem; }
+  .vmServicesScopeNoticeIcon { width: 40px; height: 40px; }
   .vmServicesScopeNoticeTitle { font-size: 1.5rem; }
-  .vmServicesReportingCard { padding: 1.75rem; }
-  .vmServicesReportingTitle { font-size: 1.35rem; }
+  .vmServicesScopeNoticeText { font-size: 1.125rem; }
+  .vmServicesScopeNoticeDescription { font-size: 1rem; }
+  .vmServicesCtaSection { padding: 4rem 0; }
+  .vmServicesCtaTitle { font-size: 1.75rem; }
+  .vmServicesCtaDesc { font-size: 1rem; }
+  .vmServicesCtaBtnGroup { flex-direction: column; gap: 1rem; }
+  .vmServicesCtaBtnPrimary,
+  .vmServicesCtaBtnSecondary { width: 100%; padding: 0.875rem 1.5rem; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
   .vmServicesContainer { padding: 0 1rem; }
-  .vmServicesHeroSection { padding: 3rem 0; min-height: 60vh; }
+  .vmServicesHeroSection { padding: 3rem 0; }
   .vmServicesMainHeading { font-size: 2rem; }
+  .vmServicesTagline { font-size: 1.125rem; }
   .vmServicesBadge { padding: 0.5rem 1rem; font-size: 0.75rem; gap: 0.5rem; }
   .vmServicesBadgeIcon { width: 16px; height: 16px; }
-  .vmServicesSubHeading { font-size: 1rem; }
-  .vmServicesScopeCard { padding: 1.5rem; }
-  .vmServicesScopeHeader h3 { font-size: 1.125rem; }
-  .vmServicesScopeContent p { font-size: 0.9375rem; }
+  .vmServicesSubheading { font-size: 1rem; }
   .vmServicesSectionWhite, 
   .vmServicesSectionGray, 
-  .vmServicesSectionLight, 
-  .vmServicesSectionDark { padding: 3rem 0; }
+  .vmServicesSectionLight { padding: 3rem 0; }
   .vmServicesSectionTitle { font-size: 1.75rem; }
-  .vmServicesSectionDesc { font-size: 1rem; }
-  .vmServicesServiceCardDetailed { padding: 1.5rem; }
-  .vmServicesServiceTitle { font-size: 1.25rem; }
-  .vmServicesServiceIconContainer { width: 52px; height: 52px; }
-  .vmServicesServiceIcon { width: 26px; height: 26px; }
-  .vmServicesReportingCard { padding: 1.5rem; }
-  .vmServicesReportingTitle { font-size: 1.25rem; }
-  .vmServicesReportingIcon { width: 28px; height: 28px; }
-  .vmServicesProcessCard { padding: 2rem 1rem 1.25rem; }
-  .vmServicesProcessTitle { font-size: 1.125rem; }
-  .vmServicesProcessIconContainer { width: 60px; height: 60px; }
-  .vmServicesProcessIcon { width: 28px; height: 28px; }
+  .vmServicesDescription { padding: 1.25rem; }
+  .vmServicesDescriptionText { font-size: 0.9375rem; }
+  .vmServicesCategoryCard { padding: 1.25rem; }
+  .vmServicesCategoryIconContainer { width: 52px; height: 52px; }
+  .vmServicesCategoryIcon { width: 26px; height: 26px; }
+  .vmServicesCategoryTitle { font-size: 1.25rem; }
+  .vmServicesCategoryDescription { font-size: 0.9375rem; }
+  .vmServicesCategoryListItem { padding: 0.625rem 0.875rem; }
+  .vmServicesCategoryListIcon { width: 18px; height: 18px; }
+  .vmServicesCategoryListItem span { font-size: 0.875rem; }
+  .vmServicesCategoryNote { padding: 1rem 1.25rem; }
   .vmServicesCtaSection { padding: 3rem 0; }
-  .vmServicesCtaTitle { font-size: 1.75rem; }
-  .vmServicesCtaIconBox { width: 60px; height: 60px; }
-  .vmServicesCtaIcon { width: 30px; height: 30px; }
-  .vmServicesCtaBtnGroup { flex-direction: column; gap: 0.75rem; }
-  .vmServicesCtaBtnPrimary, 
-  .vmServicesCtaBtnSecondary { width: 100%; padding: 0.75rem 1.5rem; font-size: 0.9375rem; }
+  .vmServicesCtaIconBox { width: 70px; height: 70px; }
+  .vmServicesCtaIcon { width: 35px; height: 35px; }
+  .vmServicesCtaTitle { font-size: 1.5rem; }
+  .vmServicesCtaDesc { font-size: 0.9375rem; }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 360px) {
   .vmServicesMainHeading { font-size: 1.75rem; }
+  .vmServicesTagline { font-size: 1rem; }
+  .vmServicesCategoryIconContainer { width: 48px; height: 48px; }
+  .vmServicesCategoryIcon { width: 24px; height: 24px; }
+  .vmServicesCategoryTitle { font-size: 1.125rem; }
   .vmServicesBtnIcon, 
   .vmServicesBtnIconSmall { width: 16px; height: 16px; }
-  .vmServicesServiceHeaderDetailed { flex-direction: column; align-items: center; text-align: center; }
-  .vmServicesServiceList { text-align: left; }
-  .vmServicesServiceIconContainer { width: 48px; height: 48px; }
-  .vmServicesServiceIcon { width: 24px; height: 24px; }
 }
-
-

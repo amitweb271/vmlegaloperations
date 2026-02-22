@@ -5,14 +5,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 
-// Nav items
+// Nav items - "What We Don't Do" removed
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'How We Work', href: '/how-we-work' },
   { name: 'Who We Support', href: '/who-we-support' },
-  { name: "What We Don't Do", href: '/what-we-dont-do' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -86,7 +85,11 @@ export default function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? '✕' : '☰'}
+            <div className={`${styles.hamburgerIcon} ${isOpen ? styles.hamburgerOpen : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </button>
         </div>
 

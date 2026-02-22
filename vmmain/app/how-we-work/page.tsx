@@ -27,7 +27,14 @@ import {
   Lightbulb,
   Users,
   BarChart3,
-  Sparkles
+  Sparkles,
+  ClipboardList,
+  Briefcase,
+  Clock,
+  LayoutList,
+  FileCheck,
+  RefreshCw,
+  Lock
 } from 'lucide-react';
 
 export default function HowWeWorkPage() {
@@ -60,65 +67,74 @@ export default function HowWeWorkPage() {
       observer.observe(el);
     });
 
-
-    
     return () => {
       observer.disconnect();
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
-  const engagementPoints = [
+  const processSteps = [
     {
-      icon: Monitor,
-      title: 'Work Alongside Your Systems',
-      description: 'We work alongside your existing systems (e.g. Clio, MyCase, PracticePanther) or maintain structured trackers where required.',
+      icon: MessageCircle,
+      title: 'Initial Consultation & Scope Alignment',
+      description: 'We begin by understanding your practice area, case volume, workflow systems, and support requirements.',
+      details: [
+        'Scope of services',
+        'Turnaround expectations',
+        'Communication structure',
+        'Reporting frequency'
+      ],
+      note: 'Clear scope prevents misunderstandings and ensures efficiency.',
       color: 'Blue'
     },
     {
       icon: Shield,
-      title: 'Secure, Role-Based Access',
-      description: 'Access is always limited, role-based, and agreed in advance to ensure data security and confidentiality.',
+      title: 'Secure Onboarding',
+      description: 'We integrate into your existing workflow through secure access to:',
+      details: [
+        'Case management platforms',
+        'Document management systems',
+        'Communication channels'
+      ],
+      note: 'All access is controlled and aligned with your firm\'s security protocols.',
       color: 'Emerald'
     },
     {
-      icon: FileText,
-      title: 'Strict Confidentiality & NDA',
-      description: 'We operate under strict confidentiality and NDA protections, with clear protocols for data handling.',
+      icon: ClipboardList,
+      title: 'Task Assignment & Execution',
+      description: 'All work is performed strictly under attorney supervision.',
+      details: [
+        'Accuracy',
+        'Consistency',
+        'Deadline compliance'
+      ],
+      note: 'We do not provide legal advice or make legal decisions.',
       color: 'Violet'
     },
     {
-      icon: Rocket,
-      title: 'Start with Pilot',
-      description: 'Engagements typically begin with a small pilot before scaling, ensuring minimal risk and maximum value.',
+      icon: FileCheck,
+      title: 'Internal Quality Review',
+      description: 'Before submission, work undergoes internal review to ensure:',
+      details: [
+        'Proper formatting',
+        'File organization',
+        'Timeline accuracy',
+        'Instruction alignment'
+      ],
+      note: 'This reduces revision cycles and protects attorney time.',
       color: 'Amber'
-    }
-  ];
-
-  const processes = [
-    {
-      icon: MessageCircle,
-      title: 'Consultation',
-      description: 'Understand needs and define scope',
-      step: '1'
     },
     {
-      icon: TestTube2,
-      title: 'Pilot Setup',
-      description: 'Limited scope implementation',
-      step: '2'
-    },
-    {
-      icon: PlayCircle,
-      title: 'Operations',
-      description: 'Daily tracking and coordination',
-      step: '3'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Review & Scale',
-      description: 'Performance review and expansion',
-      step: '4'
+      icon: RefreshCw,
+      title: 'Reporting & Ongoing Coordination',
+      description: 'We provide structured updates including:',
+      details: [
+        'Weekly status reports',
+        'Deadline alerts',
+        'Task tracking summaries'
+      ],
+      note: 'Our goal is to function as an organized extension of your team.',
+      color: 'Teal'
     }
   ];
 
@@ -137,26 +153,20 @@ export default function HowWeWorkPage() {
             
             {/* Main Heading */}
             <h1 className={howStyles.vmHowMainHeading}>
-              How We Work
+              HOW WE WORK
             </h1>
             
-            {/* Description */}
-            <h2 className={howStyles.vmHowSubHeading}>
-              A <span className={howStyles.vmHowGradientText}>simple, transparent, and low-risk engagement model</span> designed for U.S. law firms
+            {/* Tagline */}
+            <h2 className={howStyles.vmHowTagline}>
+              Structured. Supervised. Secure.
             </h2>
             
-            {/* Scope Card */}
-            <div className={howStyles.vmHowScopeCard}>
-              <div className={howStyles.vmHowScopeHeader}>
-                <Target className={howStyles.vmHowScopeIcon} />
-                <h3>Our Approach</h3>
-              </div>
-              <div className={howStyles.vmHowScopeContent}>
-                <p>
-                  We provide <strong>consistency, visibility, and operational discipline</strong> 
-                  that keeps your cases on track and your team focused on substantive legal work.
-                </p>
-              </div>
+            {/* Description */}
+            <div className={howStyles.vmHowDescription}>
+              <p className={howStyles.vmHowDescriptionText}>
+                VM Legal Operations follows a process-driven workflow designed to integrate 
+                seamlessly with U.S. law firm operations.
+              </p>
             </div>
             
             {/* CTA Buttons */}
@@ -174,191 +184,167 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
-      {/* === ENGAGEMENT MODEL SECTION === */}
-      <section id="engagement" className={`${howStyles.vmHowSectionWhite} ${howStyles.vmHowReveal}`}>
+      {/* === PROCESS STEPS SECTION === */}
+      <section id="process" className={`${howStyles.vmHowSectionWhite} ${howStyles.vmHowReveal}`}>
         <div className={howStyles.vmHowContainer}>
           <div className={howStyles.vmHowSectionHeader}>
-            <h2 className={howStyles.vmHowSectionTitle}>Our Engagement Model</h2>
+            <h2 className={howStyles.vmHowSectionTitle}>Our 5-Step Process</h2>
             <p className={howStyles.vmHowSectionDesc}>
-              Designed to be simple, transparent, and focused on delivering consistent operational support
+              A structured, supervised workflow designed for U.S. law firms
             </p>
           </div>
           
-          <div className={howStyles.vmHowEngagementContainer}>
-            <div className={howStyles.vmHowEngagementContent}>
-              <div className={howStyles.vmHowEngagementText}>
-                <div className={howStyles.vmHowEngagementHighlight}>
-                  <Target className={howStyles.vmHowHighlightIcon} />
-                  <h3 className={howStyles.vmHowHighlightTitle}>Our Role is Clear</h3>
-                  <p className={howStyles.vmHowHighlightDescription}>
-                    To provide consistency, visibility, and operational discipline that keeps your 
-                    cases on track and your team focused on substantive legal work.
-                  </p>
-                </div>
-                
-                <div className={howStyles.vmHowStructuredSupport}>
-                  <Settings className={howStyles.vmHowSupportIcon} />
-                  <h4 className={howStyles.vmHowSupportTitle}>Structured Support</h4>
-                  <ul className={howStyles.vmHowSupportList}>
-                    {[
-                      'Monthly retainer-based support',
-                      'Pilot engagements available for evaluation',
-                      'Scope defined based on case volume and reporting requirements',
-                      'Predictable and scalable pricing structure'
-                    ].map((item, idx) => (
-                      <li key={idx} className={howStyles.vmHowSupportItem}>
-                        <CheckCircle2 className={howStyles.vmHowSupportCheck} />
-                        <span>{item}</span>
+          <div className={howStyles.vmHowProcessSteps}>
+            {processSteps.map((step, index) => {
+              const IconComponent = step.icon;
+              const colorClass = `vmHowIcon${step.color}`;
+              return (
+                <div key={index} className={howStyles.vmHowProcessCard}>
+                  <div className={howStyles.vmHowProcessCardHeader}>
+                    <div className={`${howStyles.vmHowProcessIconContainer} ${howStyles[colorClass]}`}>
+                      <IconComponent className={howStyles.vmHowProcessIcon} />
+                    </div>
+                    <div className={howStyles.vmHowProcessStepBadge}>Step {index + 1}</div>
+                  </div>
+                  
+                  <h3 className={howStyles.vmHowProcessCardTitle}>{step.title}</h3>
+                  <p className={howStyles.vmHowProcessCardDescription}>{step.description}</p>
+                  
+                  <ul className={howStyles.vmHowProcessDetailsList}>
+                    {step.details.map((detail, idx) => (
+                      <li key={idx} className={howStyles.vmHowProcessDetailItem}>
+                        <CheckCircle2 className={howStyles.vmHowProcessDetailIcon} />
+                        <span>{detail}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-              </div>
-              
-              <div className={howStyles.vmHowEngagementFeatures}>
-                <h3 className={howStyles.vmHowFeaturesTitle}>Key Features of Our Approach</h3>
-                <div className={howStyles.vmHowFeaturesGrid}>
-                  {engagementPoints.map((point, index) => {
-                    const IconComponent = point.icon;
-                    const colorClass = `vmHowIcon${point.color}`;
-                    return (
-                      <div key={index} className={howStyles.vmHowFeatureCard}>
-                        <div className={`${howStyles.vmHowFeatureIconContainer} ${howStyles[colorClass]}`}>
-                          <IconComponent className={howStyles.vmHowFeatureIcon} />
-                        </div>
-                        <div className={howStyles.vmHowFeatureContent}>
-                          <h4 className={howStyles.vmHowFeatureTitle}>{point.title}</h4>
-                          <p className={howStyles.vmHowFeatureDescription}>{point.description}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* === PROCESS FLOW SECTION === */}
-      <section id="process" className={`${howStyles.vmHowSectionGray} ${howStyles.vmHowReveal}`}>
-        <div className={howStyles.vmHowContainer}>
-          <div className={howStyles.vmHowSectionHeader}>
-            <h2 className={howStyles.vmHowSectionTitle}>Our 4-Step Process</h2>
-            <p className={howStyles.vmHowSectionDesc}>
-              A structured approach to delivering reliable support
-            </p>
-          </div>
-          
-          <div className={howStyles.vmHowProcessFlow}>
-            {processes.map((process, index) => {
-              const IconComponent = process.icon;
-              return (
-                <div key={index} className={howStyles.vmHowProcessStepCard}>
-                  <div className={howStyles.vmHowProcessStepNumber}>{process.step}</div>
-                  <div className={howStyles.vmHowProcessIconContainer}>
-                    <IconComponent className={howStyles.vmHowProcessIcon} />
-                  </div>
-                  <h3 className={howStyles.vmHowProcessStepTitle}>{process.title}</h3>
-                  <p className={howStyles.vmHowProcessStepDescription}>{process.description}</p>
+                  
+                  {step.note && (
+                    <div className={howStyles.vmHowProcessNote}>
+                      <Sparkles className={howStyles.vmHowProcessNoteIcon} />
+                      <p>{step.note}</p>
+                    </div>
+                  )}
+                  
+                  {/* Connector line between steps (except last) */}
+                  {index < processSteps.length - 1 && !isMobile && (
+                    <div className={howStyles.vmHowStepConnector}>
+                      <ChevronRight className={howStyles.vmHowStepConnectorIcon} />
+                    </div>
+                  )}
                 </div>
               );
             })}
           </div>
-          
-          {/* Process Connector Line */}
-          {!isMobile && (
-            <div className={howStyles.vmHowProcessConnector}>
-              <div className={howStyles.vmHowConnectorLine}></div>
-              <div className={howStyles.vmHowConnectorDot}></div>
-              <div className={howStyles.vmHowConnectorDot}></div>
-              <div className={howStyles.vmHowConnectorDot}></div>
-              <div className={howStyles.vmHowConnectorDot}></div>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* === WHY IT MATTERS SECTION === */}
-      <section id="why-it-matters" className={`${howStyles.vmHowSectionDark} ${howStyles.vmHowReveal}`}>
+      {/* === CONFIDENTIALITY & COMPLIANCE SECTION === */}
+      <section id="compliance" className={`${howStyles.vmHowSectionGray} ${howStyles.vmHowReveal}`}>
+        <div className={howStyles.vmHowContainer}>
+          <div className={howStyles.vmHowComplianceCard}>
+            <div className={howStyles.vmHowComplianceHeader}>
+              <div className={howStyles.vmHowComplianceIconContainer}>
+                <Lock className={howStyles.vmHowComplianceIcon} />
+              </div>
+              <h2 className={howStyles.vmHowComplianceTitle}>Confidentiality & Compliance</h2>
+            </div>
+            <div className={howStyles.vmHowComplianceContent}>
+              <p className={howStyles.vmHowComplianceText}>
+                We operate exclusively under attorney supervision and maintain strict 
+                confidentiality standards in handling all firm data.
+              </p>
+              <div className={howStyles.vmHowComplianceBadges}>
+                <div className={howStyles.vmHowComplianceBadge}>
+                  <Shield className={howStyles.vmHowComplianceBadgeIcon} />
+                  <span>Attorney Supervision</span>
+                </div>
+                <div className={howStyles.vmHowComplianceBadge}>
+                  <ShieldCheck className={howStyles.vmHowComplianceBadgeIcon} />
+                  <span>Strict Confidentiality</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* === WHY THIS MATTERS SECTION === */}
+      <section id="why-matters" className={`${howStyles.vmHowSectionLight} ${howStyles.vmHowReveal}`}>
         <div className={howStyles.vmHowContainer}>
           <div className={howStyles.vmHowSectionHeader}>
-            <h2 className={`${howStyles.vmHowSectionTitle} ${howStyles.vmHowTextWhite}`}>Why This Model Matters</h2>
-            <p className={`${howStyles.vmHowSectionDesc} ${howStyles.vmHowTextLightGray}`}>
-              Addressing common challenges in legal operations
+            <h2 className={howStyles.vmHowSectionTitle}>Why Our Process Works</h2>
+            <p className={howStyles.vmHowSectionDesc}>
+              Designed to address the specific challenges of legal operations
             </p>
           </div>
           
-          <div className={howStyles.vmHowProblemSolutionGrid}>
-            <div className={howStyles.vmHowProblemCard}>
-              <div className={howStyles.vmHowProblemHeader}>
-                <div className={howStyles.vmHowProblemDot}></div>
-                <h3 className={howStyles.vmHowProblemTitle}>The Problem We Solve</h3>
+          <div className={howStyles.vmHowBenefitsGrid}>
+            <div className={howStyles.vmHowBenefitCard}>
+              <div className={howStyles.vmHowBenefitIconContainer}>
+                <Briefcase className={howStyles.vmHowBenefitIcon} />
               </div>
-              <p className={howStyles.vmHowProblemDescription}>
-                Even with modern case-management software, many firms experience:
+              <h3 className={howStyles.vmHowBenefitTitle}>Supervised Excellence</h3>
+              <p className={howStyles.vmHowBenefitDescription}>
+                All work performed under attorney supervision ensures compliance with 
+                legal ethics and firm standards.
               </p>
-              <ul className={howStyles.vmHowProblemList}>
-                {[
-                  'Inconsistent system updates',
-                  'Missed or late follow-ups',
-                  'Fragmented information across emails and platforms',
-                  'Administrative work pulling time away from billable activity'
-                ].map((item, idx) => (
-                  <li key={idx} className={howStyles.vmHowProblemListItem}>
-                    <div className={howStyles.vmHowListDot}></div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
             
-            <div className={howStyles.vmHowSolutionCard}>
-              <div className={howStyles.vmHowSolutionHeader}>
-                <div className={howStyles.vmHowSolutionDot}></div>
-                <h3 className={howStyles.vmHowSolutionTitle}>Our Solution</h3>
+            <div className={howStyles.vmHowBenefitCard}>
+              <div className={howStyles.vmHowBenefitIconContainer}>
+                <LayoutList className={howStyles.vmHowBenefitIcon} />
               </div>
-              <p className={howStyles.vmHowSolutionDescription}>
-                We help address these gaps by:
+              <h3 className={howStyles.vmHowBenefitTitle}>Structured Checklists</h3>
+              <p className={howStyles.vmHowBenefitDescription}>
+                Every task follows defined checklists and timelines for consistency 
+                and deadline compliance.
               </p>
-              <ul className={howStyles.vmHowSolutionList}>
-                {[
-                  'Owning the tracking and reporting process',
-                  'Providing consistency and operational discipline',
-                  'Ensuring nothing falls through the cracks',
-                  'Freeing attorneys to focus on substantive legal work'
-                ].map((item, idx) => (
-                  <li key={idx} className={howStyles.vmHowSolutionListItem}>
-                    <div className={howStyles.vmHowListDotGreen}></div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            </div>
+            
+            <div className={howStyles.vmHowBenefitCard}>
+              <div className={howStyles.vmHowBenefitIconContainer}>
+                <Clock className={howStyles.vmHowBenefitIcon} />
+              </div>
+              <h3 className={howStyles.vmHowBenefitTitle}>Protects Attorney Time</h3>
+              <p className={howStyles.vmHowBenefitDescription}>
+                Internal quality reviews reduce revision cycles, letting attorneys 
+                focus on substantive legal work.
+              </p>
+            </div>
+            
+            <div className={howStyles.vmHowBenefitCard}>
+              <div className={howStyles.vmHowBenefitIconContainer}>
+                <RefreshCw className={howStyles.vmHowBenefitIcon} />
+              </div>
+              <h3 className={howStyles.vmHowBenefitTitle}>Seamless Integration</h3>
+              <p className={howStyles.vmHowBenefitDescription}>
+                We function as an organized extension of your team with structured 
+                updates and coordination.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* === SCOPE OF SERVICES NOTICE === */}
-      <section id="scope" className={`${howStyles.vmHowSectionLight} ${howStyles.vmHowReveal}`}>
+      {/* <section id="scope" className={`${howStyles.vmHowSectionWhite} ${howStyles.vmHowReveal}`}>
         <div className={howStyles.vmHowContainer}>
-          <div className={howStyles.vmHowScopeNoticeDetailed}>
+          <div className={howStyles.vmHowScopeNotice}>
             <div className={howStyles.vmHowScopeNoticeHeader}>
               <AlertCircle className={howStyles.vmHowScopeNoticeIcon} />
               <h3 className={howStyles.vmHowScopeNoticeTitle}>Scope of Services</h3>
             </div>
             <div className={howStyles.vmHowScopeNoticeContent}>
               <p className={howStyles.vmHowScopeNoticeText}>
-                <strong>Our services are strictly non-legal and administrative in nature.</strong>
-              </p>
-              <p className={howStyles.vmHowScopeNoticeDescription}>
-                We do not provide legal advice or legal representation. We work under attorney supervision 
-                and follow all applicable regulations and ethical guidelines.
+                <strong>Our services are strictly non-legal and administrative in nature.</strong> We do not provide 
+                legal advice or legal representation. We work under attorney supervision and follow all 
+                applicable regulations and ethical guidelines.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* === FINAL CTA SECTION === */}
       <section id="contact" className={`${howStyles.vmHowCtaSection} ${howStyles.vmHowReveal}`}>
@@ -369,8 +355,7 @@ export default function HowWeWorkPage() {
             </div>
             <h2 className={howStyles.vmHowCtaTitle}>Ready to Get Started?</h2>
             <p className={howStyles.vmHowCtaDesc}>
-              Begin with a structured pilot engagement to experience our structured approach and 
-              see the difference in your firm's operational efficiency.
+              Experience our structured, supervised approach to legal operations support.
             </p>
             
             <div className={howStyles.vmHowCtaBtnGroup}>

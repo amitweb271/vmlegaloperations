@@ -29,12 +29,19 @@ import {
   Users,
   Calendar,
   Check,
-  Sparkles
+  Sparkles,
+  Gavel,
+  Activity,
+  FolderOpen,
+  Briefcase,
+  Globe,
+  Layers,
+  BookOpen
 } from 'lucide-react';
 
 export default function ServicesPage() {
   const [isMobile, setIsMobile] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero'); // new 
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const checkMobile = () => {
@@ -69,89 +76,94 @@ export default function ServicesPage() {
     };
   }, []);
 
-  const services = [
+  // Updated service categories based on new structure
+  const serviceCategories = [
     {
       icon: BarChart3,
-      title: 'Case Status Tracking',
-      description: 'Track case stages and progress across all matters',
+      title: 'Legal Operations & Case Management Support',
+      description: 'Designed to keep your firm organized, deadline-driven, and compliant.',
       bullets: [
-        'Tracking case stages and progress across matters',
-        'Maintaining structured case trackers or working alongside your existing systems',
-        'Real-time progress monitoring and updates'
+        'Case status tracking and updates',
+        'Docket monitoring (Federal & State courts)',
+        'Calendar management & deadline tracking',
+        'Hearing and filing reminders',
+        'Court notification monitoring',
+        'Case file organization',
+        'CRM updates (Clio, MyCase, Filevine, etc.)',
+        'Weekly case status reporting',
+        'Workflow coordination support'
       ],
-      color: 'Blue'
+      color: 'Blue',
+      note: 'We help firms avoid missed deadlines and maintain structured case oversight.'
     },
     {
-      icon: Clock,
-      title: 'Deadline & Timeline Monitoring',
-      description: 'Monitor court-driven and rule-based deadlines',
+      icon: Gavel,
+      title: 'Litigation & Paralegal Support',
+      description: '(Under Attorney Supervision)',
       bullets: [
-        'Monitoring court-driven and rule-based deadlines',
-        'Flagging upcoming actions and pending responses',
-        'Proactive deadline management'
+        'Complaint and motion summaries',
+        'Deposition summaries',
+        'Case file summaries',
+        'Chronology creation (medical & factual timelines)',
+        'Exhibit organization and indexing',
+        'Trial binder preparation support',
+        'Discovery document organization',
+        'Document tagging and indexing',
+        'Draft formatting and template preparation',
+        'Pleading formatting support (as per firm templates)'
       ],
-      color: 'Emerald'
+      color: 'Purple',
+      note: 'All work is reviewed and approved by the supervising attorney.'
     },
     {
-      icon: Building2,
-      title: 'Court Notification & Docket Monitoring',
-      description: 'Stay updated with court notifications and docket changes',
+      icon: Activity,
+      title: 'Personal Injury (PI) Support Services',
+      description: 'High-volume support for personal injury practices.',
       bullets: [
-        'Monitoring court notifications, filing confirmations, and docket updates',
-        'Updating status based on permitted access and information received',
-        'Automatic docket change alerts'
+        'Medical record organization and summarization',
+        'Treatment timeline charts',
+        'Demand package compilation support',
+        'Lien tracking and documentation',
+        'Settlement tracking spreadsheets',
+        'Insurance communication tracking',
+        'Intake data organization'
       ],
-      color: 'Rose'
+      color: 'Orange',
+      note: 'We help PI firms process cases efficiently and reduce internal workload.'
     },
     {
-      icon: RefreshCw,
-      title: 'Follow-Up & Coordination Support',
-      description: 'Coordinate status confirmations and escalate deadlines',
+      icon: Globe,
+      title: 'Immigration Case Support',
+      description: '(Administrative Processing Only)',
       bullets: [
-        'Tracking pending actions',
-        'Coordinating status confirmations with attorneys or firm staff',
-        'Escalating approaching deadlines'
+        'Form data entry support (as directed by attorney)',
+        'Document checklist verification',
+        'Packet assembly and organization',
+        'RFE document compilation support',
+        'Case file tracking'
       ],
-      color: 'Violet'
+      color: 'Teal',
+      note: 'We do not provide immigration advice or client consultation. All work remains under attorney review and supervision.'
     },
     {
-      icon: FileText,
-      title: 'Weekly Status Reporting',
-      description: 'Clear, structured reports delivered weekly',
+      icon: FolderOpen,
+      title: 'Document Review & Case Organization Support',
+      description: 'Efficient document handling for litigation matters.',
       bullets: [
-        'Clear, structured reports covering open matters',
-        'Tracking upcoming deadlines and actions taken',
-        'Highlighting items requiring attention'
+        'Relevance review support',
+        'File organization',
+        'Privilege log preparation support',
+        'Large file sorting and indexing',
+        'PDF bookmarking and exhibit labeling'
       ],
-      color: 'Amber'
+      color: 'Emerald',
+      note: 'Structured organization improves litigation readiness and saves attorney time.'
     }
   ];
 
-  const processes = [
-    {
-      icon: Search,
-      title: 'Assessment',
-      description: 'Understand your workflow and requirements',
-      step: '1'
-    },
-    {
-      icon: Settings,
-      title: 'Setup',
-      description: 'Configure tracking systems and access',
-      step: '2'
-    },
-    {
-      icon: PlayCircle,
-      title: 'Execution',
-      description: 'Daily monitoring and coordination',
-      step: '3'
-    },
-    {
-      icon: FileBarChart,
-      title: 'Reporting',
-      description: 'Weekly updates and reviews',
-      step: '4'
-    }
+  const softwareTools = [
+    'Clio', 'MyCase', 'Filevine', 'PACER', 
+    'Microsoft 365', 'Google Workspace', 'Secure file-sharing systems'
   ];
 
   return (
@@ -169,26 +181,30 @@ export default function ServicesPage() {
             
             {/* Main Heading */}
             <h1 className={servicesStyles.vmServicesMainHeading}>
-              Our Services
+              Services
             </h1>
             
-            {/* Description */}
-            <h2 className={servicesStyles.vmServicesSubHeading}>
-              Strictly <span className={servicesStyles.vmServicesGradientText}>non-legal administrative support</span> designed to keep your law firm's operations running smoothly
-            </h2>
+            {/* Tagline */}
+            <div className={servicesStyles.vmServicesTagline}>
+              Remote Legal Operations & Paralegal Support
+            </div>
             
-            {/* Scope Card */}
-            <div className={servicesStyles.vmServicesScopeCard}>
-              <div className={servicesStyles.vmServicesScopeHeader}>
-                <ShieldCheck className={servicesStyles.vmServicesScopeIcon} />
-                <h3>Service Scope</h3>
-              </div>
-              <div className={servicesStyles.vmServicesScopeContent}>
-                <p>
-                  We support law firms with <strong>day-to-day legal operations and case coordination</strong>, 
-                  ensuring nothing falls through the cracks — without adding internal headcount.
-                </p>
-              </div>
+            {/* Subheading */}
+            <div className={servicesStyles.vmServicesSubheading}>
+              Built for U.S. Law Firms
+            </div>
+            
+            {/* Description */}
+            <div className={servicesStyles.vmServicesDescription}>
+              <p className={servicesStyles.vmServicesDescriptionText}>
+                VM Legal Operations provides structured, process-driven legal operations and remote paralegal support services to licensed U.S. attorneys and law firms.
+              </p>
+              <p className={servicesStyles.vmServicesDescriptionText}>
+                We work exclusively under attorney supervision. We do not provide legal advice, represent clients, or make legal decisions.
+              </p>
+              <p className={servicesStyles.vmServicesDescriptionText}>
+                Our role is to reduce attorney workload, improve case organization, and support firm efficiency.
+              </p>
             </div>
             
             {/* CTA Buttons */}
@@ -206,49 +222,47 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* === MAIN SERVICES SECTION === */}
+      {/* === MAIN SERVICES CATEGORIES SECTION === */}
       <section id="services" className={`${servicesStyles.vmServicesSectionWhite} ${servicesStyles.vmServicesReveal}`}>
         <div className={servicesStyles.vmServicesContainer}>
           <div className={servicesStyles.vmServicesSectionHeader}>
-            <h2 className={servicesStyles.vmServicesSectionTitle}>Comprehensive Legal Operations Support</h2>
-            <p className={servicesStyles.vmServicesSectionDesc}>
-              Day-to-day legal operations and case coordination for U.S. law firms
-            </p>
+            <h2 className={servicesStyles.vmServicesSectionTitle}>Our Services</h2>
           </div>
           
-          <div className={servicesStyles.vmServicesGridDetailed}>
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              // Fix the color class name
-              const colorClass = `vmServicesIcon${service.color}`;
+          <div className={servicesStyles.vmServicesCategoriesGrid}>
+            {serviceCategories.map((category, index) => {
+              const IconComponent = category.icon;
+              const colorClass = `vmServicesIcon${category.color}`;
               return (
-                <div key={index} className={servicesStyles.vmServicesServiceCardDetailed}>
-                  <div className={servicesStyles.vmServicesServiceHeaderDetailed}>
-                    <div className={`${servicesStyles.vmServicesServiceIconContainer} ${servicesStyles[colorClass]}`}>
-                      <IconComponent className={servicesStyles.vmServicesServiceIcon} />
+                <div key={index} className={servicesStyles.vmServicesCategoryCard}>
+                  <div className={servicesStyles.vmServicesCategoryHeader}>
+                    <div className={`${servicesStyles.vmServicesCategoryIconContainer} ${servicesStyles[colorClass]}`}>
+                      <IconComponent className={servicesStyles.vmServicesCategoryIcon} />
                     </div>
-                    <div>
-                      <h3 className={servicesStyles.vmServicesServiceTitle}>{service.title}</h3>
-                      <p className={servicesStyles.vmServicesServiceSubtitle}>{service.description}</p>
-                    </div>
+                    <h3 className={servicesStyles.vmServicesCategoryTitle}>{category.title}</h3>
                   </div>
                   
-                  <div className={servicesStyles.vmServicesServiceContent}>
-                    <ul className={servicesStyles.vmServicesServiceList}>
-                      {service.bullets.map((bullet, idx) => (
-                        <li key={idx} className={servicesStyles.vmServicesServiceListItem}>
-                          <CheckCircle2 className={servicesStyles.vmServicesListIcon} />
+                  <div className={servicesStyles.vmServicesCategoryContent}>
+                    <p className={servicesStyles.vmServicesCategoryDescription}>{category.description}</p>
+                    
+                    <div className={servicesStyles.vmServicesCategoryListHeader}>
+                      <span>Services Include:</span>
+                    </div>
+                    
+                    <ul className={servicesStyles.vmServicesCategoryList}>
+                      {category.bullets.map((bullet, idx) => (
+                        <li key={idx} className={servicesStyles.vmServicesCategoryListItem}>
+                          <CheckCircle2 className={servicesStyles.vmServicesCategoryListIcon} />
                           <span>{bullet}</span>
                         </li>
                       ))}
                     </ul>
                     
-                    <div className={servicesStyles.vmServicesServiceAction}>
-                      <Link href="/contact" className={servicesStyles.vmServicesServiceButton}>
-                        Learn More
-                        <ChevronRight className={servicesStyles.vmServicesBtnIconSmall} />
-                      </Link>
-                    </div>
+                    {category.note && (
+                      <div className={servicesStyles.vmServicesCategoryNote}>
+                        <p>{category.note}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
@@ -257,100 +271,31 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* === WEEKLY REPORTING DETAILS === */}
-      <section id="reporting" className={`${servicesStyles.vmServicesSectionGray} ${servicesStyles.vmServicesReveal}`}>
+      {/* === SOFTWARE & WORKFLOW FAMILIARITY SECTION === */}
+      <section id="software" className={`${servicesStyles.vmServicesSectionGray} ${servicesStyles.vmServicesReveal}`}>
         <div className={servicesStyles.vmServicesContainer}>
           <div className={servicesStyles.vmServicesSectionHeader}>
-            <h2 className={servicesStyles.vmServicesSectionTitle}>Weekly Status Reporting</h2>
+            <h2 className={servicesStyles.vmServicesSectionTitle}>Software & Workflow Familiarity</h2>
             <p className={servicesStyles.vmServicesSectionDesc}>
-              Clear, structured reports delivered weekly for complete visibility
+              We work with leading U.S. law firm tools and platforms
             </p>
           </div>
           
-          <div className={servicesStyles.vmServicesReportingGrid}>
-            <div className={servicesStyles.vmServicesReportingCard}>
-              <div className={servicesStyles.vmServicesReportingHeader}>
-                <ListChecks className={servicesStyles.vmServicesReportingIcon} />
-                <h3 className={servicesStyles.vmServicesReportingTitle}>Report Coverage</h3>
-              </div>
-              <div className={servicesStyles.vmServicesReportingContent}>
-                <ul className={servicesStyles.vmServicesReportingList}>
-                  {[
-                    'Open matters and case status',
-                    'Upcoming deadlines and timelines',
-                    'Actions taken and completed tasks',
-                    'Items requiring attention or escalation',
-                    'Court docket updates',
-                    'Pending follow-ups'
-                  ].map((item, idx) => (
-                    <li key={idx} className={servicesStyles.vmServicesReportingListItem}>
-                      <CheckCircle2 className={servicesStyles.vmServicesListIconBlue} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            
-            <div className={servicesStyles.vmServicesReportingCard}>
-              <div className={servicesStyles.vmServicesReportingHeader}>
-                <TrendingUp className={servicesStyles.vmServicesReportingIcon} />
-                <h3 className={servicesStyles.vmServicesReportingTitle}>Key Benefits</h3>
-              </div>
-              <div className={servicesStyles.vmServicesReportingContent}>
-                <ul className={servicesStyles.vmServicesReportingList}>
-                  {[
-                    'Consistent visibility across all matters',
-                    'Early warning for upcoming deadlines',
-                    'Reduced administrative overhead',
-                    'Better coordination among team members',
-                    'Documented audit trail of case progress',
-                    'Improved client communication'
-                  ].map((item, idx) => (
-                    <li key={idx} className={servicesStyles.vmServicesReportingListItem}>
-                      <CheckCircle2 className={servicesStyles.vmServicesListIconGreen} />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* === SERVICE DELIVERY PROCESS === */}
-      <section id="process" className={`${servicesStyles.vmServicesSectionWhite} ${servicesStyles.vmServicesReveal}`}>
-        <div className={servicesStyles.vmServicesContainer}>
-          <div className={servicesStyles.vmServicesSectionHeader}>
-            <h2 className={servicesStyles.vmServicesSectionTitle}>Our Service Delivery Process</h2>
-            <p className={servicesStyles.vmServicesSectionDesc}>
-              How we ensure quality and consistency in our support
-            </p>
-          </div>
-          
-          <div className={servicesStyles.vmServicesProcessGrid}>
-            {processes.map((process, index) => {
-              const IconComponent = process.icon;
-              return (
-                <div key={index} className={servicesStyles.vmServicesProcessCard}>
-                  <div className={servicesStyles.vmServicesProcessStep}>
-                    <span className={servicesStyles.vmServicesStepNumber}>{process.step}</span>
-                  </div>
-                  <div className={servicesStyles.vmServicesProcessIconContainer}>
-                    <IconComponent className={servicesStyles.vmServicesProcessIcon} />
-                  </div>
-                  <h3 className={servicesStyles.vmServicesProcessTitle}>{process.title}</h3>
-                  <p className={servicesStyles.vmServicesProcessDescription}>{process.description}</p>
+          <div className={servicesStyles.vmServicesSoftwareGrid}>
+            {softwareTools.map((tool, index) => (
+              <div key={index} className={servicesStyles.vmServicesSoftwareItem}>
+                <div className={servicesStyles.vmServicesSoftwareIconBox}>
+                  <Check className={servicesStyles.vmServicesSoftwareIcon} />
                 </div>
-              );
-            })}
+                <span className={servicesStyles.vmServicesSoftwareName}>{tool}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* === SCOPE OF SERVICES NOTICE === */}
-      <section id="scope" className={`${servicesStyles.vmServicesSectionLight} ${servicesStyles.vmServicesReveal}`}>
+      {/* <section id="scope" className={`${servicesStyles.vmServicesSectionLight} ${servicesStyles.vmServicesReveal}`}>
         <div className={servicesStyles.vmServicesContainer}>
           <div className={servicesStyles.vmServicesScopeNoticeDetailed}>
             <div className={servicesStyles.vmServicesScopeNoticeHeader}>
@@ -368,7 +313,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* === FINAL CTA SECTION === */}
       <section id="contact" className={`${servicesStyles.vmServicesCtaSection} ${servicesStyles.vmServicesReveal}`}>

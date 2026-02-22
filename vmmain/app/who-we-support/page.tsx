@@ -26,7 +26,17 @@ import {
   CheckCircle2,
   Building2,
   FileText,
-  Sparkles
+  Sparkles,
+  Briefcase,
+  FileSearch,
+  Gavel,
+  HeartPulse,
+  Globe,
+  Rocket,
+  FolderOpen,
+  CalendarClock,
+  FileCheck,
+  Layers
 } from 'lucide-react';
 
 export default function WhoWeSupportPage() {
@@ -59,67 +69,75 @@ export default function WhoWeSupportPage() {
       observer.observe(el);
     });
 
-    
     return () => {
       observer.disconnect();
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
-  const clientTypes = [
+  const practiceAreas = [
     {
-      icon: Scale,
-      title: 'Small and mid-size U.S. law firms',
-      description: 'Firms seeking to optimize operations without expanding internal staff or administrative overhead.',
+      icon: Building2,
+      title: 'Small & Mid-Size Law Firms',
+      description: 'Firms looking to improve efficiency without expanding internal staff. We support case tracking, document organization, summaries, and structured reporting.',
       color: 'Blue'
     },
     {
-      icon: BarChart3,
-      title: 'Debt collection and consumer litigation firms',
-      description: 'High-volume practices requiring systematic case tracking, deadline management, and compliance monitoring.',
+      icon: Gavel,
+      title: 'Litigation-Focused Practices',
+      description: 'Civil litigation firms handling motions, discovery, depositions, and trial preparation. We assist with case summaries, chronologies, exhibit organization, filing and deadline tracking.',
       color: 'Emerald'
     },
     {
-      icon: TrendingUp,
-      title: 'Firms handling high-volume matters',
-      description: 'Practices with multiple concurrent cases needing consistent tracking and coordination.',
+      icon: HeartPulse,
+      title: 'Personal Injury Practices',
+      description: 'High-volume firms requiring organized case processing, medical record summaries, and demand package support.',
       color: 'Violet'
     },
     {
-      icon: Users,
-      title: 'Legal teams seeking administrative support without expanding internal staff',
-      description: 'Legal departments and in-house counsel teams looking to improve operational efficiency.',
+      icon: Globe,
+      title: 'Immigration Law Firms',
+      description: 'Firms needing structured document checklist verification, form processing support, and packet assembly under attorney direction.',
       color: 'Amber'
+    },
+    {
+      icon: Rocket,
+      title: 'Growth-Oriented Legal Teams',
+      description: 'Firms seeking reliable offshore support to scale operations while maintaining attorney oversight and compliance.',
+      color: 'Teal'
     }
   ];
 
-  const challenges = [
-    'Inconsistent system updates',
-    'Missed or late follow-ups',
-    'Fragmented information across emails and platforms',
-    'Administrative work pulling time away from billable activity'
-  ];
-
-  const benefits = [
+  const supportServices = [
     {
-      icon: Clock,
-      title: 'Time Savings',
-      description: 'Attorneys save significant time on administrative tasks'
+      icon: FileSearch,
+      title: 'Case Summaries',
+      description: 'Comprehensive case digests and summaries'
     },
     {
-      icon: DollarSign,
-      title: 'Cost Efficiency',
-      description: 'Significant savings compared to hiring in-house staff'
+      icon: Layers,
+      title: 'Chronologies',
+      description: 'Detailed timeline development and management'
     },
     {
-      icon: Eye,
-      title: 'Better Visibility',
-      description: 'Real-time case status and deadline tracking across all matters'
+      icon: FolderOpen,
+      title: 'Exhibit Organization',
+      description: 'Systematic exhibit preparation and indexing'
     },
     {
-      icon: Settings,
-      title: 'Operational Discipline',
-      description: 'Consistent tracking, reporting, and follow-through'
+      icon: CalendarClock,
+      title: 'Deadline Tracking',
+      description: 'Critical date monitoring and alerts'
+    },
+    {
+      icon: FileCheck,
+      title: 'Document Processing',
+      description: 'Form processing, verification, and assembly'
+    },
+    {
+      icon: FileText,
+      title: 'Medical Record Summaries',
+      description: 'Comprehensive medical chronology and analysis'
     }
   ];
 
@@ -143,7 +161,7 @@ export default function WhoWeSupportPage() {
             
             {/* Description */}
             <h2 className={whoStyles.vmWhoSubHeading}>
-              Dedicated <span className={whoStyles.vmWhoGradientText}>offshore legal operations support</span> for specific types of U.S. law practices
+              <span className={whoStyles.vmWhoGradientText}>U.S. Law Firms Across Practice Areas</span>
             </h2>
             
             {/* Scope Card */}
@@ -154,8 +172,9 @@ export default function WhoWeSupportPage() {
               </div>
               <div className={whoStyles.vmWhoScopeContent}>
                 <p>
-                  We work best with U.S. law firms and legal teams that value efficiency, consistency, 
-                  and want to focus on substantive legal work while we handle the operational details.
+                  VM Legal Operations works best with firms that manage <strong>deadline-driven, document-intensive, 
+                  and process-oriented matters.</strong> We provide structured remote legal operations and paralegal 
+                  support under attorney supervision.
                 </p>
               </div>
             </div>
@@ -166,36 +185,36 @@ export default function WhoWeSupportPage() {
                 <span>Schedule Consultation</span>
                 <ArrowRight className={whoStyles.vmWhoBtnIcon} />
               </Link>
-              <Link href="/services" className={whoStyles.vmWhoBtnSecondary}>
+              <Link href="/how-we-work" className={whoStyles.vmWhoBtnSecondary}>
                 <FileText className={whoStyles.vmWhoBtnIcon} />
-                <span>View Our Services</span>
+                <span>How We Work</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* === IDEAL CLIENTS SECTION === */}
-      <section id="ideal-clients" className={`${whoStyles.vmWhoSectionWhite} ${whoStyles.vmWhoReveal}`}>
+      {/* === PRACTICE AREAS SECTION - 5 CARDS === */}
+      <section id="practice-areas" className={`${whoStyles.vmWhoSectionWhite} ${whoStyles.vmWhoReveal}`}>
         <div className={whoStyles.vmWhoContainer}>
           <div className={whoStyles.vmWhoSectionHeader}>
-            <h2 className={whoStyles.vmWhoSectionTitle}>Ideal Client Profiles</h2>
+            <h2 className={whoStyles.vmWhoSectionTitle}>Practice Areas We Support</h2>
             <p className={whoStyles.vmWhoSectionDesc}>
-              We work best with U.S. law firms and legal teams that have these characteristics
+              Tailored operational support for specific legal practice areas
             </p>
           </div>
           
-          <div className={whoStyles.vmWhoClientsGrid}>
-            {clientTypes.map((client, index) => {
-              const IconComponent = client.icon;
-              const colorClass = `vmWhoIcon${client.color}`;
+          <div className={whoStyles.vmWhoPracticeGrid}>
+            {practiceAreas.map((area, index) => {
+              const IconComponent = area.icon;
+              const colorClass = `vmWhoIcon${area.color}`;
               return (
-                <div key={index} className={whoStyles.vmWhoClientCard}>
-                  <div className={`${whoStyles.vmWhoClientIconContainer} ${whoStyles[colorClass]}`}>
-                    <IconComponent className={whoStyles.vmWhoClientIcon} />
+                <div key={index} className={whoStyles.vmWhoPracticeCard}>
+                  <div className={`${whoStyles.vmWhoPracticeIconContainer} ${whoStyles[colorClass]}`}>
+                    <IconComponent className={whoStyles.vmWhoPracticeIcon} />
                   </div>
-                  <h3 className={whoStyles.vmWhoClientTitle}>{client.title}</h3>
-                  <p className={whoStyles.vmWhoClientDescription}>{client.description}</p>
+                  <h3 className={whoStyles.vmWhoPracticeTitle}>{area.title}</h3>
+                  <p className={whoStyles.vmWhoPracticeDescription}>{area.description}</p>
                 </div>
               );
             })}
@@ -203,80 +222,89 @@ export default function WhoWeSupportPage() {
         </div>
       </section>
 
-      {/* === WHY SUPPORT MATTERS SECTION === */}
-      <section id="why-matters" className={`${whoStyles.vmWhoSectionGray} ${whoStyles.vmWhoReveal}`}>
+      {/* === SUPPORT SERVICES SECTION === */}
+      <section id="support-services" className={`${whoStyles.vmWhoSectionGray} ${whoStyles.vmWhoReveal}`}>
         <div className={whoStyles.vmWhoContainer}>
           <div className={whoStyles.vmWhoSectionHeader}>
-            <h2 className={whoStyles.vmWhoSectionTitle}>Why Legal Operations Support Matters</h2>
+            <h2 className={whoStyles.vmWhoSectionTitle}>What We Support</h2>
             <p className={whoStyles.vmWhoSectionDesc}>
-              Addressing common challenges in modern legal practice
+              Structured operational assistance across key legal tasks
             </p>
           </div>
           
-          <div className={whoStyles.vmWhoSupportGrid}>
-            <div className={whoStyles.vmWhoChallengesCard}>
-              <div className={whoStyles.vmWhoChallengesHeader}>
-                <div className={whoStyles.vmWhoChallengesDot}></div>
-                <h3 className={whoStyles.vmWhoChallengesTitle}>The Challenges</h3>
+          <div className={whoStyles.vmWhoServicesGrid}>
+            {supportServices.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div key={index} className={whoStyles.vmWhoServiceCard}>
+                  <div className={whoStyles.vmWhoServiceIconContainer}>
+                    <IconComponent className={whoStyles.vmWhoServiceIcon} />
+                  </div>
+                  <h3 className={whoStyles.vmWhoServiceTitle}>{service.title}</h3>
+                  <p className={whoStyles.vmWhoServiceDescription}>{service.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* === WHY PARTNER WITH US SECTION === */}
+      <section id="why-partner" className={`${whoStyles.vmWhoSectionLight} ${whoStyles.vmWhoReveal}`}>
+        <div className={whoStyles.vmWhoContainer}>
+          <div className={whoStyles.vmWhoSectionHeader}>
+            <h2 className={whoStyles.vmWhoSectionTitle}>Why Partner With Us</h2>
+            <p className={whoStyles.vmWhoSectionDesc}>
+              Reliable offshore support with attorney supervision and compliance
+            </p>
+          </div>
+          
+          <div className={whoStyles.vmWhoBenefitsGrid}>
+            <div className={whoStyles.vmWhoBenefitCard}>
+              <div className={whoStyles.vmWhoBenefitIconContainer}>
+                <Shield className={whoStyles.vmWhoBenefitIcon} />
               </div>
-              <p className={whoStyles.vmWhoChallengesDescription}>
-                Even with modern case-management software, many firms experience:
+              <h3 className={whoStyles.vmWhoBenefitTitle}>Attorney Supervision</h3>
+              <p className={whoStyles.vmWhoBenefitDescription}>
+                All work performed under strict attorney oversight and compliance with ethical guidelines
               </p>
-              <ul className={whoStyles.vmWhoChallengesList}>
-                {challenges.map((challenge, idx) => (
-                  <li key={idx} className={whoStyles.vmWhoChallengesListItem}>
-                    <div className={whoStyles.vmWhoListDot}></div>
-                    <span>{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className={whoStyles.vmWhoHelpCard}>
-                <Shield className={whoStyles.vmWhoHelpIcon} />
-                <h4 className={whoStyles.vmWhoHelpTitle}>How We Help</h4>
-                <p className={whoStyles.vmWhoHelpDescription}>
-                  We help address these gaps by <strong>owning the tracking and reporting process</strong>, 
-                  so attorneys can focus on substantive legal work.
-                </p>
-              </div>
             </div>
             
-            <div className={whoStyles.vmWhoBenefitsCard}>
-              <div className={whoStyles.vmWhoBenefitsHeader}>
-                <Shield className={whoStyles.vmWhoBenefitsIcon} />
-                <h3 className={whoStyles.vmWhoBenefitsTitle}>Key Benefits</h3>
+            <div className={whoStyles.vmWhoBenefitCard}>
+              <div className={whoStyles.vmWhoBenefitIconContainer}>
+                <Clock className={whoStyles.vmWhoBenefitIcon} />
               </div>
-              <div className={whoStyles.vmWhoBenefitsGrid}>
-                {benefits.map((benefit, idx) => {
-                  const IconComponent = benefit.icon;
-                  return (
-                    <div key={idx} className={whoStyles.vmWhoBenefitItem}>
-                      <div className={whoStyles.vmWhoBenefitIconContainer}>
-                        <IconComponent className={whoStyles.vmWhoBenefitIcon} />
-                      </div>
-                      <div className={whoStyles.vmWhoBenefitContent}>
-                        <h4 className={whoStyles.vmWhoBenefitTitle}>{benefit.title}</h4>
-                        <p className={whoStyles.vmWhoBenefitDescription}>{benefit.description}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+              <h3 className={whoStyles.vmWhoBenefitTitle}>Process-Oriented</h3>
+              <p className={whoStyles.vmWhoBenefitDescription}>
+                Structured workflows designed for deadline-driven, document-intensive matters
+              </p>
+            </div>
+            
+            <div className={whoStyles.vmWhoBenefitCard}>
+              <div className={whoStyles.vmWhoBenefitIconContainer}>
+                <TrendingUp className={whoStyles.vmWhoBenefitIcon} />
               </div>
-              
-              <div className={whoStyles.vmWhoRoleHighlight}>
-                <Target className={whoStyles.vmWhoRoleIcon} />
-                <p className={whoStyles.vmWhoRoleText}>
-                  Our role is to provide <strong>consistency, visibility, and operational discipline</strong> 
-                  that keeps your cases on track.
-                </p>
+              <h3 className={whoStyles.vmWhoBenefitTitle}>Scalable Support</h3>
+              <p className={whoStyles.vmWhoBenefitDescription}>
+                Reliable offshore assistance that grows with your practice needs
+              </p>
+            </div>
+            
+            <div className={whoStyles.vmWhoBenefitCard}>
+              <div className={whoStyles.vmWhoBenefitIconContainer}>
+                <Target className={whoStyles.vmWhoBenefitIcon} />
               </div>
+              <h3 className={whoStyles.vmWhoBenefitTitle}>Operational Discipline</h3>
+              <p className={whoStyles.vmWhoBenefitDescription}>
+                Consistent tracking, reporting, and follow-through on all matters
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* === SCOPE OF SERVICES NOTICE === */}
-      <section id="scope" className={`${whoStyles.vmWhoSectionDark} ${whoStyles.vmWhoReveal}`}>
+      {/* <section id="scope" className={`${whoStyles.vmWhoSectionDark} ${whoStyles.vmWhoReveal}`}>
         <div className={whoStyles.vmWhoContainer}>
           <div className={whoStyles.vmWhoScopeNotice}>
             <div className={whoStyles.vmWhoScopeIconContainer}>
@@ -294,7 +322,7 @@ export default function WhoWeSupportPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* === FINAL CTA SECTION === */}
       <section id="contact" className={`${whoStyles.vmWhoCtaSection} ${whoStyles.vmWhoReveal}`}>
@@ -303,18 +331,18 @@ export default function WhoWeSupportPage() {
             <div className={whoStyles.vmWhoCtaIconBox}>
               <MessageCircle className={whoStyles.vmWhoCtaIcon} />
             </div>
-            <h2 className={whoStyles.vmWhoCtaTitle}>Is Your Firm a Good Fit?</h2>
+            <h2 className={whoStyles.vmWhoCtaTitle}>Ready to Scale Your Practice?</h2>
             <p className={whoStyles.vmWhoCtaDesc}>
-              Schedule a consultation to discuss how our legal operations support can benefit your practice 
-              and improve your firm's efficiency.
+              Schedule a consultation to discuss how our structured legal operations support can benefit 
+              your specific practice area.
             </p>
             
             <div className={whoStyles.vmWhoCtaBtnGroup}>
               <Link href="/contact" className={whoStyles.vmWhoCtaBtnPrimary}>
                 Schedule Consultation
               </Link>
-              <Link href="/services" className={whoStyles.vmWhoCtaBtnSecondary}>
-                View Our Services
+              <Link href="/how-we-work" className={whoStyles.vmWhoCtaBtnSecondary}>
+                View Our Process
               </Link>
             </div>
           </div>

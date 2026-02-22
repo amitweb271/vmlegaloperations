@@ -10,7 +10,8 @@ import {
   RefreshCw, FileText, CheckCircle2, Target,
   Calendar, TestTube2, TrendingUp, Scale, AlertCircle,
   Zap, Award, ArrowRight, ChevronRight, Phone,
-  Check, Star, Users, Globe, Briefcase
+  Check, Star, Users, Globe, Briefcase, Gavel,
+  FolderOpen, BookOpen, Layers, Activity
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -42,9 +43,6 @@ export default function HomePage() {
       observer.observe(el);
     });
 
-    // 👇 YEH POORA SMOOTH SCROLL CODE HATAYA
-    // Smooth scroll for anchor links - REMOVED
-
     return () => {
       observer.disconnect();
       window.removeEventListener('resize', checkMobile);
@@ -69,7 +67,7 @@ export default function HomePage() {
               VM Legal Operations
             </h1>
             
-            {/* Tagline */}
+            {/* Tagline - UPDATED to reflect new positioning */}
             <div className={homeStyles.vmTaglineWrapper}>
               <div className={homeStyles.vmTaglineGroup}>
                 <span className={homeStyles.vmTaglineItem}>Clarity.</span>
@@ -78,13 +76,13 @@ export default function HomePage() {
               </div>
             </div>
             
-            {/* Subheading */}
+            {/* Subheading - UPDATED with new line */}
             <h2 className={homeStyles.vmSubHeading}>
-              Legal Operations & Case Management Support
+              Remote Legal Operations & Litigation Support
               <span className={homeStyles.vmGradientText}> for U.S. Law Firms</span>
             </h2>
             
-            {/* Scope of Services Card */}
+            {/* Scope of Services Card - UPDATED with professional version */}
             <div className={homeStyles.vmScopeCard}>
               <div className={homeStyles.vmScopeHeader}>
                 <Shield className={homeStyles.vmScopeIcon} />
@@ -92,8 +90,7 @@ export default function HomePage() {
               </div>
               <div className={homeStyles.vmScopeContent}>
                 <p>
-                  VM Legal Operations provides <strong>strictly non-legal administrative support</strong> for law firm operations. 
-                  We do not provide legal advice, draft legal documents, represent clients in court, or make legal decisions.
+                  VM Legal Operations provides remote legal operations and paralegal support exclusively to licensed U.S. law firms. All work is performed under attorney supervision. We do not provide legal advice or represent clients.
                 </p>
               </div>
             </div>
@@ -147,132 +144,111 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* === WHAT WE DO SECTION === */}
+      {/* === WHAT WE DO SECTION - EXPANDED WITH 4 BLOCKS === */}
       <section id="what-we-do" className={`${homeStyles.vmSectionWhite} ${homeStyles.vmReveal}`}>
         <div className={homeStyles.vmContainer}>
           <div className={homeStyles.vmSectionHeader}>
             <h2 className={homeStyles.vmSectionTitle}>What We Do</h2>
             <p className={homeStyles.vmSectionDesc}>
-              We support law firms with <strong>day-to-day legal operations and case coordination</strong>
+              Structured legal operations and paralegal support under clearly defined scope and attorney supervision
             </p>
           </div>
           
           <div className={homeStyles.vmServicesGrid}>
-            {/* Service 1 - Case Status Tracking */}
+            {/* A) Legal Operations & Case Management */}
             <div className={homeStyles.vmServiceCard}>
               <div className={homeStyles.vmServiceHeader}>
                 <div className={homeStyles.vmServiceIconBox}>
                   <BarChart3 className={homeStyles.vmServiceIcon} />
                 </div>
-                <h3 className={homeStyles.vmServiceTitle}>Case Status Tracking</h3>
+                <h3 className={homeStyles.vmServiceTitle}>Legal Operations & Case Management</h3>
               </div>
               <ul className={homeStyles.vmServiceList}>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Tracking case stages and progress across matters</span>
+                  <span>Case tracking across all active matters</span>
                 </li>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Maintaining structured case trackers or working alongside your existing systems</span>
+                  <span>Deadline monitoring and calendar management</span>
+                </li>
+                <li className={homeStyles.vmServiceListItem}>
+                  <CheckCircle2 className={homeStyles.vmListIcon} />
+                  <span>Weekly status reporting with actionable insights</span>
                 </li>
               </ul>
             </div>
             
-            {/* Service 2 - Deadline Monitoring */}
+            {/* B) Litigation Support - NEW */}
             <div className={homeStyles.vmServiceCard}>
               <div className={homeStyles.vmServiceHeader}>
                 <div className={homeStyles.vmServiceIconBox}>
-                  <Clock className={homeStyles.vmServiceIcon} />
+                  <Gavel className={homeStyles.vmServiceIcon} />
                 </div>
-                <h3 className={homeStyles.vmServiceTitle}>Deadline & Timeline Monitoring</h3>
+                <h3 className={homeStyles.vmServiceTitle}>Litigation Support</h3>
               </div>
               <ul className={homeStyles.vmServiceList}>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Monitoring court-driven and rule-based deadlines</span>
+                  <span>Case summaries and timeline preparation</span>
                 </li>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Flagging upcoming actions and pending responses</span>
+                  <span>Deposition summaries and key point extraction</span>
+                </li>
+                <li className={homeStyles.vmServiceListItem}>
+                  <CheckCircle2 className={homeStyles.vmListIcon} />
+                  <span>Exhibit indexing and chronology preparation</span>
                 </li>
               </ul>
             </div>
             
-            {/* Service 3 - Court Monitoring */}
+            {/* C) Personal Injury Support - NEW */}
             <div className={homeStyles.vmServiceCard}>
               <div className={homeStyles.vmServiceHeader}>
                 <div className={homeStyles.vmServiceIconBox}>
-                  <Building2 className={homeStyles.vmServiceIcon} />
+                  <Activity className={homeStyles.vmServiceIcon} />
                 </div>
-                <h3 className={homeStyles.vmServiceTitle}>Court Notification & Docket Monitoring</h3>
+                <h3 className={homeStyles.vmServiceTitle}>Personal Injury Support</h3>
               </div>
               <ul className={homeStyles.vmServiceList}>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Monitoring court notifications, filing confirmations, and docket updates</span>
+                  <span>Medical record organization and summarization</span>
                 </li>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Updating status based on permitted access and information received</span>
+                  <span>Treatment timeline and chronology charts</span>
+                </li>
+                <li className={homeStyles.vmServiceListItem}>
+                  <CheckCircle2 className={homeStyles.vmListIcon} />
+                  <span>Demand package support and document preparation</span>
                 </li>
               </ul>
             </div>
             
-            {/* Service 4 - Follow-up & Coordination */}
+            {/* D) Document Review & Organization */}
             <div className={homeStyles.vmServiceCard}>
               <div className={homeStyles.vmServiceHeader}>
                 <div className={homeStyles.vmServiceIconBox}>
-                  <RefreshCw className={homeStyles.vmServiceIcon} />
+                  <FolderOpen className={homeStyles.vmServiceIcon} />
                 </div>
-                <h3 className={homeStyles.vmServiceTitle}>Follow-Up & Coordination Support</h3>
+                <h3 className={homeStyles.vmServiceTitle}>Document Review & Organization</h3>
               </div>
               <ul className={homeStyles.vmServiceList}>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Tracking pending actions</span>
+                  <span>Discovery indexing and document categorization</span>
                 </li>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Coordinating status confirmations with attorneys or firm staff</span>
+                  <span>PDF bookmarking and metadata organization</span>
                 </li>
                 <li className={homeStyles.vmServiceListItem}>
                   <CheckCircle2 className={homeStyles.vmListIcon} />
-                  <span>Escalating approaching deadlines</span>
+                  <span>File structuring and document management</span>
                 </li>
               </ul>
-            </div>
-            
-            {/* Service 5 - Weekly Status Reporting */}
-            <div className={homeStyles.vmServiceCard}>
-              <div className={homeStyles.vmServiceHeader}>
-                <div className={homeStyles.vmServiceIconBox}>
-                  <FileText className={homeStyles.vmServiceIcon} />
-                </div>
-                <h3 className={homeStyles.vmServiceTitle}>Weekly Status Reporting</h3>
-              </div>
-              <div className={homeStyles.vmServiceContent}>
-                <p className={homeStyles.vmServiceDesc}>
-                  Clear, structured reports covering:
-                </p>
-                <ul className={homeStyles.vmServiceList}>
-                  <li className={homeStyles.vmServiceListItem}>
-                    <Check className={homeStyles.vmListIcon} />
-                    <span>Open matters</span>
-                  </li>
-                  <li className={homeStyles.vmServiceListItem}>
-                    <Check className={homeStyles.vmListIcon} />
-                    <span>Upcoming deadlines</span>
-                  </li>
-                  <li className={homeStyles.vmServiceListItem}>
-                    <Check className={homeStyles.vmListIcon} />
-                    <span>Actions taken</span>
-                  </li>
-                  <li className={homeStyles.vmServiceListItem}>
-                    <Check className={homeStyles.vmListIcon} />
-                    <span>Items requiring attention</span>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
           
@@ -285,7 +261,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* === ABOUT OUR APPROACH SECTION === */}
+      {/* === ABOUT OUR APPROACH SECTION - UPDATED WITH PROFESSIONAL TONE === */}
       <section id="approach" className={`${homeStyles.vmSectionGray} ${homeStyles.vmReveal}`}>
         <div className={homeStyles.vmContainer}>
           <div className={homeStyles.vmSectionHeader}>
@@ -297,16 +273,16 @@ export default function HomePage() {
           
           <div className={homeStyles.vmApproachWrapper}>
             <div className={homeStyles.vmApproachContent}>
-              {/* Text Section */}
+              {/* Text Section - UPDATED with new professional tone */}
               <div className={homeStyles.vmApproachText}>
                 <p className={homeStyles.vmApproachPara}>
-                  <strong>We provide offshore legal operations support focused strictly on non-legal administrative work</strong> that law firms rely on to maintain consistency and control.
+                  <strong>Structured legal operations and paralegal support under clearly defined scope and attorney supervision.</strong> We provide remote assistance that integrates seamlessly with your existing workflows.
                 </p>
                 <p className={homeStyles.vmApproachPara}>
-                  <strong>Our approach is process-driven and risk-aware.</strong> We work within clearly defined scopes, respect confidentiality requirements, and integrate with existing workflows rather than disrupting them.
+                  <strong>Our approach is process-driven and risk-aware.</strong> We work within clearly defined boundaries, maintain strict confidentiality, and focus on delivering clarity and consistency across all matters.
                 </p>
                 <p className={homeStyles.vmApproachPara}>
-                  <strong>This model is designed for firms that value clarity, accountability, and reliable follow-through</strong> — without increasing internal headcount or administrative overhead.
+                  <strong>This model is designed for firms that value operational control and reliable follow-through</strong> — without increasing internal headcount or administrative overhead.
                 </p>
               </div>
               
@@ -314,22 +290,22 @@ export default function HomePage() {
               <div className={homeStyles.vmFeaturesCard}>
                 <h3 className={homeStyles.vmFeaturesTitle}>Key Features</h3>
                 <ul className={homeStyles.vmFeaturesList}>
-                  {/* Feature 1 */}
+                  {/* Feature 1 - UPDATED */}
                   <li 
                     className={homeStyles.vmFeatureItem}
                     data-tooltip="Core Principle #1"
                   >
                     <CheckCircle2 className={homeStyles.vmFeatureIcon} />
-                    <span>Strictly non-legal administrative scope</span>
+                    <span>Attorney-supervised support structure</span>
                   </li>
                   
-                  {/* Feature 2 */}
+                  {/* Feature 2 - UPDATED */}
                   <li 
                     className={homeStyles.vmFeatureItem}
                     data-tooltip="Core Principle #2"
                   >
                     <CheckCircle2 className={homeStyles.vmFeatureIcon} />
-                    <span>Clear scope definition and boundaries</span>
+                    <span>Clearly defined scope and boundaries</span>
                   </li>
                   
                   {/* Feature 3 */}
@@ -455,7 +431,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* === WHO WE SUPPORT SECTION === */}
+      {/* === WHO WE SUPPORT SECTION - UPDATED WITHOUT DEBT COLLECTION HIGHLIGHT === */}
       <section id="who-we-support" className={`${homeStyles.vmSectionDark} ${homeStyles.vmReveal}`}>
         <div className={homeStyles.vmContainer}>
           <div className={homeStyles.vmSectionHeader}>
@@ -470,10 +446,11 @@ export default function HomePage() {
               </div>
               <ul className={homeStyles.vmSupportList}>
                 {[
-                  'Small and mid-size U.S. law firms',
-                  'Debt collection and consumer litigation firms',
-                  'Firms handling high-volume matters',
-                  'Legal teams seeking administrative support without expanding internal staff'
+                  'Small & mid-size U.S. law firms',
+                  'Litigation-focused practices',
+                  'Personal injury firms',
+                  'Immigration firms',
+                  'Firms handling high-volume matters'
                 ].map((item, idx) => (
                   <li key={idx} className={homeStyles.vmSupportListItem}>
                     <div className={homeStyles.vmListDot}></div>
@@ -520,57 +497,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* === WHAT WE DON'T DO SECTION === */}
-      <section id="what-we-dont-do" className={`${homeStyles.vmSectionWhite} ${homeStyles.vmReveal}`}>
-        <div className={homeStyles.vmContainer}>
-          <div className={homeStyles.vmSectionHeader}>
-            <h2 className={homeStyles.vmSectionTitle}>What We Do NOT Do</h2>
-            <p className={homeStyles.vmSectionDesc}>
-              To maintain clarity and compliance, we do <strong>not</strong>:
-            </p>
-          </div>
-          
-          <div className={homeStyles.vmNotDoGrid}>
-            <div className={homeStyles.vmNotDoCard}>
-              <div className={homeStyles.vmNotDoHeader}>
-                <div className={homeStyles.vmNotDoIconBox}>
-                  <Scale className={homeStyles.vmNotDoIcon} />
-                </div>
-                <h3 className={homeStyles.vmNotDoTitle}>Legal Advice & Representation</h3>
-              </div>
-              <p className={homeStyles.vmNotDoDesc}>
-                We do not provide legal advice, draft pleadings or legal opinions, 
-                or represent clients before any court or authority.
-              </p>
-            </div>
-            
-            <div className={homeStyles.vmNotDoCard}>
-              <div className={homeStyles.vmNotDoHeader}>
-                <div className={homeStyles.vmNotDoIconBox}>
-                  <AlertCircle className={homeStyles.vmNotDoIcon} />
-                </div>
-                <h3 className={homeStyles.vmNotDoTitle}>Legal Decision Making</h3>
-              </div>
-              <p className={homeStyles.vmNotDoDesc}>
-                We do not make legal or strategic decisions, nor do we access 
-                trust accounts or billing systems.
-              </p>
-            </div>
-          </div>
-          
-          <div className={homeStyles.vmNoteCard}>
-            <p className={homeStyles.vmNoteText}>
-              Our services are limited to <strong>non-legal administrative support only</strong>.
-            </p>
-            <div className={homeStyles.vmNoteButton}>
-              <Link href="/what-we-dont-do" className={homeStyles.vmBtnOutlineDark}>
-                Full Service Exclusions
-                <ChevronRight className={homeStyles.vmBtnIcon} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* === WHAT WE DON'T DO SECTION - REMOVED FROM HOMEPAGE === */}
 
       {/* === ENGAGEMENT MODEL SECTION === */}
       <section id="engagement" className={`${homeStyles.vmSectionLight} ${homeStyles.vmReveal}`}>

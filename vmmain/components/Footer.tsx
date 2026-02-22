@@ -106,12 +106,6 @@ export default function Footer() {
               </li>
               <li>
                 <div className={styles.flex}>
-                  <FileText style={{ width: '16px', height: '16px', color: '#9ca3af' }} />
-                  <Link href="/what-we-dont-do" className={styles.footerLink}>What We Don't Do</Link>
-                </div>
-              </li>
-              <li>
-                <div className={styles.flex}>
                   <Info style={{ width: '16px', height: '16px', color: '#9ca3af' }} />
                   <Link href="/about" className={styles.footerLink}>About Us</Link>
                 </div>

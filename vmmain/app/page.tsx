@@ -18,6 +18,8 @@ export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
+
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -48,6 +50,10 @@ export default function HomePage() {
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
+
+
+  
+
 
   return (
     <div className={homeStyles.vmPageWrapper}>

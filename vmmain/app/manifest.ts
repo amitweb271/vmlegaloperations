@@ -1,4 +1,3 @@
-// app/manifest.ts
 import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -12,12 +11,22 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#1e40af',
     icons: [
       {
-        src: '/icon-192.png',
+        src: '/favicon.ico',
+        sizes: 'any',
+        type: 'image/x-icon',
+      },
+      {
+        src: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+      {
+        src: '/android-chrome-192x192.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/icon-512.png',
+        src: '/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
       },
